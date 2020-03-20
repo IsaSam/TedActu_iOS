@@ -97,7 +97,8 @@ public class BATabBarBadge: UIView {
     func updateBadge() {
         let font = UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)
         
-        let title = "\(String(describing: value!))"
+//        let title = "\(String(describing: value!))"
+        let title = ""
         
         let attributes = [
             NSAttributedString.Key.font: font,

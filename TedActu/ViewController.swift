@@ -15,32 +15,39 @@ class ViewController: UIViewController {
             case BATabBarNoText
         }
         
-        var  demotype = DemoTypes.BATabBarNoText
+        var  demotype = DemoTypes.BATabBarWithText
         
         override func viewDidLoad() {
             
             super.viewDidLoad()
+            
             let testController = BATabBarController()
 
             var tabBarItem, tabBarItem2, tabBarItem3: BATabBarItem
 
             switch (self.demotype) {
             case .BATabBarWithText:
-                let option1 = NSMutableAttributedString(string: "Feed")
-                option1.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: option1.length))
-                tabBarItem  = BATabBarItem(image: UIImage(named: "home-1")!, selectedImage: UIImage(named: "home-1")!, title: option1)
-                tabBarItem2 = BATabBarItem(image: UIImage(named: "icon2_unselected")!, selectedImage: UIImage(named: "icon2_selected")!, title: option1)
-                tabBarItem3 = BATabBarItem(image: UIImage(named: "icon3_unselected")!, selectedImage: UIImage(named: "icon3_selected")!, title: option1)
+                let option1 = NSMutableAttributedString(string: "Feeds")
+                option1.addAttribute(.foregroundColor, value: UIColor.clear, range: NSRange(location: 0, length: option1.length))
+                
+                let option2 = NSMutableAttributedString(string: "Trending")
+                option2.addAttribute(.foregroundColor, value: UIColor.gray, range: NSRange(location: 0, length: option1.length))
+                
+                let option3 = NSMutableAttributedString(string: "Trending")
+                option3.addAttribute(.foregroundColor, value: UIColor.gray, range: NSRange(location: 0, length: option1.length))
+                
+                tabBarItem  = BATabBarItem(image: UIImage(named: "home1_unselected")!, selectedImage: UIImage(named: "home1_selected")!, title: option1)
+                tabBarItem2 = BATabBarItem(image: UIImage(named: "fire_unselected")!, selectedImage: UIImage(named: "fire_selected")!, title: option2)
+                tabBarItem3 = BATabBarItem(image: UIImage(named: "playlist_unselected")!, selectedImage: UIImage(named: "playlist_selected")!, title: option3)
 
             case .BATabBarNoText:
                 tabBarItem  = BATabBarItem(image: UIImage(named: "home1_unselected")!, selectedImage: UIImage(named: "home1_selected")!)
-                tabBarItem2 = BATabBarItem(image: UIImage(named: "icon2_unselected")!, selectedImage: UIImage(named: "icon2_selected")!)
-                tabBarItem3 = BATabBarItem(image: UIImage(named: "icon3_unselected")!, selectedImage: UIImage(named: "icon3_selected")!)
+                tabBarItem2 = BATabBarItem(image: UIImage(named: "fire_unselected")!, selectedImage: UIImage(named: "fire_selected")!)
+                tabBarItem3 = BATabBarItem(image: UIImage(named: "playlist_unselected")!, selectedImage: UIImage(named: "playlist_selected")!)
             }
 
-
-            let badge = BATabBarBadge(value:0, badgeColor: .red)
-            tabBarItem2.badge = badge
+            let badge = BATabBarBadge(value: 1, badgeColor: .clear)
+            tabBarItem.badge = badge
 
 
             let vc1 = UIViewController()
@@ -49,6 +56,8 @@ class ViewController: UIViewController {
             vc2.view.backgroundColor = .black
             let vc3 = UIViewController()
             vc3.view.backgroundColor = .blue
+            
+            
 
             testController.delegate = self
             testController.viewControllers = [vc1, vc2, vc3]
