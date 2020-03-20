@@ -13,9 +13,12 @@
 		964D6B58242421C900504E42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964D6B56242421C900504E42 /* Main.storyboard */; };
 		964D6B5A242421D100504E42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 964D6B59242421D100504E42 /* Assets.xcassets */; };
 		964D6B5D242421D100504E42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964D6B5B242421D100504E42 /* LaunchScreen.storyboard */; };
+		C331C87238DE20B23F87A06E /* Pods_TedActu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 155BBD647236A3BA0E6FF74F /* Pods_TedActu.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		155BBD647236A3BA0E6FF74F /* Pods_TedActu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TedActu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49E247230B81F473FABA795D /* Pods-TedActu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedActu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TedActu/Pods-TedActu.debug.xcconfig"; sourceTree = "<group>"; };
 		964D6B4D242421C900504E42 /* TedActu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TedActu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		964D6B50242421C900504E42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		964D6B52242421C900504E42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		964D6B59242421D100504E42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		964D6B5C242421D100504E42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		964D6B5E242421D100504E42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA65728135CCE2F3185BD2E6 /* Pods-TedActu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedActu.release.xcconfig"; path = "Pods/Target Support Files/Pods-TedActu/Pods-TedActu.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C331C87238DE20B23F87A06E /* Pods_TedActu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				964D6B4F242421C900504E42 /* TedActu */,
 				964D6B4E242421C900504E42 /* Products */,
+				F7432EAB8E9559EBCE4EEE89 /* Pods */,
+				A7B86229764BDC57246DF544 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = TedActu;
 			sourceTree = "<group>";
 		};
+		A7B86229764BDC57246DF544 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				155BBD647236A3BA0E6FF74F /* Pods_TedActu.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7432EAB8E9559EBCE4EEE89 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49E247230B81F473FABA795D /* Pods-TedActu.debug.xcconfig */,
+				AA65728135CCE2F3185BD2E6 /* Pods-TedActu.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 964D6B61242421D100504E42 /* Build configuration list for PBXNativeTarget "TedActu" */;
 			buildPhases = (
+				0300604E50E62C99595D8238 /* [CP] Check Pods Manifest.lock */,
 				964D6B49242421C900504E42 /* Sources */,
 				964D6B4A242421C900504E42 /* Frameworks */,
 				964D6B4B242421C900504E42 /* Resources */,
+				EDA59C9784E97858102B2298 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0300604E50E62C99595D8238 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TedActu-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDA59C9784E97858102B2298 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TedActu/Pods-TedActu-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BATabBarController/BATabBarController.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BATabBarController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TedActu/Pods-TedActu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		964D6B49242421C900504E42 /* Sources */ = {
@@ -282,6 +357,7 @@
 		};
 		964D6B62242421D100504E42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49E247230B81F473FABA795D /* Pods-TedActu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +376,7 @@
 		};
 		964D6B63242421D100504E42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA65728135CCE2F3185BD2E6 /* Pods-TedActu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
