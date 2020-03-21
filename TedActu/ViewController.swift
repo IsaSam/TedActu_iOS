@@ -23,27 +23,32 @@ class ViewController: UIViewController {
             
             let testController = BATabBarController()
 
-            var tabBarItem, tabBarItem2, tabBarItem3: BATabBarItem
+            var tabBarItem, tabBarItem2, tabBarItem3, tabBarItem4: BATabBarItem
 
             switch (self.demotype) {
             case .BATabBarWithText:
-                let option1 = NSMutableAttributedString(string: "Feeds")
+                let option1 = NSMutableAttributedString(string: "Accueil")
                 option1.addAttribute(.foregroundColor, value: UIColor.clear, range: NSRange(location: 0, length: option1.length))
                 
-                let option2 = NSMutableAttributedString(string: "Trending")
+                let option2 = NSMutableAttributedString(string: "Catégories")
                 option2.addAttribute(.foregroundColor, value: UIColor.gray, range: NSRange(location: 0, length: option1.length))
                 
-                let option3 = NSMutableAttributedString(string: "Trending")
+                let option3 = NSMutableAttributedString(string: "Playlists")
                 option3.addAttribute(.foregroundColor, value: UIColor.gray, range: NSRange(location: 0, length: option1.length))
                 
-                tabBarItem  = BATabBarItem(image: UIImage(named: "home1_unselected")!, selectedImage: UIImage(named: "home1_selected")!, title: option1)
-                tabBarItem2 = BATabBarItem(image: UIImage(named: "fire_unselected")!, selectedImage: UIImage(named: "fire_selected")!, title: option2)
-                tabBarItem3 = BATabBarItem(image: UIImage(named: "playlist_unselected")!, selectedImage: UIImage(named: "playlist_selected")!, title: option3)
+                let option4 = NSMutableAttributedString(string: "À Propos")
+                option4.addAttribute(.foregroundColor, value: UIColor.gray, range: NSRange(location: 0, length: option1.length))
+                
+                tabBarItem  = BATabBarItem(image: UIImage(named: "home_unselected")!, selectedImage: UIImage(named: "home_selected")!, title: option1)
+                tabBarItem2 = BATabBarItem(image: UIImage(named: "categories_unselected")!, selectedImage: UIImage(named: "categories_selected")!, title: option2)
+                tabBarItem3 = BATabBarItem(image: UIImage(named: "video_playlist_unselected")!, selectedImage: UIImage(named: "video_playlist_selected")!, title: option3)
+                tabBarItem4 = BATabBarItem(image: UIImage(named: "info_unselected")!, selectedImage: UIImage(named: "info_selected")!, title: option4)
 
             case .BATabBarNoText:
-                tabBarItem  = BATabBarItem(image: UIImage(named: "home1_unselected")!, selectedImage: UIImage(named: "home1_selected")!)
-                tabBarItem2 = BATabBarItem(image: UIImage(named: "fire_unselected")!, selectedImage: UIImage(named: "fire_selected")!)
-                tabBarItem3 = BATabBarItem(image: UIImage(named: "playlist_unselected")!, selectedImage: UIImage(named: "playlist_selected")!)
+                tabBarItem  = BATabBarItem(image: UIImage(named: "home_unselected")!, selectedImage: UIImage(named: "home_selected")!)
+                tabBarItem2 = BATabBarItem(image: UIImage(named: "categories_unselected")!, selectedImage: UIImage(named: "categories_selected")!)
+                tabBarItem3 = BATabBarItem(image: UIImage(named: "video_playlist_unselected")!, selectedImage: UIImage(named: "video_playlist_selected")!)
+                tabBarItem4 = BATabBarItem(image: UIImage(named: "info_unselected")!, selectedImage: UIImage(named: "info_selected")!)
             }
 
             let badge = BATabBarBadge(value: 1, badgeColor: .clear)
@@ -51,17 +56,18 @@ class ViewController: UIViewController {
 
 
             let vc1 = UIViewController()
-            vc1.view.backgroundColor = .gray
+            vc1.view.backgroundColor = .white
             let vc2 = UIViewController()
-            vc2.view.backgroundColor = .black
+            vc2.view.backgroundColor = .gray
             let vc3 = UIViewController()
             vc3.view.backgroundColor = .blue
-            
+            let vc4 = UIViewController()
+            vc4.view.backgroundColor = .black
             
 
             testController.delegate = self
-            testController.viewControllers = [vc1, vc2, vc3]
-            testController.tabBarItems = [tabBarItem,tabBarItem2,tabBarItem3]
+            testController.viewControllers = [vc1, vc2, vc3, vc4]
+            testController.tabBarItems = [tabBarItem,tabBarItem2,tabBarItem3, tabBarItem4]
 
 
             //OPTIONAL SETTINGS
@@ -70,10 +76,10 @@ class ViewController: UIViewController {
     //        testController.initialViewController = vc2
 
             //tab bar background color example
-            //testController.tabBarBackgroundColor = .black
+            testController.tabBarBackgroundColor = UIColor(red:0.00, green:0.11, blue:0.29, alpha:1.00)
 
             //tab bar item stroke color example
-    //        testController.tabBarItemStrokeColor = .blue
+            testController.tabBarItemStrokeColor = UIColor(red:0.95, green:0.51, blue:0.19, alpha:1.00)
 
             //Tab bar line width example
             //testController.tabBarItemLineWidth = 9.0

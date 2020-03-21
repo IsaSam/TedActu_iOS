@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "playlist_unselected.png",
+      "filename" : "home_selected.png",
       "scale" : "1x"
     },
     {

@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "fire_selected.png",
+      "filename" : "info_unselected.png",
       "scale" : "1x"
     },
     {
