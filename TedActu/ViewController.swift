@@ -59,8 +59,12 @@ class ViewController: UIViewController {
             vc1.view.backgroundColor = .white
             let vc2 = UIViewController()
             vc2.view.backgroundColor = .gray
-            let vc3 = UIViewController()
-            vc3.view.backgroundColor = .blue
+            let vc3 = self.storyboard?.instantiateViewController(withIdentifier: "PlayListView") as! PlaylistViewController
+            self.navigationController?.pushViewController(vc3, animated: true)
+
+
+            
+            
             let vc4 = UIViewController()
             vc4.view.backgroundColor = .black
             
@@ -94,7 +98,7 @@ class ViewController: UIViewController {
 
     extension ViewController: BATabBarControllerDelegate {
         func tabBarController(_ tabBarController: BATabBarController, didSelect: UIViewController) {
-            print("Delegate success!");
+            print("Delegate success!")
         }
     }
 

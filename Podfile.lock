@@ -1,20 +1,24 @@
 PODS:
+  - Alamofire (4.9.0)
   - BATabBarController (1.0.1):
     - SnapKit
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
+  - Alamofire
   - BATabBarController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - BATabBarController
     - SnapKit
 
 SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   BATabBarController: 25227223fa0bb6d0016e451b8e1e0339cc720a89
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 03742f359af1296c806c1081ef5ae1cdb4bb89f9
+PODFILE CHECKSUM: da85d07929df348e168ca429a0a0bb37c9a456f5
 
 COCOAPODS: 1.5.3

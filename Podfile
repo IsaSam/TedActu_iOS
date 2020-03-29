@@ -7,6 +7,6 @@ target 'TedActu' do
 
   # Pods for TedActu
 
-	pod 'BATabBarController'
-
+	 pod 'BATabBarController'
+    	 pod "Alamofire"
 end

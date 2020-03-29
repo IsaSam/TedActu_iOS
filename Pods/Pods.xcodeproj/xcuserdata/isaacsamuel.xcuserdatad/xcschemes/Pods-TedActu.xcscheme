@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1130"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AA8539495827CA8DD513FCE85A47979E"
+               BlueprintIdentifier = "E060BB71DF0DE0F9D100931494658C2E"
                BuildableName = "Pods_TedActu.framework"
                BlueprintName = "Pods-TedActu"
                ReferencedContainer = "container:Pods.xcodeproj">
