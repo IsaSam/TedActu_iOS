@@ -20,6 +20,7 @@ class PlaylistViewController: UIViewController {
     var items: [[String: Any]] = []
     var snippet: [[String: Any]] = []
         var snippet1: [[String: Any]] = []
+        var resourceId1: [[String: Any]] = []
     var videoTitle: [[String: Any]] = []
     var videoDesc: [[String: Any]] = []
     var videoId: [[String: Any]] = []
@@ -86,7 +87,7 @@ class PlaylistViewController: UIViewController {
                                     self.posts.append(item as! [String : Any])
                                          
                                      }
-                                            let video1 = video()
+//                                            let video1 = video()
                                             
                                                  for snippet in self.posts{
                                                      self.snippet.append(snippet)
@@ -95,30 +96,20 @@ class PlaylistViewController: UIViewController {
                                                  for items2 in self.snippet{
                                                      let snippetDic = (items2 as AnyObject).value(forKey: "snippet")
                                                     self.snippet1.append(snippetDic as! [String : Any])
-                                                     let titleDic = (snippetDic as AnyObject).value(forKey: "title")
-                                                     let descDic = (snippetDic as AnyObject).value(forKey: "description")
+//                                                     let titleDic = (snippetDic as AnyObject).value(forKey: "title")
+//                                                     let descDic = (snippetDic as AnyObject).value(forKey: "description")
                                                      let resourceId = (snippetDic as AnyObject).value(forKey: "resourceId")
-                                                     let videoId = (resourceId as AnyObject).value(forKey: "videoId")
-                                                     self.videoTitleString.append(titleDic as! String)
-                                                //     self.videoTitleString = (titleDic as! String)
-                                                     self.videoDescString.append(descDic as! String)
-                                                //     self.videoDescString = (descDic as! String)
-                                                     self.videoIdString.append(videoId as! String)
-                                                //     self.videoIdString = (videoId as! String)
+                                                    self.resourceId1.append(resourceId as! [String : Any])
+//                                                     let videoId = (resourceId as AnyObject).value(forKey: "videoId")
+//                                                     self.videoTitleString.append(titleDic as! String)
+//                                                     self.videoDescString.append(descDic as! String)
+//                                                     self.videoIdString.append(videoId as! String)
 //
-//                                                    let titleDicString = titleDic as? [[String: Any]]
-//                                                     let descDicString = descDic as? [[String: Any]]
-//                                                     let videoDicString = videoId as? [[String: Any]]
-                                                     
-                                //                     if titleDicString != nil || descDicString != nil || videoDicString != nil{
-                                //                         self.videoTitle = titleDicString!
-                                //                         self.videoDesc = descDicString!
-                                //                         self.videoId = videoDicString!
 
-                                                    video1.videoTitle = (titleDic as! String)
-                                                    video1.videoDes = (descDic as! String)
-                                                    video1.videoId = (videoId as! String)
-                                                    self.videos.append(video1)
+                                //                    video1.videoTitle = (titleDic as! String)
+                                //                    video1.videoDes = (descDic as! String)
+//                                                    video1.videoId = (videoId as! String)
+//                                                    self.videos.append(video1)
                                                     
                                                     DispatchQueue.main.async {
                                                         self.tableView?.reloadData()
@@ -228,13 +219,17 @@ class PlaylistViewController: UIViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             
             let post = snippet1[indexPath.row]
-          //  let postTitle = snippet[indexPath.row]
-        //    let postDesc = videoDescString[indexPath.row]
+            let resource = resourceId1[indexPath.row]
+            let video1 = video()
             
-                    let label = cell.viewWithTag(2) as! UILabel
+            let label = cell.viewWithTag(2) as! UILabel
             //        label.text = videoTitleString[indexPath.row]
             label.text = post["title"] as? String
-                    print("label:\(indexPath.row) \(label.text ?? "nil")")
+            print("label:\(indexPath.row) \(label.text ?? "nil")")
+            
+            
+            video1.videoId =  (resource["videoId"] as? String)!
+            self.videos.append(video1)
     
 //            let videoTitle = videos[indexPath.row].videoTitle
 //            let videoTitle = videoTitleString[indexPath.row]
@@ -243,6 +238,7 @@ class PlaylistViewController: UIViewController {
             
             
             // Construct the video thumbnail url
+//            let videoThumbnailUrlString = "https://i1.ytimg.com/vi/" + videos[indexPath.row].videoId + "/maxresdefault.jpg"
             let videoThumbnailUrlString = "https://i1.ytimg.com/vi/" + videos[indexPath.row].videoId + "/maxresdefault.jpg"
             
             
