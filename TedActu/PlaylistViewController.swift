@@ -22,12 +22,12 @@ class PlaylistViewController: UIViewController {
     var videoTitle: [[String: Any]] = []
     var videoDesc: [[String: Any]] = []
     var videoId: [[String: Any]] = []
-//    var videoTitleString: [String] = []
-//    var videoDescString: [String] = []
-//    var videoIdString: [String] = []
-    var videoTitleString: String?
-    var videoDescString: String?
-    var videoIdString: String?
+    var videoTitleString: [String] = []
+    var videoDescString: [String] = []
+    var videoIdString: [String] = []
+//    var videoTitleString: String?
+//    var videoDescString: String?
+//    var videoIdString: String?
     
     var posts: [[String: Any]] = []
 //    var  videos = [video]()
@@ -85,6 +85,39 @@ class PlaylistViewController: UIViewController {
                                     self.posts.append(item as! [String : Any])
                                          
                                      }
+                                            let video1 = video()
+                                            
+                                                 for snippet in self.posts{
+                                                     self.snippet.append(snippet)
+                                                     }
+
+                                                 for items2 in self.snippet{
+                                                     let snippetDic = (items2 as AnyObject).value(forKey: "snippet")
+                                                     let titleDic = (snippetDic as AnyObject).value(forKey: "title")
+                                                     let descDic = (snippetDic as AnyObject).value(forKey: "description")
+                                                     let resourceId = (snippetDic as AnyObject).value(forKey: "resourceId")
+                                                     let videoId = (resourceId as AnyObject).value(forKey: "videoId")
+                                                     self.videoTitleString.append(titleDic as! String)
+                                                //     self.videoTitleString = (titleDic as! String)
+                                                     self.videoDescString.append(descDic as! String)
+                                                //     self.videoDescString = (descDic as! String)
+                                                     self.videoIdString.append(videoId as! String)
+                                                //     self.videoIdString = (videoId as! String)
+//
+//                                                    let titleDicString = titleDic as? [[String: Any]]
+//                                                     let descDicString = descDic as? [[String: Any]]
+//                                                     let videoDicString = videoId as? [[String: Any]]
+                                                     
+                                //                     if titleDicString != nil || descDicString != nil || videoDicString != nil{
+                                //                         self.videoTitle = titleDicString!
+                                //                         self.videoDesc = descDicString!
+                                //                         self.videoId = videoDicString!
+
+                                                    video1.videoTitle = (titleDic as! String)
+                                                    video1.videoDes = (descDic as! String)
+                                                    video1.videoId = (videoId as! String)
+                                                    self.videos.append(video1)
+                                                     }
                                     DispatchQueue.main.async {
                                         self.tableView?.reloadData()
                                     }
@@ -147,7 +180,7 @@ class PlaylistViewController: UIViewController {
                                             video1.videoId = (videoId as! String)
                                             
                                             videos.append(video1)
-                                            self.tableView.reloadData()
+                                      //      self.tableView.reloadData()
                                             
                                             print("***")
                                             
@@ -181,7 +214,8 @@ class PlaylistViewController: UIViewController {
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          ///   return videos.count
-            return posts.count
+           /// return posts.count
+            return snippet.count
         }
         
         
@@ -189,44 +223,14 @@ class PlaylistViewController: UIViewController {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             
-            let post = posts[indexPath.row]
+            let post = snippet[indexPath.row]
+            let postTitle = videoTitleString[indexPath.row]
+            let postDesc = videoDescString[indexPath.row]
             
-            let video1 = video()
-            
-                 for snippet in self.posts{
-                     self.snippet.append(snippet)
-                     }
-
-                 for items2 in self.snippet{
-                     let snippetDic = (items2 as AnyObject).value(forKey: "snippet")
-                     let titleDic = (snippetDic as AnyObject).value(forKey: "title")
-                     let descDic = (snippetDic as AnyObject).value(forKey: "description")
-                     let resourceId = (snippetDic as AnyObject).value(forKey: "resourceId")
-                     let videoId = (resourceId as AnyObject).value(forKey: "videoId")
-                //     self.videoTitleString.append(titleDic as! String)
-                     self.videoTitleString = (titleDic as! String)
-                //     self.videoDescString.append(descDic as! String)
-                     self.videoDescString = (descDic as! String)
-                //     self.videoIdString.append(videoId as! String)
-                     self.videoIdString = (videoId as! String)
-                
-                    let titleDicString = titleDic as? [[String: Any]]
-                     let descDicString = descDic as? [[String: Any]]
-                     let videoDicString = videoId as? [[String: Any]]
-                     
-//                     if titleDicString != nil || descDicString != nil || videoDicString != nil{
-//                         self.videoTitle = titleDicString!
-//                         self.videoDesc = descDicString!
-//                         self.videoId = videoDicString!
                     let label = cell.viewWithTag(2) as! UILabel
             //        label.text = videoTitleString[indexPath.row]
-                    label.text = videoTitleString
+            label.text = postTitle["title"]
                     print("label:\(indexPath.row) \(label.text ?? "nil")")
-                    video1.videoTitle = (titleDic as! String)
-                    video1.videoDes = (descDic as! String)
-                    video1.videoId = (videoId as! String)
-                    videos.append(video1)
-                     }
     
 //            let videoTitle = videos[indexPath.row].videoTitle
 //            let videoTitle = videoTitleString[indexPath.row]
