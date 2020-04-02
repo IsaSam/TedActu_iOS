@@ -96,20 +96,8 @@ class PlaylistViewController: UIViewController {
                                                  for items2 in self.snippet{
                                                      let snippetDic = (items2 as AnyObject).value(forKey: "snippet")
                                                     self.snippet1.append(snippetDic as! [String : Any])
-//                                                     let titleDic = (snippetDic as AnyObject).value(forKey: "title")
-//                                                     let descDic = (snippetDic as AnyObject).value(forKey: "description")
                                                      let resourceId = (snippetDic as AnyObject).value(forKey: "resourceId")
                                                     self.resourceId1.append(resourceId as! [String : Any])
-//                                                     let videoId = (resourceId as AnyObject).value(forKey: "videoId")
-//                                                     self.videoTitleString.append(titleDic as! String)
-//                                                     self.videoDescString.append(descDic as! String)
-//                                                     self.videoIdString.append(videoId as! String)
-//
-
-                                //                    video1.videoTitle = (titleDic as! String)
-                                //                    video1.videoDes = (descDic as! String)
-//                                                    video1.videoId = (videoId as! String)
-//                                                    self.videos.append(video1)
                                                     
                                                     DispatchQueue.main.async {
                                                         self.tableView?.reloadData()
@@ -223,11 +211,10 @@ class PlaylistViewController: UIViewController {
             let video1 = video()
             
             let label = cell.viewWithTag(2) as! UILabel
-            //        label.text = videoTitleString[indexPath.row]
             label.text = post["title"] as? String
             print("label:\(indexPath.row) \(label.text ?? "nil")")
             
-            
+            video1.videoDes = (post["description"] as? String)!
             video1.videoId =  (resource["videoId"] as? String)!
             self.videos.append(video1)
     
