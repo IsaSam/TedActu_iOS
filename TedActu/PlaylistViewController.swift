@@ -22,12 +22,15 @@ class PlaylistViewController: UIViewController {
     var videoTitle: [[String: Any]] = []
     var videoDesc: [[String: Any]] = []
     var videoId: [[String: Any]] = []
-    var videoTitleString: [String] = []
-    var videoDescString: [String] = []
-    var videoIdString: [String] = []
-//    var videoTitleString: String?
-//    var videoDescString: String?
-//    var videoIdString: String?
+//    var videoTitleString: [String] = []
+//    var videoDescString: [String] = []
+//    var videoIdString: [String] = []
+    var videoTitleString: String?
+    var videoDescString: String?
+    var videoIdString: String?
+    
+    var posts: [[String: Any]] = []
+//    var  videos = [video]()
 //
     ///
 
@@ -45,10 +48,53 @@ class PlaylistViewController: UIViewController {
         
      //       self.videos = model.getVideos()
             
-            getFeedVideos()
+            tableView.delegate = self
+            tableView.dataSource = self
+            
+   ///         getFeedVideos()
+            getFeedsVideos()
+            
+
         }
     
     ///new
+    func getFeedsVideos(){
+        
+        // Alamofire 4
+        let parameters: Parameters = ["part": "snippet", "playlistId": UPLOADS_PLAYLIST_ID, "key": API_KEY]
+        
+        
+        Alamofire.request(urlString, method: .get, parameters: parameters, encoding: URLEncoding.queryString)
+            .downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
+///                print("Progress: \(progress.fractionCompleted)")
+            }
+            .validate { request, response, data in
+                // Custom evaluation closure now includes data (allows you to parse data to dig out error messages if necessary)
+                return .success
+            }
+            .responseJSON { response in
+                debugPrint(response)
+                
+                            if let JSON = response.result.value as? [String:Any]  {//as? [String:Any] {
+                                
+ ///                            print("json \(JSON)")
+                                
+                                ////
+
+                                 for item in JSON["items"] as! NSArray {
+                                    self.posts.append(item as! [String : Any])
+                                         
+                                     }
+                                    DispatchQueue.main.async {
+                                        self.tableView?.reloadData()
+                                    }
+                                ///
+                           }
+                        
+            }
+    }
+    
+    
     func getFeedVideos(){
             
             // Alamofire 4
@@ -57,7 +103,7 @@ class PlaylistViewController: UIViewController {
             
             Alamofire.request(urlString, method: .get, parameters: parameters, encoding: URLEncoding.queryString)
                 .downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
-                    print("Progress: \(progress.fractionCompleted)")
+ ///                   print("Progress: \(progress.fractionCompleted)")
                 }
                 .validate { request, response, data in
                     // Custom evaluation closure now includes data (allows you to parse data to dig out error messages if necessary)
@@ -89,12 +135,12 @@ class PlaylistViewController: UIViewController {
                                             let descDic = (snippetDic as AnyObject).value(forKey: "description")
                                             let resourceId = (snippetDic as AnyObject).value(forKey: "resourceId")
                                             let videoId = (resourceId as AnyObject).value(forKey: "videoId")
-                                            self.videoTitleString.append(titleDic as! String)
-                                       //     self.videoTitleString = (titleDic as! String)
-                                            self.videoDescString.append(descDic as! String)
-                                       //     self.videoDescString = (descDic as! String)
-                                            self.videoIdString.append(videoId as! String)
-                                       //     self.videoIdString = (videoId as! String)
+//                                       //     self.videoTitleString.append(titleDic as! String)
+//                                            self.videoTitleString = (titleDic as! String)
+//                                       //     self.videoDescString.append(descDic as! String)
+//                                            self.videoDescString = (descDic as! String)
+//                                       //     self.videoIdString.append(videoId as! String)
+//                                            self.videoIdString = (videoId as! String)
                                             
                                             video1.videoTitle = (titleDic as! String)
                                             video1.videoDes = (descDic as! String)
@@ -118,7 +164,8 @@ class PlaylistViewController: UIViewController {
                                         }
                                             
                                         }
-                                 print("json \(JSON)")
+                                    
+   ///                              print("json \(JSON)")
                                }
                             
                 }
@@ -133,7 +180,8 @@ class PlaylistViewController: UIViewController {
         
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return videos.count
+         ///   return videos.count
+            return posts.count
         }
         
         
@@ -141,10 +189,49 @@ class PlaylistViewController: UIViewController {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             
+            let post = posts[indexPath.row]
+            
+            let video1 = video()
+            
+                 for snippet in self.posts{
+                     self.snippet.append(snippet)
+                     }
+
+                 for items2 in self.snippet{
+                     let snippetDic = (items2 as AnyObject).value(forKey: "snippet")
+                     let titleDic = (snippetDic as AnyObject).value(forKey: "title")
+                     let descDic = (snippetDic as AnyObject).value(forKey: "description")
+                     let resourceId = (snippetDic as AnyObject).value(forKey: "resourceId")
+                     let videoId = (resourceId as AnyObject).value(forKey: "videoId")
+                //     self.videoTitleString.append(titleDic as! String)
+                     self.videoTitleString = (titleDic as! String)
+                //     self.videoDescString.append(descDic as! String)
+                     self.videoDescString = (descDic as! String)
+                //     self.videoIdString.append(videoId as! String)
+                     self.videoIdString = (videoId as! String)
+                
+                    let titleDicString = titleDic as? [[String: Any]]
+                     let descDicString = descDic as? [[String: Any]]
+                     let videoDicString = videoId as? [[String: Any]]
+                     
+//                     if titleDicString != nil || descDicString != nil || videoDicString != nil{
+//                         self.videoTitle = titleDicString!
+//                         self.videoDesc = descDicString!
+//                         self.videoId = videoDicString!
+                    let label = cell.viewWithTag(2) as! UILabel
+            //        label.text = videoTitleString[indexPath.row]
+                    label.text = videoTitleString
+                    print("label:\(indexPath.row) \(label.text ?? "nil")")
+                    video1.videoTitle = (titleDic as! String)
+                    video1.videoDes = (descDic as! String)
+                    video1.videoId = (videoId as! String)
+                    videos.append(video1)
+                     }
+    
 //            let videoTitle = videos[indexPath.row].videoTitle
-            let videoTitle = videoTitleString[indexPath.row]
-            let label = cell.viewWithTag(2) as! UILabel
-            label.text = videoTitle
+//            let videoTitle = videoTitleString[indexPath.row]
+//            let label = cell.viewWithTag(2) as! UILabel
+//            label.text = videoTitle
             
             
             // Construct the video thumbnail url
