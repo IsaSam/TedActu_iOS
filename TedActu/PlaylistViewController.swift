@@ -19,6 +19,7 @@ class PlaylistViewController: UIViewController {
     
     var items: [[String: Any]] = []
     var snippet: [[String: Any]] = []
+        var snippet1: [[String: Any]] = []
     var videoTitle: [[String: Any]] = []
     var videoDesc: [[String: Any]] = []
     var videoId: [[String: Any]] = []
@@ -93,6 +94,7 @@ class PlaylistViewController: UIViewController {
 
                                                  for items2 in self.snippet{
                                                      let snippetDic = (items2 as AnyObject).value(forKey: "snippet")
+                                                    self.snippet1.append(snippetDic as! [String : Any])
                                                      let titleDic = (snippetDic as AnyObject).value(forKey: "title")
                                                      let descDic = (snippetDic as AnyObject).value(forKey: "description")
                                                      let resourceId = (snippetDic as AnyObject).value(forKey: "resourceId")
@@ -117,10 +119,12 @@ class PlaylistViewController: UIViewController {
                                                     video1.videoDes = (descDic as! String)
                                                     video1.videoId = (videoId as! String)
                                                     self.videos.append(video1)
+                                                    
+                                                    DispatchQueue.main.async {
+                                                        self.tableView?.reloadData()
+                                                        }
                                                      }
-                                    DispatchQueue.main.async {
-                                        self.tableView?.reloadData()
-                                    }
+                                   
                                 ///
                            }
                         
@@ -215,7 +219,7 @@ class PlaylistViewController: UIViewController {
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          ///   return videos.count
            /// return posts.count
-            return snippet.count
+            return snippet1.count
         }
         
         
@@ -223,13 +227,13 @@ class PlaylistViewController: UIViewController {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             
-            let post = snippet[indexPath.row]
-            let postTitle = videoTitleString[indexPath.row]
-            let postDesc = videoDescString[indexPath.row]
+            let post = snippet1[indexPath.row]
+          //  let postTitle = snippet[indexPath.row]
+        //    let postDesc = videoDescString[indexPath.row]
             
                     let label = cell.viewWithTag(2) as! UILabel
             //        label.text = videoTitleString[indexPath.row]
-            label.text = postTitle["title"]
+            label.text = post["title"] as? String
                     print("label:\(indexPath.row) \(label.text ?? "nil")")
     
 //            let videoTitle = videos[indexPath.row].videoTitle
