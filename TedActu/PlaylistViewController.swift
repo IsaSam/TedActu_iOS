@@ -18,10 +18,11 @@ class PlaylistViewController: UIViewController {
             super.viewDidLoad()
             
             let model = VideoModel()
-            self.videos = model.getVideo()
+      //      self.videos = model.getVideo()
             
-      //        model.getFeedVideos()
-            
+            model.getFeedVideos()
+        
+     //       self.videos = model.getVideos()
         }
         
     }//End viewController

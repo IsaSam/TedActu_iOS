@@ -13,19 +13,24 @@ import Alamofire
 
 class VideoModel: NSObject {
     
-       let UPLOADS_PLAYLIST_ID =  "UCYwjO810TxGsyEG9ytlRtbQ"
-       let API_KEY = "AIzaSyC7fKfqeDD_QkhMRaS8Sd0Zk9d8mJFCTDE"
-       let urlString = "https://www.googleapis.com/youtube/v3/playlistItems"
+    let UPLOADS_PLAYLIST_ID =  "UUYwjO810TxGsyEG9ytlRtbQ"
+    let API_KEY = "AIzaSyBQqgKRuhh2JuqOpKpwRULqtydyYSRkvn4"
+    let urlString = "https://www.googleapis.com/youtube/v3/playlistItems"
     
-        let id =  "UCYwjO810TxGsyEG9ytlRtbQ"
-        let ApiKey = "AIzaSyC7fKfqeDD_QkhMRaS8Sd0Zk9d8mJFCTDE"
-        let url = "https://www.googleapis.com/youtube/v3/playlistItems"
+    var items: [[String: Any]] = []
+    var snippet: [[String: Any]] = []
+    var videoTitle: [[String: Any]] = []
+    var videoDesc: [[String: Any]] = []
+    var videoId: [[String: Any]] = []
+    var videoTitleString: [String] = []
+    var videoDescString: [String] = []
+    var videoIdString: [String] = []
     
     func getFeedVideos(){
         
-        
         // Alamofire 4
         let parameters: Parameters = ["part": "snippet", "playlistId": UPLOADS_PLAYLIST_ID, "key": API_KEY]
+        
         
         Alamofire.request(urlString, method: .get, parameters: parameters, encoding: URLEncoding.queryString)
             .downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
@@ -33,40 +38,117 @@ class VideoModel: NSObject {
             }
             .validate { request, response, data in
                 // Custom evaluation closure now includes data (allows you to parse data to dig out error messages if necessary)
-                print("*** success")
                 return .success
             }
             .responseJSON { response in
                 debugPrint(response)
+                
+//                            var  videos = [video]()
+//                            let video1 = video()
+                
+                            if let JSON = response.result.value as? [String:Any]  {//as? [String:Any] {
+                                
+                                for items in JSON["items"] as! NSArray {
+                                    
+                               
+                                 //   self.items = items as! [[String : Any]]
+                                    self.items.append(items as! [String : Any])
+                                    for snippet in self.items{
+                                        
+                                        print("begin--")
+                                        self.snippet.append(snippet)
+                                   //     print(snippet)
+                                        print("*--")
+                                        }
+                                    for items2 in self.snippet{
+                                        let snippetDic = (items2 as AnyObject).value(forKey: "snippet")
+                                        let titleDic = (snippetDic as AnyObject).value(forKey: "title")
+                                        let descDic = (snippetDic as AnyObject).value(forKey: "description")
+                                        let resourceId = (snippetDic as AnyObject).value(forKey: "resourceId")
+                                        let videoId = (resourceId as AnyObject).value(forKey: "videoId")
+                                        self.videoTitleString.append(titleDic as! String)
+                                   //     self.videoTitleString = (titleDic as! String)
+                                        self.videoDescString.append(descDic as! String)
+                                   //     self.videoDescString = (descDic as! String)
+                                        self.videoIdString.append(videoId as! String)
+//                                   //     self.videoIdString = (videoId as! String)
+//                                        video1.videoTitle = self.videoTitleString!
+//                                        video1.videoDes = self.videoDescString!
+//                                        video1.videoId = self.videoIdString!
+//                                        videos.append(video1)
+                                        
+                                        print("***")
+                                        
+                                        let titleDicString = titleDic as? [[String: Any]]
+                                        let descDicString = descDic as? [[String: Any]]
+                                        let videoDicString = videoId as? [[String: Any]]
+                                        
+                                        if titleDicString != nil || descDicString != nil || videoDicString != nil{
+                                            self.videoTitle = titleDicString!
+                                            self.videoDesc = descDicString!
+                                            self.videoId = videoDicString!
+                                        }
+
+                                    }
+                                        
+                                    }
+                                    
+                             print("json \(JSON)")
+                           }
+                        
             }
-        
     }
     
-    func getFeedVideo(){
-        
-        // Fetch video dynamically through the youtube data API (synchronous downloading )
-        // this make application more synchronous to prevent frozen app
-        
-        Alamofire.request( url ,  method: .get , parameters:  ["part":"snippet" , "playlistId": id , "key": ApiKey ], encoding: JSONEncoding.default, headers: nil).responseJSON{ (response) -> Void in
-            
-            if let JSON = response.result.value as? [String:Any]  {//as? [String:Any] {
-                
-                for video in JSON["items"] as! NSArray {
-                    
-                    print(video)
-                
-                }
-                
-             print("json \(JSON)")
-           }
-            
-            
-            
-        }
- 
-        
-        
-    }//End function getFeedVideo
+//    func getVideos()-> [video]{
+//
+//        var  videos = [video]()
+//        let video1 = video()
+//
+//         //Assign properties
+//        for i in self.videoIdString{
+//            video1.videoId = i
+//            print("i: \(i)")
+//            for t in videoTitleString{
+//                video1.videoTitle = t
+//                print("t: \(t)")
+//            }
+//            for d in videoDescString{
+//                video1.videoDes = d
+//                print("d: \(d)")
+//            }
+//        }
+//        //Append it into array video
+//        videos.append(video1)
+//
+//        return videos
+//    }
+    
+    
+//    func getFeedVideo(){
+//
+//        // Fetch video dynamically through the youtube data API (synchronous downloading )
+//        // this make application more synchronous to prevent frozen app
+//
+//        Alamofire.request( url ,  method: .get , parameters:  ["part":"snippet" , "playlistId": id , "key": ApiKey ], encoding: JSONEncoding.default, headers: nil).responseJSON{ (response) -> Void in
+//
+//            if let JSON = response.result.value as? [String:Any]  {//as? [String:Any] {
+//
+//                for video in JSON["items"] as! NSArray {
+//
+//                    print("video \(video)")
+//
+//                }
+//
+//             print("json \(JSON)")
+//           }
+//
+//
+//            
+//        }
+//
+//
+//
+//    }//End function getFeedVideo
     
     
     
@@ -162,3 +244,5 @@ class VideoModel: NSObject {
     }
     
 }
+
+
