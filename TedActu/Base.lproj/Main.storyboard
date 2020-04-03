@@ -133,16 +133,60 @@
                                                         <constraint firstAttribute="height" constant="330" id="dvZ-1L-ebL"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zgm-x8-xzs">
+                                                    <rect key="frame" x="0.0" y="293" width="227" height="35"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-facebook-like-48" translatesAutoresizingMaskIntoConstraints="NO" id="vGE-YN-HOp">
+                                                            <rect key="frame" x="10" y="0.0" width="41" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="41" id="Phs-Le-Wq0"/>
+                                                                <constraint firstAttribute="height" constant="35" id="cf1-Sf-Oa6"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-chat-bubble-64" translatesAutoresizingMaskIntoConstraints="NO" id="144-pp-E0C">
+                                                            <rect key="frame" x="59" y="0.0" width="41" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="35" id="Esu-N6-3pQ"/>
+                                                                <constraint firstAttribute="width" constant="41" id="fGl-Ym-sD7"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-share-64" translatesAutoresizingMaskIntoConstraints="NO" id="dvL-gO-liq">
+                                                            <rect key="frame" x="108" y="0.0" width="41" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="41" id="8b1-bP-RiN"/>
+                                                                <constraint firstAttribute="height" constant="35" id="xsT-8V-p5B"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="vGE-YN-HOp" firstAttribute="leading" secondItem="Zgm-x8-xzs" secondAttribute="leading" constant="10" id="4xe-Lj-MNJ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="dvL-gO-liq" secondAttribute="bottom" id="InB-jW-kdt"/>
+                                                        <constraint firstItem="144-pp-E0C" firstAttribute="leading" secondItem="vGE-YN-HOp" secondAttribute="trailing" constant="8" id="MVj-34-eWD"/>
+                                                        <constraint firstAttribute="height" constant="35" id="N84-qA-NbA"/>
+                                                        <constraint firstItem="dvL-gO-liq" firstAttribute="top" secondItem="Zgm-x8-xzs" secondAttribute="top" id="OZ1-md-ATP"/>
+                                                        <constraint firstAttribute="bottom" secondItem="144-pp-E0C" secondAttribute="bottom" id="OqK-dp-NTA"/>
+                                                        <constraint firstItem="144-pp-E0C" firstAttribute="top" secondItem="Zgm-x8-xzs" secondAttribute="top" id="P5H-Nw-iKT"/>
+                                                        <constraint firstAttribute="bottom" secondItem="vGE-YN-HOp" secondAttribute="bottom" id="a7v-6N-Ule"/>
+                                                        <constraint firstItem="dvL-gO-liq" firstAttribute="leading" secondItem="144-pp-E0C" secondAttribute="trailing" constant="8" id="bpE-Jt-KH8"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="227" id="mHY-Gg-47f"/>
+                                                        <constraint firstItem="vGE-YN-HOp" firstAttribute="top" secondItem="Zgm-x8-xzs" secondAttribute="top" id="oJQ-wg-1q4"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Zgm-x8-xzs" firstAttribute="leading" secondItem="bgR-te-KrL" secondAttribute="leading" id="CCT-hv-Kdw"/>
                                                 <constraint firstAttribute="trailing" secondItem="uev-qR-VxQ" secondAttribute="trailing" id="M7H-MI-e8r"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zgm-x8-xzs" secondAttribute="trailing" constant="187" id="N7R-V6-vKN"/>
                                                 <constraint firstItem="uev-qR-VxQ" firstAttribute="top" secondItem="bgR-te-KrL" secondAttribute="top" id="bXQ-rD-Fyo"/>
+                                                <constraint firstAttribute="bottom" secondItem="Zgm-x8-xzs" secondAttribute="bottom" constant="2" id="lNJ-kj-WN9"/>
                                                 <constraint firstAttribute="bottom" secondItem="uev-qR-VxQ" secondAttribute="bottom" id="o5u-qq-by9"/>
                                                 <constraint firstItem="uev-qR-VxQ" firstAttribute="leading" secondItem="bgR-te-KrL" secondAttribute="leading" id="riU-OB-aoc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageFeed" destination="uev-qR-VxQ" id="shT-83-uIt"/>
+                                            <segue destination="XE3-gz-CqO" kind="show" id="1LI-jj-Zne"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -166,6 +210,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LeJ-0k-BAd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1786.9565217391305" y="101.78571428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="p9h-hW-hqg">
+            <objects>
+                <viewController id="95a-Zg-jEP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ug5-Ab-HXV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="nza-Ie-RT9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="42s-yx-GV6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tSd-RD-eUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3708.6956521739135" y="98.4375"/>
         </scene>
         <!--Video Detail View Controller-->
         <scene sceneID="End-Hc-6ch">
@@ -245,8 +305,30 @@
             </objects>
             <point key="canvasLocation" x="138" y="849"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="M9o-Sc-HRB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XE3-gz-CqO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="mQ4-79-USK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H9o-70-iQM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="95a-Zg-jEP" kind="relationship" relationship="rootViewController" id="ak4-hB-jhN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ka-1g-WFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2798.5507246376815" y="98.4375"/>
+        </scene>
     </scenes>
     <resources>
         <image name="feed1" width="960" height="960"/>
+        <image name="icons8-chat-bubble-64" width="64" height="64"/>
+        <image name="icons8-facebook-like-48" width="48" height="48"/>
+        <image name="icons8-share-64" width="64" height="64"/>
     </resources>
 </document>
