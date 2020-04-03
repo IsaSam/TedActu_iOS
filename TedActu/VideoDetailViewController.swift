@@ -39,7 +39,7 @@ class VideoDetailViewController: UIViewController {
                     // let height = (width/320)*180
                     
                     
-                    let videoEmbedString =  "<html><head><style type=\"text/css\">body {background-color: transparent;color: white;}</style></head><body style=\"margin:0\"><iframe frameBorder=\"0\" height=\"250\"  width= \"\(width)\"   src=\"http://www.youtube.com/embed/" + vid.videoId + "?showinfo=0&modestbranding=1&frameborder=0&rel=0\"></iframe></body></html>"
+                    let videoEmbedString =  "<html><head><style type=\"text/css\">body {background-color: transparent;color: white;}</style></head><body style=\"margin:0\"><iframe frameBorder=\"0\" height=\"320\"  width= \"\(width)\"   src=\"http://www.youtube.com/embed/" + vid.videoId + "?showinfo=0&modestbranding=1&frameborder=0&rel=0\"></iframe></body></html>"
                     
                     self.webView.loadHTMLString(videoEmbedString, baseURL: nil)
                     
