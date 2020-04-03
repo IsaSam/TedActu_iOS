@@ -19,6 +19,7 @@
                     </view>
                     <connections>
                         <segue destination="iqJ-Xb-ohP" kind="show" identifier="PlayListSegue" id="YaN-yc-Oxg"/>
+                        <segue destination="3Z0-eA-g3z" kind="show" id="BGj-hf-YGy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -106,6 +107,66 @@
             </objects>
             <point key="canvasLocation" x="1077" y="849"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="biD-5r-IwK">
+            <objects>
+                <viewController storyboardIdentifier="homeView" id="3Z0-eA-g3z" customClass="HomeViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="csB-od-0iH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R1t-Kf-ONq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="330" id="CZF-bE-kf2" customClass="HomeTableViewCell" customModule="TedActu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="330"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CZF-bE-kf2" id="bgR-te-KrL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feed1" translatesAutoresizingMaskIntoConstraints="NO" id="uev-qR-VxQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="330"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="414" id="cTW-ec-XJV"/>
+                                                        <constraint firstAttribute="height" constant="330" id="dvZ-1L-ebL"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="uev-qR-VxQ" secondAttribute="trailing" id="M7H-MI-e8r"/>
+                                                <constraint firstItem="uev-qR-VxQ" firstAttribute="top" secondItem="bgR-te-KrL" secondAttribute="top" id="bXQ-rD-Fyo"/>
+                                                <constraint firstAttribute="bottom" secondItem="uev-qR-VxQ" secondAttribute="bottom" id="o5u-qq-by9"/>
+                                                <constraint firstItem="uev-qR-VxQ" firstAttribute="leading" secondItem="bgR-te-KrL" secondAttribute="leading" id="riU-OB-aoc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageFeed" destination="uev-qR-VxQ" id="shT-83-uIt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3Z0-eA-g3z" id="Lry-XR-uHR"/>
+                                    <outlet property="delegate" destination="3Z0-eA-g3z" id="WV2-VS-qIk"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.10627212375402451" blue="0.28515332937240601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="R1t-Kf-ONq" firstAttribute="leading" secondItem="MHn-Xv-dME" secondAttribute="leading" id="Id7-Vo-GM9"/>
+                            <constraint firstItem="R1t-Kf-ONq" firstAttribute="top" secondItem="MHn-Xv-dME" secondAttribute="top" id="Pzu-9U-z4Q"/>
+                            <constraint firstItem="R1t-Kf-ONq" firstAttribute="trailing" secondItem="MHn-Xv-dME" secondAttribute="trailing" id="vXv-wh-LgU"/>
+                            <constraint firstItem="R1t-Kf-ONq" firstAttribute="bottom" secondItem="MHn-Xv-dME" secondAttribute="bottom" id="xmD-bQ-Ols"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MHn-Xv-dME"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Pd-SJ-WiU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LeJ-0k-BAd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1786.9565217391305" y="101.78571428571428"/>
+        </scene>
         <!--Video Detail View Controller-->
         <scene sceneID="End-Hc-6ch">
             <objects>
@@ -168,7 +229,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Ibs-cS-ipY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SBS-OB-Abi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iqJ-Xb-ohP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="uHn-MT-C4f"/>
@@ -181,8 +241,12 @@
                         <segue destination="dv5-JI-dEA" kind="relationship" relationship="rootViewController" id="ppH-pe-vvo"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SBS-OB-Abi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138" y="849"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="feed1" width="960" height="960"/>
+    </resources>
 </document>

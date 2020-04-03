@@ -55,16 +55,14 @@ class ViewController: UIViewController {
             tabBarItem.badge = badge
 
 
-            let vc1 = UIViewController()
-            vc1.view.backgroundColor = .white
+            let vc1 = self.storyboard?.instantiateViewController(withIdentifier: "homeView") as! HomeViewController
+            self.navigationController?.pushViewController(vc1, animated: true)
+            
             let vc2 = UIViewController()
             vc2.view.backgroundColor = .gray
             let vc3 = self.storyboard?.instantiateViewController(withIdentifier: "PlayListView") as! PlaylistViewController
             self.navigationController?.pushViewController(vc3, animated: true)
 
-
-            
-            
             let vc4 = UIViewController()
             vc4.view.backgroundColor = .black
             
