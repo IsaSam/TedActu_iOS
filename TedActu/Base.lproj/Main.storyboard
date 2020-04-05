@@ -20,6 +20,7 @@
                     <connections>
                         <segue destination="iqJ-Xb-ohP" kind="show" identifier="PlayListSegue" id="YaN-yc-Oxg"/>
                         <segue destination="3Z0-eA-g3z" kind="show" id="BGj-hf-YGy"/>
+                        <segue destination="Duf-v2-CV9" kind="show" identifier="categoriesSegue" id="Hua-Tf-Dsk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -290,17 +291,30 @@
             </objects>
             <point key="canvasLocation" x="1786.875" y="1479.9295774647887"/>
         </scene>
-        <!--View Controller-->
+        <!--Categories View Controller-->
         <scene sceneID="E7D-E7-rrc">
             <objects>
-                <viewController id="Duf-v2-CV9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="categories" id="Duf-v2-CV9" customClass="CategoriesViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CvI-mh-4JV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sWC-n5-xZY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="IxV-jf-eIf" customClass="CategoryRow" customModule="TedActu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IxV-jf-eIf" id="ylm-YV-xEG">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Duf-v2-CV9" id="gO3-Bt-Waq"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -312,10 +326,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ncw-vw-BQm"/>
                     </view>
+                    <navigationItem key="navigationItem" id="lZW-ox-OiW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4b-wh-FMZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="594" y="786"/>
+            <point key="canvasLocation" x="1076" y="795"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ibs-cS-ipY">

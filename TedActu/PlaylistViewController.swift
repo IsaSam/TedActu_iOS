@@ -60,7 +60,7 @@ class PlaylistViewController: UIViewController {
  ///                            print("json \(JSON)")
                                 
                                 ////
-
+                      
                                  for item in JSON["items"] as! NSArray {
                                     self.posts.append(item as! [String : Any])
                                          
@@ -83,7 +83,7 @@ class PlaylistViewController: UIViewController {
                                                      }
                                    
                                 ///
-                           }
+                            }
                         
             }
     }
