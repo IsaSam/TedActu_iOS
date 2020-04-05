@@ -58,8 +58,9 @@ class ViewController: UIViewController {
             let vc1 = self.storyboard?.instantiateViewController(withIdentifier: "homeView") as! HomeViewController
             self.navigationController?.pushViewController(vc1, animated: true)
             
-            let vc2 = UIViewController()
-            vc2.view.backgroundColor = .gray
+            let vc2 = self.storyboard?.instantiateViewController(withIdentifier: "categories") as! CategoriesViewController
+            self.navigationController?.pushViewController(vc2, animated: true)
+            
             let vc3 = self.storyboard?.instantiateViewController(withIdentifier: "PlayListView") as! PlaylistViewController
             self.navigationController?.pushViewController(vc3, animated: true)
 
