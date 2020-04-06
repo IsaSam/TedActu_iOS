@@ -36,15 +36,6 @@ extension CategoryRow : UICollectionViewDataSource {
 }
 extension CategoryRow : UICollectionViewDelegateFlowLayout {
     
-//       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//           let itemsPerRow:CGFloat = 4
-//           let hardCodedPadding:CGFloat = 5
-//           let itemWidth = (collectionView.bounds.width / itemsPerRow) - hardCodedPadding
-//           let itemHeight = collectionView.bounds.height - (2 * hardCodedPadding)
-//     //      return CGSize(width: itemWidth, height: itemHeight)
-//           return CGSize(width: 200, height: 250)
-//       }
-    
        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
            return CGSize(width: itemSize, height: itemSize)

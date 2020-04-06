@@ -17,8 +17,8 @@ class PlaylistViewController: UIViewController {
     let urlString = "https://www.googleapis.com/youtube/v3/playlistItems"
     
     var snippet: [[String: Any]] = []
-        var snippet1: [[String: Any]] = []
-        var resourceId1: [[String: Any]] = []
+    var snippet1: [[String: Any]] = []
+    var resourceId1: [[String: Any]] = []
     
     var posts: [[String: Any]] = []
 
