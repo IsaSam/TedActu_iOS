@@ -20,11 +20,7 @@ struct TedActuAPIManager{
                 completion(nil, error?.localizedDescription)
                 return
             }
-           
-            
             do{
-                
-                
                 let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [[String : Any]]
     
                 completion(json, nil)
