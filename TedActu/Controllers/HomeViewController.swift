@@ -7,13 +7,15 @@
 //
 
 import UIKit
-import Alamofire
-//import SwiftyJSON
-//import SDWebImage
+import AlamofireImage
+import SwiftyJSON
+import SDWebImage
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
+
     @IBOutlet weak var activityIndicatory: UIActivityIndicatorView!
+    
     @IBOutlet weak var tableView: UITableView!
     
     var posts: [[String: Any]] = []
@@ -30,48 +32,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var imagePost2: UIImage?
     var refreshControl: UIRefreshControl!
     
-//    var myImages: [UIImage] = [
-//        UIImage(named: "feed1.png")!,
-//        UIImage(named: "feed2.png")!,
-//        UIImage(named: "feed3.png")!,
-//        UIImage(named: "feed4.png")!,
-//        UIImage(named: "feed5.png")!,
-//        UIImage(named: "feed6.png")!,
-//        UIImage(named: "feed7.png")!,
-//        UIImage(named: "feed8.png")!
-//    ]
-    
-//    var myDescriptions: [String] = [
-//        "Le bilan s'élève à plus de 900 000 cas de Covid-19 dans 187 pays et territoires, dont 215 000 aux Etats-Unis où la maladie progresse le plus vite.",
-//        """
-//            Toujours par arrêté,
-//
-//            Le citoyen Michelet COMEAU, a été nommé Directeur Général du Ministère de l’Économie et des Finances.
-//
-//            Le citoyen Rode TOUSSAINT, a été nommé Directeur Général du Ministère des Travaux Publics, Transports et Communications.
-//
-//            Le citoyen Jean Marie Harry SALOMON, a été nommé Directeur Général adjoint de l’Institut Haïtien de Statistique et d’Informatique (IHSI).
-//        """,
-//        """
-//            Si vous utilisez Android 9 et les versions inférieures,
-//            * Allez dans l’application WhatsApp
-//            * Puis dans Réglages
-//            * Discussions
-//            * Thèmes
-//            * Choisissez le mode sombre.
-//        """,
-//        "L’attaquant de 19 ans devance le joueur du FC Barcelone Ansu Fati et Mason Greenwood de Manchester United, respectivement 2ème et 3ème.",
-//        "Levez la main si vous l'avez déjà remarqué.",
-//        "L’attaquant de 19 ans devance le joueur du FC Barcelone Ansu Fati et Mason Greenwood de Manchester United, respectivement 2ème et 3ème.",
-//        "Si vous avez déjà retiré votre billet, ne vous inquiétez pas. Il sera valide pour 2021.",
-//        "L'heure est grave."
-//    ]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl.addTarget(self, action: #selector(HomeViewController.didPullToRefresh(_:)), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
         
         getPostList()
     }
@@ -227,7 +193,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //            }
             
             do{
-                let medium =  (sizes as AnyObject).value(forKey: "medium")
+                let medium =  (sizes as AnyObject).value(forKey: "medium_large")
                 let dataDic = medium as? [[String: Any]]
                 if dataDic != nil{
                     
@@ -268,44 +234,20 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         else{
                             cell.imagePost.image = nil
                         }
-                        
                         //  imgShare = cell.imagePost.image
                         imagePost1 = cell.imagePost
                         imagePost2 = cell.imagePost.image
                     }
                 }else{}
             }
-
-            cell.favButton.addTarget(self, action: #selector(ViewController.bookmarkTapped(_:)), for: .touchUpInside)
-            cell.btnSharePosts.addTarget(self, action: #selector(ViewController.shareTapped(_:)), for: .touchUpInside)
-            
-            return cell
-            
-            
+            return cell  
         }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }// End of Class
-
-//extension HomeViewController : UITableViewDataSource , UITableViewDelegate{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return myImages.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! HomeTableViewCell
-//
-//        cell.imageFeed?.image = myImages[indexPath.row]
-//
-//        return cell
-//
-//    }
-//
-//
-//
-//}
-
-
 
 
 

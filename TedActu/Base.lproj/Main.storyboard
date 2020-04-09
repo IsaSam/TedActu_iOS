@@ -128,70 +128,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feed1" translatesAutoresizingMaskIntoConstraints="NO" id="uev-qR-VxQ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tedact0" translatesAutoresizingMaskIntoConstraints="NO" id="uev-qR-VxQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="414" id="cTW-ec-XJV"/>
                                                         <constraint firstAttribute="height" constant="330" id="dvZ-1L-ebL"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zgm-x8-xzs">
-                                                    <rect key="frame" x="0.0" y="293" width="133" height="35"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-facebook-like-48" translatesAutoresizingMaskIntoConstraints="NO" id="vGE-YN-HOp">
-                                                            <rect key="frame" x="10" y="0.0" width="41" height="35"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="41" id="Phs-Le-Wq0"/>
-                                                                <constraint firstAttribute="height" constant="35" id="cf1-Sf-Oa6"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-chat-bubble-64" translatesAutoresizingMaskIntoConstraints="NO" id="144-pp-E0C">
-                                                            <rect key="frame" x="59" y="0.0" width="41" height="35"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="35" id="Esu-N6-3pQ"/>
-                                                                <constraint firstAttribute="width" constant="41" id="fGl-Ym-sD7"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-share-64" translatesAutoresizingMaskIntoConstraints="NO" id="dvL-gO-liq">
-                                                            <rect key="frame" x="108" y="0.0" width="41" height="35"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="41" id="8b1-bP-RiN"/>
-                                                                <constraint firstAttribute="height" constant="35" id="xsT-8V-p5B"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    <constraints>
-                                                        <constraint firstItem="vGE-YN-HOp" firstAttribute="leading" secondItem="Zgm-x8-xzs" secondAttribute="leading" constant="10" id="4xe-Lj-MNJ"/>
-                                                        <constraint firstAttribute="bottom" secondItem="dvL-gO-liq" secondAttribute="bottom" id="InB-jW-kdt"/>
-                                                        <constraint firstItem="144-pp-E0C" firstAttribute="leading" secondItem="vGE-YN-HOp" secondAttribute="trailing" constant="8" id="MVj-34-eWD"/>
-                                                        <constraint firstAttribute="height" constant="35" id="N84-qA-NbA"/>
-                                                        <constraint firstItem="dvL-gO-liq" firstAttribute="top" secondItem="Zgm-x8-xzs" secondAttribute="top" id="OZ1-md-ATP"/>
-                                                        <constraint firstAttribute="bottom" secondItem="144-pp-E0C" secondAttribute="bottom" id="OqK-dp-NTA"/>
-                                                        <constraint firstItem="144-pp-E0C" firstAttribute="top" secondItem="Zgm-x8-xzs" secondAttribute="top" id="P5H-Nw-iKT"/>
-                                                        <constraint firstAttribute="bottom" secondItem="vGE-YN-HOp" secondAttribute="bottom" id="a7v-6N-Ule"/>
-                                                        <constraint firstItem="dvL-gO-liq" firstAttribute="leading" secondItem="144-pp-E0C" secondAttribute="trailing" constant="8" id="bpE-Jt-KH8"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="227" id="mHY-Gg-47f"/>
-                                                        <constraint firstItem="vGE-YN-HOp" firstAttribute="top" secondItem="Zgm-x8-xzs" secondAttribute="top" id="oJQ-wg-1q4"/>
-                                                    </constraints>
-                                                </view>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="bLw-g1-JVy">
-                                                    <rect key="frame" x="150" y="155" width="20" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="609-dK-3NK"/>
-                                                        <constraint firstAttribute="width" constant="20" id="udP-ae-k58"/>
-                                                    </constraints>
-                                                    <color key="color" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bLw-g1-JVy" firstAttribute="centerX" secondItem="uev-qR-VxQ" secondAttribute="centerX" id="0u7-on-plw"/>
-                                                <constraint firstItem="Zgm-x8-xzs" firstAttribute="leading" secondItem="bgR-te-KrL" secondAttribute="leading" id="CCT-hv-Kdw"/>
                                                 <constraint firstAttribute="trailing" secondItem="uev-qR-VxQ" secondAttribute="trailing" id="M7H-MI-e8r"/>
-                                                <constraint firstAttribute="trailing" secondItem="Zgm-x8-xzs" secondAttribute="trailing" constant="187" id="N7R-V6-vKN"/>
                                                 <constraint firstItem="uev-qR-VxQ" firstAttribute="top" secondItem="bgR-te-KrL" secondAttribute="top" id="bXQ-rD-Fyo"/>
-                                                <constraint firstAttribute="bottom" secondItem="Zgm-x8-xzs" secondAttribute="bottom" constant="2" id="lNJ-kj-WN9"/>
-                                                <constraint firstItem="bLw-g1-JVy" firstAttribute="centerY" secondItem="uev-qR-VxQ" secondAttribute="centerY" id="nXj-dK-shY"/>
                                                 <constraint firstAttribute="bottom" secondItem="uev-qR-VxQ" secondAttribute="bottom" id="o5u-qq-by9"/>
                                                 <constraint firstItem="uev-qR-VxQ" firstAttribute="leading" secondItem="bgR-te-KrL" secondAttribute="leading" id="riU-OB-aoc"/>
                                             </constraints>
@@ -207,11 +154,17 @@
                                     <outlet property="delegate" destination="3Z0-eA-g3z" id="WV2-VS-qIk"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="1cX-go-VGv">
+                                <rect key="frame" x="141.5" y="255.5" width="37" height="37"/>
+                                <color key="color" red="0.94509803920000002" green="0.51372549020000002" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.10627212375402451" blue="0.28515332937240601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="R1t-Kf-ONq" firstAttribute="leading" secondItem="MHn-Xv-dME" secondAttribute="leading" id="Id7-Vo-GM9"/>
                             <constraint firstItem="R1t-Kf-ONq" firstAttribute="top" secondItem="MHn-Xv-dME" secondAttribute="top" id="Pzu-9U-z4Q"/>
+                            <constraint firstItem="1cX-go-VGv" firstAttribute="centerX" secondItem="csB-od-0iH" secondAttribute="centerX" id="f6a-gD-AF7"/>
+                            <constraint firstItem="1cX-go-VGv" firstAttribute="centerY" secondItem="csB-od-0iH" secondAttribute="centerY" id="qeJ-Qo-8fJ"/>
                             <constraint firstItem="R1t-Kf-ONq" firstAttribute="trailing" secondItem="MHn-Xv-dME" secondAttribute="trailing" id="vXv-wh-LgU"/>
                             <constraint firstItem="R1t-Kf-ONq" firstAttribute="bottom" secondItem="MHn-Xv-dME" secondAttribute="bottom" id="xmD-bQ-Ols"/>
                         </constraints>
@@ -219,7 +172,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="1Pd-SJ-WiU"/>
                     <connections>
-                        <outlet property="activityIndicatory" destination="bLw-g1-JVy" id="Z2P-jP-MEC"/>
+                        <outlet property="activityIndicatory" destination="1cX-go-VGv" id="dEG-no-7kg"/>
                         <outlet property="tableView" destination="R1t-Kf-ONq" id="Pq6-pU-6Oi"/>
                     </connections>
                 </viewController>
@@ -423,9 +376,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="feed1" width="960" height="960"/>
-        <image name="icons8-chat-bubble-64" width="64" height="64"/>
-        <image name="icons8-facebook-like-48" width="48" height="48"/>
-        <image name="icons8-share-64" width="64" height="64"/>
+        <image name="tedact0" width="1152" height="1152"/>
     </resources>
 </document>

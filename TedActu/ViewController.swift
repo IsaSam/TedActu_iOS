@@ -16,10 +16,17 @@ class ViewController: UIViewController {
         }
         
         var  demotype = DemoTypes.BATabBarWithText
-        
+        var darkMode = false
+        override var preferredStatusBarStyle : UIStatusBarStyle {
+            return darkMode ? .default : .lightContent
+        }
+    
+    
         override func viewDidLoad() {
             
             super.viewDidLoad()
+            
+            setNeedsStatusBarAppearanceUpdate()
             
             let testController = BATabBarController()
 
