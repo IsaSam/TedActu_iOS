@@ -7,6 +7,17 @@ target 'TedActu' do
 
   # Pods for TedActu
 
-	 pod 'BATabBarController'
-    	 pod "Alamofire"
+	pod 'BATabBarController'
+    	pod "Alamofire"
+	
+	pod 'AlamofireImage'
+  	pod 'SDWebImage'
+
+  #pod 'SwiftyJSON'
+  	pod 'SwiftyJSON', '~> 4.0'
+
+  	pod 'YYHRequest'
+  	pod 'YYHRequest/JSON'	
+
+
 end
