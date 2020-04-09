@@ -17,6 +17,10 @@
 		96A716022436BCFC00D579A5 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A716012436BCFC00D579A5 /* HomeTableViewCell.swift */; };
 		96A71604243A84FC00D579A5 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A71603243A84FB00D579A5 /* CategoriesViewController.swift */; };
 		96A71606243A869400D579A5 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A71605243A869300D579A5 /* CategoryRow.swift */; };
+		96F23F51243F7CF600CD634C /* TedActuAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F23F50243F7CF600CD634C /* TedActuAPIManager.swift */; };
+		96F23F53243F7D7D00CD634C /* HTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F23F52243F7D7D00CD634C /* HTTPHandler.swift */; };
+		96F23F56243F7F6400CD634C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F23F55243F7F6400CD634C /* Post.swift */; };
+		96F23F59243F874700CD634C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F23F58243F874700CD634C /* Extensions.swift */; };
 		96F80B3724308C7200E119B8 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F80B3624308C7200E119B8 /* PlaylistViewController.swift */; };
 		96F80B3A2430953D00E119B8 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F80B392430953D00E119B8 /* Video.swift */; };
 		96F80B3E2430979F00E119B8 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F80B3D2430979F00E119B8 /* VideoDetailViewController.swift */; };
@@ -38,6 +42,10 @@
 		96A716012436BCFC00D579A5 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		96A71603243A84FB00D579A5 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		96A71605243A869300D579A5 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		96F23F50243F7CF600CD634C /* TedActuAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedActuAPIManager.swift; sourceTree = "<group>"; };
+		96F23F52243F7D7D00CD634C /* HTTPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHandler.swift; sourceTree = "<group>"; };
+		96F23F55243F7F6400CD634C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		96F23F58243F874700CD634C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		96F80B3624308C7200E119B8 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		96F80B392430953D00E119B8 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		96F80B3D2430979F00E119B8 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +85,9 @@
 		964D6B4F242421C900504E42 /* TedActu */ = {
 			isa = PBXGroup;
 			children = (
+				96F23F57243F873300CD634C /* Extensions */,
+				96F23F54243F7F5700CD634C /* Model */,
+				96F23F4F243F7CCC00CD634C /* ManagerAPI */,
 				96A716002436BCB800D579A5 /* CellView */,
 				96A715FC2436AE8000D579A5 /* Controllers */,
 				96F80B382430950100E119B8 /* classes */,
@@ -109,6 +120,31 @@
 				96A71605243A869300D579A5 /* CategoryRow.swift */,
 			);
 			path = CellView;
+			sourceTree = "<group>";
+		};
+		96F23F4F243F7CCC00CD634C /* ManagerAPI */ = {
+			isa = PBXGroup;
+			children = (
+				96F23F50243F7CF600CD634C /* TedActuAPIManager.swift */,
+				96F23F52243F7D7D00CD634C /* HTTPHandler.swift */,
+			);
+			path = ManagerAPI;
+			sourceTree = "<group>";
+		};
+		96F23F54243F7F5700CD634C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96F23F55243F7F6400CD634C /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96F23F57243F873300CD634C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				96F23F58243F874700CD634C /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		96F80B382430950100E119B8 /* classes */ = {
@@ -264,12 +300,16 @@
 				96F80B3E2430979F00E119B8 /* VideoDetailViewController.swift in Sources */,
 				96A71606243A869400D579A5 /* CategoryRow.swift in Sources */,
 				96A71604243A84FC00D579A5 /* CategoriesViewController.swift in Sources */,
+				96F23F56243F7F6400CD634C /* Post.swift in Sources */,
 				964D6B55242421C900504E42 /* ViewController.swift in Sources */,
 				964D6B51242421C900504E42 /* AppDelegate.swift in Sources */,
 				964D6B53242421C900504E42 /* SceneDelegate.swift in Sources */,
 				96A715FE2436AE9D00D579A5 /* HomeViewController.swift in Sources */,
 				96A716022436BCFC00D579A5 /* HomeTableViewCell.swift in Sources */,
+				96F23F51243F7CF600CD634C /* TedActuAPIManager.swift in Sources */,
+				96F23F53243F7D7D00CD634C /* HTTPHandler.swift in Sources */,
 				96F80B3A2430953D00E119B8 /* Video.swift in Sources */,
+				96F23F59243F874700CD634C /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

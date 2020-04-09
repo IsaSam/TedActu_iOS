@@ -175,19 +175,29 @@
                                                         <constraint firstItem="vGE-YN-HOp" firstAttribute="top" secondItem="Zgm-x8-xzs" secondAttribute="top" id="oJQ-wg-1q4"/>
                                                     </constraints>
                                                 </view>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="bLw-g1-JVy">
+                                                    <rect key="frame" x="150" y="155" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="609-dK-3NK"/>
+                                                        <constraint firstAttribute="width" constant="20" id="udP-ae-k58"/>
+                                                    </constraints>
+                                                    <color key="color" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="bLw-g1-JVy" firstAttribute="centerX" secondItem="uev-qR-VxQ" secondAttribute="centerX" id="0u7-on-plw"/>
                                                 <constraint firstItem="Zgm-x8-xzs" firstAttribute="leading" secondItem="bgR-te-KrL" secondAttribute="leading" id="CCT-hv-Kdw"/>
                                                 <constraint firstAttribute="trailing" secondItem="uev-qR-VxQ" secondAttribute="trailing" id="M7H-MI-e8r"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zgm-x8-xzs" secondAttribute="trailing" constant="187" id="N7R-V6-vKN"/>
                                                 <constraint firstItem="uev-qR-VxQ" firstAttribute="top" secondItem="bgR-te-KrL" secondAttribute="top" id="bXQ-rD-Fyo"/>
                                                 <constraint firstAttribute="bottom" secondItem="Zgm-x8-xzs" secondAttribute="bottom" constant="2" id="lNJ-kj-WN9"/>
+                                                <constraint firstItem="bLw-g1-JVy" firstAttribute="centerY" secondItem="uev-qR-VxQ" secondAttribute="centerY" id="nXj-dK-shY"/>
                                                 <constraint firstAttribute="bottom" secondItem="uev-qR-VxQ" secondAttribute="bottom" id="o5u-qq-by9"/>
                                                 <constraint firstItem="uev-qR-VxQ" firstAttribute="leading" secondItem="bgR-te-KrL" secondAttribute="leading" id="riU-OB-aoc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imageFeed" destination="uev-qR-VxQ" id="shT-83-uIt"/>
+                                            <outlet property="imagePost" destination="uev-qR-VxQ" id="fkL-t0-0aI"/>
                                             <segue destination="XE3-gz-CqO" kind="show" id="1LI-jj-Zne"/>
                                         </connections>
                                     </tableViewCell>
@@ -208,6 +218,10 @@
                         <viewLayoutGuide key="safeArea" id="MHn-Xv-dME"/>
                     </view>
                     <navigationItem key="navigationItem" id="1Pd-SJ-WiU"/>
+                    <connections>
+                        <outlet property="activityIndicatory" destination="bLw-g1-JVy" id="Z2P-jP-MEC"/>
+                        <outlet property="tableView" destination="R1t-Kf-ONq" id="Pq6-pU-6Oi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LeJ-0k-BAd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
