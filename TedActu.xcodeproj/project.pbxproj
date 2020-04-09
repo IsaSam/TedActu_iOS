@@ -46,9 +46,9 @@
 		96F23F52243F7D7D00CD634C /* HTTPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHandler.swift; sourceTree = "<group>"; };
 		96F23F55243F7F6400CD634C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		96F23F58243F874700CD634C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		96F80B3624308C7200E119B8 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
+		96F80B3624308C7200E119B8 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaylistViewController.swift; path = ../PlaylistViewController.swift; sourceTree = "<group>"; };
 		96F80B392430953D00E119B8 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		96F80B3D2430979F00E119B8 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
+		96F80B3D2430979F00E119B8 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoDetailViewController.swift; path = ../VideoDetailViewController.swift; sourceTree = "<group>"; };
 		AA65728135CCE2F3185BD2E6 /* Pods-TedActu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedActu.release.xcconfig"; path = "Pods/Target Support Files/Pods-TedActu/Pods-TedActu.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,13 +93,10 @@
 				96F80B382430950100E119B8 /* classes */,
 				964D6B50242421C900504E42 /* AppDelegate.swift */,
 				964D6B52242421C900504E42 /* SceneDelegate.swift */,
-				964D6B54242421C900504E42 /* ViewController.swift */,
 				964D6B56242421C900504E42 /* Main.storyboard */,
 				964D6B59242421D100504E42 /* Assets.xcassets */,
 				964D6B5B242421D100504E42 /* LaunchScreen.storyboard */,
 				964D6B5E242421D100504E42 /* Info.plist */,
-				96F80B3624308C7200E119B8 /* PlaylistViewController.swift */,
-				96F80B3D2430979F00E119B8 /* VideoDetailViewController.swift */,
 			);
 			path = TedActu;
 			sourceTree = "<group>";
@@ -107,8 +104,11 @@
 		96A715FC2436AE8000D579A5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				964D6B54242421C900504E42 /* ViewController.swift */,
 				96A715FD2436AE9D00D579A5 /* HomeViewController.swift */,
 				96A71603243A84FB00D579A5 /* CategoriesViewController.swift */,
+				96F80B3624308C7200E119B8 /* PlaylistViewController.swift */,
+				96F80B3D2430979F00E119B8 /* VideoDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
