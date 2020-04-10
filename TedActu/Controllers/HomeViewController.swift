@@ -39,7 +39,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.refreshControl.addTarget(self, action: #selector(HomeViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
         
-        getPostList()
+        if Reachability.isConnectedToNetwork(){
+            print("Internet Connection Available!")
+            getPostList()
+        }else{
+                print("Internet Connection not Available!")
+                let errorAlertController = UIAlertController(title: "On ne peut pas obtenir de données", message: "La connexion Internet semble être hors ligne", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "Réessayer", style: .cancel)
+                   errorAlertController.addAction(cancelAction)
+                self.present(errorAlertController, animated: true)
+        }
     }
     
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){

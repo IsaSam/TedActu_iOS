@@ -21,6 +21,7 @@
 		96F23F53243F7D7D00CD634C /* HTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F23F52243F7D7D00CD634C /* HTTPHandler.swift */; };
 		96F23F56243F7F6400CD634C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F23F55243F7F6400CD634C /* Post.swift */; };
 		96F23F59243F874700CD634C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F23F58243F874700CD634C /* Extensions.swift */; };
+		96F23F5B243FED3A00CD634C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F23F5A243FED3800CD634C /* Reachability.swift */; };
 		96F80B3724308C7200E119B8 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F80B3624308C7200E119B8 /* PlaylistViewController.swift */; };
 		96F80B3A2430953D00E119B8 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F80B392430953D00E119B8 /* Video.swift */; };
 		96F80B3E2430979F00E119B8 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F80B3D2430979F00E119B8 /* VideoDetailViewController.swift */; };
@@ -46,6 +47,7 @@
 		96F23F52243F7D7D00CD634C /* HTTPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHandler.swift; sourceTree = "<group>"; };
 		96F23F55243F7F6400CD634C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		96F23F58243F874700CD634C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		96F23F5A243FED3800CD634C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		96F80B3624308C7200E119B8 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaylistViewController.swift; path = ../PlaylistViewController.swift; sourceTree = "<group>"; };
 		96F80B392430953D00E119B8 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		96F80B3D2430979F00E119B8 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoDetailViewController.swift; path = ../VideoDetailViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				96F80B392430953D00E119B8 /* Video.swift */,
+				96F23F5A243FED3800CD634C /* Reachability.swift */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				964D6B55242421C900504E42 /* ViewController.swift in Sources */,
 				964D6B51242421C900504E42 /* AppDelegate.swift in Sources */,
 				964D6B53242421C900504E42 /* SceneDelegate.swift in Sources */,
+				96F23F5B243FED3A00CD634C /* Reachability.swift in Sources */,
 				96A715FE2436AE9D00D579A5 /* HomeViewController.swift in Sources */,
 				96A716022436BCFC00D579A5 /* HomeTableViewCell.swift in Sources */,
 				96F23F51243F7CF600CD634C /* TedActuAPIManager.swift in Sources */,
