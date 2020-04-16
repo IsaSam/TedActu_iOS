@@ -202,7 +202,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //            }
             
             do{
-                let medium =  (sizes as AnyObject).value(forKey: "medium_large")
+                let medium =  (sizes as AnyObject).value(forKey: "full")
                 let dataDic = medium as? [[String: Any]]
                 if dataDic != nil{
                     

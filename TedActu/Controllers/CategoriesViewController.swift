@@ -11,8 +11,7 @@ import UIKit
 class CategoriesViewController: UIViewController, UITableViewDataSource{
     
     @IBOutlet weak var tableView: UITableView!
-    
-    
+   
     var categories = ["SOCIÉTÉ", "POLITIQUE", "CULTURE", "SPORT", "SAVOIR+"]
     
 //
@@ -44,6 +43,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryRow
+        
         return cell
     }
 }

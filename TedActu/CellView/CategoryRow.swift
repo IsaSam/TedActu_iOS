@@ -9,6 +9,7 @@
 import UIKit
 
 class CategoryRow: UITableViewCell {
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +26,7 @@ class CategoryRow: UITableViewCell {
 extension CategoryRow : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath as IndexPath)
+        
         return cell
     }
     
