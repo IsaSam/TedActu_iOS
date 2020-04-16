@@ -9,6 +9,7 @@
 import UIKit
 
 class CategoriesViewController: UIViewController, UITableViewDataSource{
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
    

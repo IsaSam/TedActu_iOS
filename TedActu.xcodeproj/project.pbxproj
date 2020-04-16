@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		963E4F9A2447FC1200DED197 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963E4F992447FC1200DED197 /* CategoriesCollectionViewCell.swift */; };
 		964D6B51242421C900504E42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D6B50242421C900504E42 /* AppDelegate.swift */; };
 		964D6B53242421C900504E42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D6B52242421C900504E42 /* SceneDelegate.swift */; };
 		964D6B55242421C900504E42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D6B54242421C900504E42 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		155BBD647236A3BA0E6FF74F /* Pods_TedActu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TedActu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E247230B81F473FABA795D /* Pods-TedActu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedActu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TedActu/Pods-TedActu.debug.xcconfig"; sourceTree = "<group>"; };
+		963E4F992447FC1200DED197 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		964D6B4D242421C900504E42 /* TedActu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TedActu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		964D6B50242421C900504E42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		964D6B52242421C900504E42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		96A716002436BCB800D579A5 /* CellView */ = {
 			isa = PBXGroup;
 			children = (
+				963E4F992447FC1200DED197 /* CategoriesCollectionViewCell.swift */,
 				96A716012436BCFC00D579A5 /* HomeTableViewCell.swift */,
 				96A71605243A869300D579A5 /* CategoryRow.swift */,
 			);
@@ -309,6 +312,7 @@
 			files = (
 				96F80B3724308C7200E119B8 /* PlaylistViewController.swift in Sources */,
 				96F80B3E2430979F00E119B8 /* VideoDetailViewController.swift in Sources */,
+				963E4F9A2447FC1200DED197 /* CategoriesCollectionViewCell.swift in Sources */,
 				96A71606243A869400D579A5 /* CategoryRow.swift in Sources */,
 				96A71604243A84FC00D579A5 /* CategoriesViewController.swift in Sources */,
 				96F23F56243F7F6400CD634C /* Post.swift in Sources */,

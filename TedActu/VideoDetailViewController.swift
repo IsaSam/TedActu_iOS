@@ -17,9 +17,6 @@ class VideoDetailViewController: UIViewController {
         
         var selectedVideo:video?
             
-            
-            
-            
             override func viewDidLoad() {
                 super.viewDidLoad()
 

@@ -24,8 +24,12 @@ class CategoryRow: UITableViewCell {
 
 }
 extension CategoryRow : UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath as IndexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath as IndexPath) as! CategoriesCollectionViewCell
+        print("index: \(indexPath.row)")
+        cell.titleLabel.text = String(indexPath.row)
+        cell.titleLabel.textColor = .white
         
         return cell
     }
