@@ -10,7 +10,6 @@ import UIKit
 
 class CategoryRow: UITableViewCell {
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,11 +24,23 @@ class CategoryRow: UITableViewCell {
 }
 extension CategoryRow : UICollectionViewDataSource {
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath as IndexPath) as! CategoriesCollectionViewCell
         print("index: \(indexPath.row)")
+        print(Categories.Names)
+//        if Categories.Names == "SOCIÉTÉ"{
+//            print("true")
+//        }else{
+//            print("false")
+//        }
+    //    print("c: \(Categories.cat[i+1]))")
+        
         cell.titleLabel.text = String(indexPath.row)
         cell.titleLabel.textColor = .white
+        
+        print(collectionView.numberOfSections)
         
         return cell
     }
@@ -48,4 +59,6 @@ extension CategoryRow : UICollectionViewDelegateFlowLayout {
        }
 
 }
+
+
 
