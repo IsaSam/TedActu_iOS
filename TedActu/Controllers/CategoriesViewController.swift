@@ -18,7 +18,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
     
     @IBOutlet weak var tableView: UITableView!
    
-    var categories = ["SOCIÉTÉ", "POLITIQUE", "CULTURE", "SPORT", "SAVOIR+"]
+//    var categories = ["SOCIÉTÉ", "POLITIQUE", "CULTURE", "SPORT", "SAVOIR+"]
    // var categories = ["SOCIÉTÉ"]
     
 
@@ -39,14 +39,17 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return categories.count
+  //      return categories.count
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-       // print("categories1: \(categories[section])")
-        Categories.Names = categories[section]
-        return categories[section]
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//       // print("categories1: \(categories[section])")
+//        Categories.Names = categories[section]
+//        return categories[section]
+//    }
+    
+    
 //    func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
 //        var tempIndex:Int = 0
 //        for str in categories {
@@ -68,7 +71,10 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryRow
         
-        print("categories: \(categories[indexPath.row])")
+        cell.labelHeader1.text = "SOCIÉTÉ"
+        cell.labelHeader1.textColor = .white
+        
+//        print("categories: \(categories[indexPath.row])")
         print(tableView.numberOfSections)
         
         return cell
