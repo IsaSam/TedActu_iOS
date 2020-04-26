@@ -89,7 +89,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! CategoryRow2
             cell.labelHeader2.text = "POLITIQUE"
-          //  cell.labelHeader2.textColor = .white
+            cell.labelHeader2.textColor = .white
             
             return cell
         }

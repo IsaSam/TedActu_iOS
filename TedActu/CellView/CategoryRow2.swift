@@ -34,7 +34,7 @@ extension CategoryRow2 : UICollectionViewDataSource {
         print("index: \(indexPath.row)")
         
         cell.titleLabel2.text = String(indexPath.row)
-        cell.titleLabel2.textColor = .white
+        cell.titleLabel2.textColor = .red
         
         print(collectionView.numberOfSections)
         

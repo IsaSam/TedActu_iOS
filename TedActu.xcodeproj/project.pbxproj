@@ -14,14 +14,6 @@
 		964D6B58242421C900504E42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964D6B56242421C900504E42 /* Main.storyboard */; };
 		964D6B5A242421D100504E42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 964D6B59242421D100504E42 /* Assets.xcassets */; };
 		964D6B5D242421D100504E42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964D6B5B242421D100504E42 /* LaunchScreen.storyboard */; };
-		96655A952454C929007D2BDF /* HomeCategoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96655A942454C929007D2BDF /* HomeCategoryTableView.swift */; };
-		96655A972454F11B007D2BDF /* SocietyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96655A962454F11B007D2BDF /* SocietyCell.swift */; };
-		96655A992454F131007D2BDF /* PolitiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96655A982454F131007D2BDF /* PolitiCell.swift */; };
-		96655A9B2454F261007D2BDF /* SocietyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96655A9A2454F261007D2BDF /* SocietyCollectionView.swift */; };
-		96655A9D2454F279007D2BDF /* PolitiCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96655A9C2454F279007D2BDF /* PolitiCollectionView.swift */; };
-		96655A9F2454F2AA007D2BDF /* SocietyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96655A9E2454F2AA007D2BDF /* SocietyViewCell.swift */; };
-		96655AA12454F2C1007D2BDF /* PoliticViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96655AA02454F2C1007D2BDF /* PoliticViewCell.swift */; };
-		96655AA5245501D9007D2BDF /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96655AA4245501D9007D2BDF /* CategoryViewController.swift */; };
 		96655AAD2455F055007D2BDF /* CategoryRow2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96655AAC2455F055007D2BDF /* CategoryRow2.swift */; };
 		96655AAF2455F30B007D2BDF /* CategoriesCollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96655AAE2455F30B007D2BDF /* CategoriesCollectionViewCell2.swift */; };
 		96A715FE2436AE9D00D579A5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A715FD2436AE9D00D579A5 /* HomeViewController.swift */; };
@@ -51,14 +43,6 @@
 		964D6B59242421D100504E42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		964D6B5C242421D100504E42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		964D6B5E242421D100504E42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96655A942454C929007D2BDF /* HomeCategoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCategoryTableView.swift; sourceTree = "<group>"; };
-		96655A962454F11B007D2BDF /* SocietyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocietyCell.swift; sourceTree = "<group>"; };
-		96655A982454F131007D2BDF /* PolitiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolitiCell.swift; sourceTree = "<group>"; };
-		96655A9A2454F261007D2BDF /* SocietyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocietyCollectionView.swift; sourceTree = "<group>"; };
-		96655A9C2454F279007D2BDF /* PolitiCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolitiCollectionView.swift; sourceTree = "<group>"; };
-		96655A9E2454F2AA007D2BDF /* SocietyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocietyViewCell.swift; sourceTree = "<group>"; };
-		96655AA02454F2C1007D2BDF /* PoliticViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticViewCell.swift; sourceTree = "<group>"; };
-		96655AA4245501D9007D2BDF /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		96655AAC2455F055007D2BDF /* CategoryRow2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow2.swift; sourceTree = "<group>"; };
 		96655AAE2455F30B007D2BDF /* CategoriesCollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell2.swift; sourceTree = "<group>"; };
 		96A715FD2436AE9D00D579A5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +93,6 @@
 		964D6B4F242421C900504E42 /* TedActu */ = {
 			isa = PBXGroup;
 			children = (
-				96655A932454C692007D2BDF /* CategoriesView */,
 				96F23F57243F873300CD634C /* Extensions */,
 				96F23F54243F7F5700CD634C /* Model */,
 				96F23F4F243F7CCC00CD634C /* ManagerAPI */,
@@ -124,21 +107,6 @@
 				964D6B5E242421D100504E42 /* Info.plist */,
 			);
 			path = TedActu;
-			sourceTree = "<group>";
-		};
-		96655A932454C692007D2BDF /* CategoriesView */ = {
-			isa = PBXGroup;
-			children = (
-				96655A942454C929007D2BDF /* HomeCategoryTableView.swift */,
-				96655A962454F11B007D2BDF /* SocietyCell.swift */,
-				96655A982454F131007D2BDF /* PolitiCell.swift */,
-				96655A9A2454F261007D2BDF /* SocietyCollectionView.swift */,
-				96655A9C2454F279007D2BDF /* PolitiCollectionView.swift */,
-				96655A9E2454F2AA007D2BDF /* SocietyViewCell.swift */,
-				96655AA02454F2C1007D2BDF /* PoliticViewCell.swift */,
-				96655AA4245501D9007D2BDF /* CategoryViewController.swift */,
-			);
-			path = CategoriesView;
 			sourceTree = "<group>";
 		};
 		96A715FC2436AE8000D579A5 /* Controllers */ = {
@@ -349,28 +317,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				96F80B3724308C7200E119B8 /* PlaylistViewController.swift in Sources */,
-				96655A9B2454F261007D2BDF /* SocietyCollectionView.swift in Sources */,
 				96F80B3E2430979F00E119B8 /* VideoDetailViewController.swift in Sources */,
 				963E4F9A2447FC1200DED197 /* CategoriesCollectionViewCell.swift in Sources */,
-				96655AA5245501D9007D2BDF /* CategoryViewController.swift in Sources */,
-				96655A992454F131007D2BDF /* PolitiCell.swift in Sources */,
 				96A71606243A869400D579A5 /* CategoryRow.swift in Sources */,
 				96A71604243A84FC00D579A5 /* CategoriesViewController.swift in Sources */,
 				96F23F56243F7F6400CD634C /* Post.swift in Sources */,
 				964D6B55242421C900504E42 /* ViewController.swift in Sources */,
 				964D6B51242421C900504E42 /* AppDelegate.swift in Sources */,
 				964D6B53242421C900504E42 /* SceneDelegate.swift in Sources */,
-				96655A952454C929007D2BDF /* HomeCategoryTableView.swift in Sources */,
 				96F23F5B243FED3A00CD634C /* Reachability.swift in Sources */,
-				96655A9D2454F279007D2BDF /* PolitiCollectionView.swift in Sources */,
 				96A715FE2436AE9D00D579A5 /* HomeViewController.swift in Sources */,
 				96A716022436BCFC00D579A5 /* HomeTableViewCell.swift in Sources */,
 				96F23F51243F7CF600CD634C /* TedActuAPIManager.swift in Sources */,
 				96F23F53243F7D7D00CD634C /* HTTPHandler.swift in Sources */,
 				96F80B3A2430953D00E119B8 /* Video.swift in Sources */,
-				96655AA12454F2C1007D2BDF /* PoliticViewCell.swift in Sources */,
-				96655A9F2454F2AA007D2BDF /* SocietyViewCell.swift in Sources */,
-				96655A972454F11B007D2BDF /* SocietyCell.swift in Sources */,
 				96F23F59243F874700CD634C /* Extensions.swift in Sources */,
 				96655AAD2455F055007D2BDF /* CategoryRow2.swift in Sources */,
 				96655AAF2455F30B007D2BDF /* CategoriesCollectionViewCell2.swift in Sources */,
