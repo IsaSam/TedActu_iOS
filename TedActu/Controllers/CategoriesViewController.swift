@@ -63,20 +63,37 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
 //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
         
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryRow
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryRow
         
-        cell.labelHeader1.text = "SOCIÉTÉ"
-        cell.labelHeader1.textColor = .white
+//        let cell2 = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! CategoryRow
         
 //        print("categories: \(categories[indexPath.row])")
         print(tableView.numberOfSections)
         
-        return cell
+        //////
+        let row = indexPath.row
+        
+        if row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryRow
+            cell.labelHeader1.text = "SOCIÉTÉ"
+            cell.labelHeader1.textColor = .white
+            
+            return cell
+        }
+        else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! CategoryRow2
+            cell.labelHeader2.text = "POLITIQUE"
+          //  cell.labelHeader2.textColor = .white
+            
+            return cell
+        }
+
     }
+    
 }

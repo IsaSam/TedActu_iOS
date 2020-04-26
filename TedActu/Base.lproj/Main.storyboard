@@ -316,9 +316,11 @@
                                                         <outlet property="delegate" destination="IxV-jf-eIf" id="QUt-XV-A1s"/>
                                                     </connections>
                                                 </collectionView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SOCIETY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTz-Hn-IKB">
-                                                    <rect key="frame" x="8" y="4" width="70" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTz-Hn-IKB">
+                                                    <rect key="frame" x="8" y="4" width="54" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="qpS-S0-OLl"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -326,6 +328,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="5Ty-PA-9Mt" firstAttribute="top" secondItem="ylm-YV-xEG" secondAttribute="top" constant="30" id="Jw6-Jo-y6I"/>
+                                                <constraint firstItem="aTz-Hn-IKB" firstAttribute="leading" secondItem="ylm-YV-xEG" secondAttribute="leadingMargin" constant="-7" id="L61-YZ-3RH"/>
+                                                <constraint firstItem="5Ty-PA-9Mt" firstAttribute="top" secondItem="aTz-Hn-IKB" secondAttribute="bottom" constant="5" id="XeE-7b-e4z"/>
                                                 <constraint firstItem="5Ty-PA-9Mt" firstAttribute="leading" secondItem="ylm-YV-xEG" secondAttribute="leading" id="ayh-D3-m7v"/>
                                                 <constraint firstAttribute="trailing" secondItem="5Ty-PA-9Mt" secondAttribute="trailing" id="fj2-C3-tcQ"/>
                                                 <constraint firstAttribute="bottom" secondItem="5Ty-PA-9Mt" secondAttribute="bottom" id="fqb-en-msL"/>
@@ -334,6 +338,74 @@
                                         <color key="backgroundColor" red="0.0036190925170000001" green="0.083339817819999995" blue="0.2890685201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="labelHeader1" destination="aTz-Hn-IKB" id="g5M-LQ-z7w"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell2" rowHeight="210" id="xbf-kb-vLy" customClass="CategoryRow2" customModule="TedActu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="238" width="320" height="210"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xbf-kb-vLy" id="TOu-Jw-4yt">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="210"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="C9K-jg-Cep">
+                                                    <rect key="frame" x="0.0" y="30" width="320" height="180"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="t3Z-4P-A4G">
+                                                        <size key="itemSize" width="50" height="50"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell2" id="RXf-6k-cwZ" customClass="CategoriesCollectionViewCell2" customModule="TedActu" customModuleProvider="target">
+                                                            <rect key="frame" x="5" y="5" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2FB-QU-SPv">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zct-1x-H1x">
+                                                                        <rect key="frame" x="4" y="15" width="42" height="21"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </collectionViewCellContentView>
+                                                            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <connections>
+                                                                <outlet property="titleLabel2" destination="zct-1x-H1x" id="qBv-cr-Z0l"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="xbf-kb-vLy" id="ETW-Hu-po3"/>
+                                                        <outlet property="delegate" destination="xbf-kb-vLy" id="kM3-Y2-lS2"/>
+                                                    </connections>
+                                                </collectionView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpn-BP-QJp">
+                                                    <rect key="frame" x="8" y="4" width="54" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="8QH-E2-ucP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Qpn-BP-QJp" firstAttribute="leading" secondItem="TOu-Jw-4yt" secondAttribute="leadingMargin" constant="-7" id="75i-sK-mx1"/>
+                                                <constraint firstItem="C9K-jg-Cep" firstAttribute="top" secondItem="TOu-Jw-4yt" secondAttribute="top" constant="30" id="Xb8-rN-CIq"/>
+                                                <constraint firstItem="C9K-jg-Cep" firstAttribute="top" secondItem="Qpn-BP-QJp" secondAttribute="bottom" constant="5" id="ZY1-Gr-KBH"/>
+                                                <constraint firstAttribute="bottom" secondItem="C9K-jg-Cep" secondAttribute="bottom" id="ZmJ-xA-bQT"/>
+                                                <constraint firstAttribute="trailing" secondItem="C9K-jg-Cep" secondAttribute="trailing" id="rzR-r0-ygJ"/>
+                                                <constraint firstItem="C9K-jg-Cep" firstAttribute="leading" secondItem="TOu-Jw-4yt" secondAttribute="leading" id="x33-NC-Cl2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="labelHeader2" destination="Qpn-BP-QJp" id="cSl-qP-6qM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
