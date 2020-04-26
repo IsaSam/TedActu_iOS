@@ -43,7 +43,7 @@ extension CategoryRow2 : UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return 10
     }
     
 }

@@ -305,7 +305,7 @@
                                                                     </label>
                                                                 </subviews>
                                                             </collectionViewCellContentView>
-                                                            <color key="backgroundColor" red="0.0036190925170000001" green="0.083339817819999995" blue="0.2890685201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <connections>
                                                                 <outlet property="titleLabel" destination="W3p-oH-Qth" id="7pg-7a-N12"/>
                                                             </connections>
@@ -335,7 +335,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="5Ty-PA-9Mt" secondAttribute="bottom" id="fqb-en-msL"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0036190925170000001" green="0.083339817819999995" blue="0.2890685201" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="labelHeader1" destination="aTz-Hn-IKB" id="g5M-LQ-z7w"/>
                                         </connections>
@@ -373,7 +373,7 @@
                                                                     </label>
                                                                 </subviews>
                                                             </collectionViewCellContentView>
-                                                            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <connections>
                                                                 <outlet property="titleLabel2" destination="zct-1x-H1x" id="qBv-cr-Z0l"/>
                                                             </connections>
@@ -403,7 +403,7 @@
                                                 <constraint firstItem="C9K-jg-Cep" firstAttribute="leading" secondItem="TOu-Jw-4yt" secondAttribute="leading" id="x33-NC-Cl2"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="labelHeader2" destination="Qpn-BP-QJp" id="cSl-qP-6qM"/>
                                         </connections>

@@ -33,6 +33,8 @@ extension CategoryRow : UICollectionViewDataSource {
         
         print("index: \(indexPath.row)")
         
+        Categories.catID = "22"
+        
         cell.titleLabel.text = String(indexPath.row)
         cell.titleLabel.textColor = .white
         
@@ -43,7 +45,7 @@ extension CategoryRow : UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return 10
     }
     
 }
