@@ -29,11 +29,11 @@ class HomeCategoryTableView: UITableView, UITableViewDataSource, UITableViewDele
         let row = indexPath.row
         
         if row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SocieteCell") as! SocieteCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SocietyCell") as! SocietyCell
             return cell
         }
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PolitiqueCell") as! PolitiqueCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PolitiCell") as! PolitiCell
             return cell
         }
     }
