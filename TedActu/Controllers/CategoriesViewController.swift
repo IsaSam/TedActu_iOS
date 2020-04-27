@@ -10,18 +10,51 @@ import UIKit
 import YYHRequest
 
 struct Categories{
+    
     static var Names = String()
     static var catID: String?
     static var catID2: String?
     static var posts: [[String: Any]] = []
     static var posts2: [[String: Any]] = []
+    static var loadNumber = 1
+    static var tableView = UITableView()
+    static func h(){
+        print("hello")
+    }
+     //---- GET POST BY CATEGORIES
+    static func getPostCategory(){
+        //    self.activityIndicatory.startAnimating()
+        //    self.activityIndicatory.isHidden = false
+            
+        TedActuAPIManager.shared.get(url: "http://ted.policite.org/wp-json/wp/v2/posts?page=\(Categories.loadNumber)&categories=\(Categories.catID!)&_embed") { (result, error) in
+                if error != nil{
+                    // print(error!)
+                    let errorAlertController = UIAlertController(title: "Cannot Get Data", message: "The Internet connections appears to be offline", preferredStyle: .alert)
+                    let cancelAction = UIAlertAction(title: "Retry", style: .cancel)
+                    errorAlertController.addAction(cancelAction)
+                //    self.present(errorAlertController, animated: true)
+                    print(error!)
+                    
+                    return
+                }
+                    print("result1: \(result!)")
+                Categories.posts = result!
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+        //                self.activityIndicatory.stopAnimating()
+        //                self.activityIndicatory.isHidden = true
+                    }
+                
+                //====================
+            }
+    //        self.refreshControl.endRefreshing()
+        }
 }
 
 class CategoriesViewController: UIViewController, UITableViewDataSource{
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    var loadNumber = 1
     var imgURLShare1: String?
 //    var categories = ["SOCIÉTÉ", "POLITIQUE", "CULTURE", "SPORT", "SAVOIR+"]
 
@@ -33,126 +66,97 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
         
             tableView.dataSource = self
         
-        getPostCategory()
-        getPostCategory2()
-
+ //       Categories.getPostCategory()
+  //      getPostCategory2()
     }
-    
-    //---- GET POST BY CATEGORIES
-    
-    
-    private func getPostCategory(){
-    //    self.activityIndicatory.startAnimating()
-    //    self.activityIndicatory.isHidden = false
-        
-        TedActuAPIManager.shared.get(url: "http://ted.policite.org/wp-json/wp/v2/posts?page=\(loadNumber)&categories=22&_embed") { (result, error) in
-            if error != nil{
-                // print(error!)
-                let errorAlertController = UIAlertController(title: "Cannot Get Data", message: "The Internet connections appears to be offline", preferredStyle: .alert)
-                let cancelAction = UIAlertAction(title: "Retry", style: .cancel)
-                errorAlertController.addAction(cancelAction)
-                self.present(errorAlertController, animated: true)
-                print(error!)
-                
-                return
-            }
-                print("result1: \(result!)")
-            Categories.posts = result!
-                DispatchQueue.main.async {
-                    self.tableView?.reloadData()
-    //                self.activityIndicatory.stopAnimating()
-    //                self.activityIndicatory.isHidden = true
-                }
-            
-            //====================
-        }
-//        self.refreshControl.endRefreshing()
-    }
-    private func getPostCategory2(){
-        //    self.activityIndicatory.startAnimating()
-        //    self.activityIndicatory.isHidden = false
-            
-            TedActuAPIManager.shared.get(url: "http://ted.policite.org/wp-json/wp/v2/posts?page=\(loadNumber)&categories=16&_embed") { (result, error) in
-                if error != nil{
-                    // print(error!)
-                    let errorAlertController = UIAlertController(title: "Cannot Get Data", message: "The Internet connections appears to be offline", preferredStyle: .alert)
-                    let cancelAction = UIAlertAction(title: "Retry", style: .cancel)
-                    errorAlertController.addAction(cancelAction)
-                    self.present(errorAlertController, animated: true)
-                    print(error!)
-                    
-                    return
-                }
-                    print("result2: \(result!)")
-                Categories.posts2 = result!
-                    DispatchQueue.main.async {
-                        self.tableView?.reloadData()
-        //                self.activityIndicatory.stopAnimating()
-        //                self.activityIndicatory.isHidden = true
-                    }
-                
-                //====================
-            }
-    //        self.refreshControl.endRefreshing()
-        }
-    
-    func loadMorePosts(){
-//        self.activityIndicatory.startAnimating()
-//        self.activityIndicatory.isHidden = false
-        loadNumber = loadNumber + 1
-        TedActuAPIManager.shared.get(url: "http://ted.policite.org/wp-json/wp/v2/posts?page=\(loadNumber)&categories=22&_embed") { (result, error) in
 
-            if error != nil{
-                // print(error!)
-                let errorAlertController = UIAlertController(title: "Cannot Get Data", message: "The Internet connections appears to be offline", preferredStyle: .alert)
-                let cancelAction = UIAlertAction(title: "Retry", style: .cancel)
-                errorAlertController.addAction(cancelAction)
-                self.present(errorAlertController, animated: true)
-                print(error!)
-                
-                return
-            }
-            
-            do{
-                
-                ////
-                if YYHRequest(url: NSURL(string: self.imgURLShare1!)! as URL) != nil {
-            
-                    if result != nil{
-                        do{
-                            for item in result!
-                                
-                            {
-                                
-                                Categories.posts.append(item)
-                            }
-                            DispatchQueue.main.async {
-                                self.tableView?.reloadData()
-//                                self.activityIndicatory.stopAnimating()
-//                                self.activityIndicatory.isHidden = true
-                            }
-                        }
-                    }else{
-                        print("nil")
-//                            self.activityIndicatory.stopAnimating()
-//                            self.activityIndicatory.isHidden = true
-                        let errorAlertController = UIAlertController(title: "Désolé, Fin des articles!", message: "Remonter la liste", preferredStyle: .alert)
-                        let cancelAction = UIAlertAction(title: "OK", style: .cancel)
-                        errorAlertController.addAction(cancelAction)
-                        self.present(errorAlertController, animated: true)
-                        
-                    }
+    
 
-                }else{
-                    print("===========================================")
-                    print("body nil")
-
-            }
-
-                }
-            
-        }
-    }
+//    private func getPostCategory2(){
+//        //    self.activityIndicatory.startAnimating()
+//        //    self.activityIndicatory.isHidden = false
+//            
+//            TedActuAPIManager.shared.get(url: "http://ted.policite.org/wp-json/wp/v2/posts?page=\(loadNumber)&categories=16&_embed") { (result, error) in
+//                if error != nil{
+//                    // print(error!)
+//                    let errorAlertController = UIAlertController(title: "Cannot Get Data", message: "The Internet connections appears to be offline", preferredStyle: .alert)
+//                    let cancelAction = UIAlertAction(title: "Retry", style: .cancel)
+//                    errorAlertController.addAction(cancelAction)
+//                    self.present(errorAlertController, animated: true)
+//                    print(error!)
+//                    
+//                    return
+//                }
+//                    print("result2: \(result!)")
+//                Categories.posts2 = result!
+//                    DispatchQueue.main.async {
+//                        self.tableView?.reloadData()
+//        //                self.activityIndicatory.stopAnimating()
+//        //                self.activityIndicatory.isHidden = true
+//                    }
+//                
+//                //====================
+//            }
+//    //        self.refreshControl.endRefreshing()
+//        }
+    
+//    func loadMorePosts(){
+////        self.activityIndicatory.startAnimating()
+////        self.activityIndicatory.isHidden = false
+//        loadNumber = loadNumber + 1
+//        TedActuAPIManager.shared.get(url: "http://ted.policite.org/wp-json/wp/v2/posts?page=\(loadNumber)&categories=22&_embed") { (result, error) in
+//
+//            if error != nil{
+//                // print(error!)
+//                let errorAlertController = UIAlertController(title: "Cannot Get Data", message: "The Internet connections appears to be offline", preferredStyle: .alert)
+//                let cancelAction = UIAlertAction(title: "Retry", style: .cancel)
+//                errorAlertController.addAction(cancelAction)
+//                self.present(errorAlertController, animated: true)
+//                print(error!)
+//
+//                return
+//            }
+//
+//            do{
+//
+//                ////
+//                if YYHRequest(url: NSURL(string: self.imgURLShare1!)! as URL) != nil {
+//
+//                    if result != nil{
+//                        do{
+//                            for item in result!
+//
+//                            {
+//
+//                                Categories.posts.append(item)
+//                            }
+//                            DispatchQueue.main.async {
+//                                self.tableView?.reloadData()
+////                                self.activityIndicatory.stopAnimating()
+////                                self.activityIndicatory.isHidden = true
+//                            }
+//                        }
+//                    }else{
+//                        print("nil")
+////                            self.activityIndicatory.stopAnimating()
+////                            self.activityIndicatory.isHidden = true
+//                        let errorAlertController = UIAlertController(title: "Désolé, Fin des articles!", message: "Remonter la liste", preferredStyle: .alert)
+//                        let cancelAction = UIAlertAction(title: "OK", style: .cancel)
+//                        errorAlertController.addAction(cancelAction)
+//                        self.present(errorAlertController, animated: true)
+//
+//                    }
+//
+//                }else{
+//                    print("===========================================")
+//                    print("body nil")
+//
+//            }
+//
+//                }
+//
+//        }
+//    }
     
     // END CATEGORIES
     
@@ -196,9 +200,13 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
         
         //////
         let row = indexPath.row
+        print("row: \(row)")
         
         if row == 0 {
-  //          Categories.catID = "22"
+            print("row1: \(row)")
+            Categories.h()
+            Categories.catID = "22"
+            Categories.getPostCategory()
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryRow
             cell.labelHeader1.text = "SOCIÉTÉ"
             cell.labelHeader1.textColor = .white
@@ -206,7 +214,9 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
             return cell
         }
         else{
-  //          Categories.catID = "16"
+            Categories.catID = "16"
+            print("row2: \(row)")
+            Categories.getPostCategory()
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! CategoryRow2
             cell.labelHeader2.text = "POLITIQUE"
             cell.labelHeader2.textColor = .white
