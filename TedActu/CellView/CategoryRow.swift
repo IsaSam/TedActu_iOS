@@ -33,7 +33,7 @@ extension CategoryRow : UICollectionViewDataSource {
         
         print("index: \(indexPath.row)")
         
-        Categories.catID = "22"
+ //       Categories.catID = "22"
         
         cell.titleLabel.text = String(indexPath.row)
         cell.titleLabel.textColor = .white

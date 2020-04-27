@@ -11,6 +11,7 @@ import YYHRequest
 
 struct Categories{
     
+    static var nb = Int()
     static var Names = String()
     static var catID: String?
     static var catID2: String?
@@ -66,7 +67,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
         
             tableView.dataSource = self
         
- //       Categories.getPostCategory()
+        Categories.getPostCategory()
   //      getPostCategory2()
     }
 
@@ -75,7 +76,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
 //    private func getPostCategory2(){
 //        //    self.activityIndicatory.startAnimating()
 //        //    self.activityIndicatory.isHidden = false
-//            
+//
 //            TedActuAPIManager.shared.get(url: "http://ted.policite.org/wp-json/wp/v2/posts?page=\(loadNumber)&categories=16&_embed") { (result, error) in
 //                if error != nil{
 //                    // print(error!)
@@ -84,7 +85,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
 //                    errorAlertController.addAction(cancelAction)
 //                    self.present(errorAlertController, animated: true)
 //                    print(error!)
-//                    
+//
 //                    return
 //                }
 //                    print("result2: \(result!)")
@@ -94,7 +95,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
 //        //                self.activityIndicatory.stopAnimating()
 //        //                self.activityIndicatory.isHidden = true
 //                    }
-//                
+//
 //                //====================
 //            }
 //    //        self.refreshControl.endRefreshing()
@@ -188,7 +189,6 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
         return 2
         
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryRow

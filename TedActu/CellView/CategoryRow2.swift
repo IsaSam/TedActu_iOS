@@ -34,7 +34,7 @@ extension CategoryRow2 : UICollectionViewDataSource {
         print("index: \(indexPath.row)")
         
         cell.titleLabel2.text = String(indexPath.row)
-        cell.titleLabel2.textColor = .red
+        cell.titleLabel2.textColor = .white
         
         print(collectionView.numberOfSections)
         
@@ -43,6 +43,10 @@ extension CategoryRow2 : UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("iii: \(Categories.posts)")
+        for i in Categories.posts{
+            print("ii: \(i)")
+        }
         return 10
     }
     
