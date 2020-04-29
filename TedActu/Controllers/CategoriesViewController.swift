@@ -28,6 +28,8 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    static var staticSelf:CategoriesViewController?
+    
     var imgURLShare1: String?
     var loadNumber = 1
 //    var categories = ["SOCIÉTÉ", "POLITIQUE", "CULTURE", "SPORT", "SAVOIR+"]
@@ -35,13 +37,15 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        CategoriesViewController.staticSelf = self
+        
             tableView.rowHeight = 170
             tableView.estimatedRowHeight = 180
         
             tableView.dataSource = self
         
   //      Categories.getPostCategory()
-        getPostCategory2()
+  //      getPostCategory2()
     }
     
 //     //---- GET POST BY CATEGORIES
@@ -75,7 +79,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
 
     
 
-    private func getPostCategory2(){
+    func getPostCategory2(){
         //    self.activityIndicatory.startAnimating()
         //    self.activityIndicatory.isHidden = false
 
@@ -209,6 +213,11 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
             Categories.h()
             Categories.catID = "22"
             //getPostCategory()
+            
+            if let controller = CategoriesViewController.staticSelf {
+                   controller.getPostCategory2()
+            }
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CategoryRow
             cell.labelHeader1.text = "SOCIÉTÉ"
             cell.labelHeader1.textColor = .white
@@ -219,6 +228,9 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
             Categories.catID = "16"
             print("row2: \(row)")
             //getPostCategory()
+            
+            
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! CategoryRow2
             cell.labelHeader2.text = "POLITIQUE"
             cell.labelHeader2.textColor = .white
