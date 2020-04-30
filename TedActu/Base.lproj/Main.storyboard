@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="evn-Ie-ZwN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -14,7 +14,7 @@
             <objects>
                 <viewController storyboardIdentifier="tabBarController" modalTransitionStyle="flipHorizontal" id="BYZ-38-t0r" customClass="ViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0036190925166010857" green="0.083339817821979523" blue="0.28906852006912231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -30,16 +30,67 @@
             </objects>
             <point key="canvasLocation" x="139" y="102"/>
         </scene>
+        <!--Item 2-->
+        <scene sceneID="ZjO-dK-2Gg">
+            <objects>
+                <viewController id="sZB-8p-5IA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Imi-ta-mUc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="OMc-5e-kvL"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="fMA-QE-mwm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c8E-c7-pnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1151" y="-341"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="lkL-vb-meA">
+            <objects>
+                <viewController id="Ken-hf-UEc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IA4-hJ-luX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="BBd-ym-nLo"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="YhX-3H-lnt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HxM-Zc-FI6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1151" y="-1017"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="uLG-2W-bUX">
+            <objects>
+                <tabBarController storyboardIdentifier="tabBarController1" id="1nT-C6-Ihh" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="k2Q-mE-8kt"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Dx-Bc-vX3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ken-hf-UEc" kind="relationship" relationship="viewControllers" id="mgs-PY-fM3"/>
+                        <segue destination="sZB-8p-5IA" kind="relationship" relationship="viewControllers" id="MQo-GV-Ygz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywf-Yo-ERc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="-678"/>
+        </scene>
         <!--Playlist View Controller-->
         <scene sceneID="vZj-vU-YAM">
             <objects>
                 <viewController storyboardIdentifier="PlayListView" id="dv5-JI-dEA" customClass="PlaylistViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="duB-fu-8EF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TNM-MC-Pnb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="143" id="MVK-9N-1O7">
@@ -116,11 +167,11 @@
             <objects>
                 <viewController storyboardIdentifier="homeView" id="3Z0-eA-g3z" customClass="HomeViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="csB-od-0iH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R1t-Kf-ONq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="330" id="CZF-bE-kf2" customClass="HomeTableViewCell" customModule="TedActu" customModuleProvider="target">
@@ -157,7 +208,7 @@
                                 </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="1cX-go-VGv">
-                                <rect key="frame" x="141.5" y="255.5" width="37" height="37"/>
+                                <rect key="frame" x="141.5" y="265.5" width="37" height="37"/>
                                 <color key="color" red="0.94509803920000002" green="0.51372549020000002" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -187,7 +238,7 @@
             <objects>
                 <viewController id="95a-Zg-jEP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ug5-Ab-HXV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.10627212380000001" blue="0.28515332939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="nza-Ie-RT9"/>
@@ -203,11 +254,11 @@
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="t67-03-cAW" customClass="VideoDetailViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5YD-hH-jV7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZy-q7-jbJ">
-                                <rect key="frame" x="-8.5" y="210.5" width="337" height="43"/>
+                                <rect key="frame" x="-8.5" y="220.5" width="337" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="1hQ-5z-60Y"/>
                                     <constraint firstAttribute="width" constant="337" id="R00-pe-K7h"/>
@@ -217,7 +268,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WS-NM-YKp">
-                                <rect key="frame" x="0.0" y="56" width="320" height="144.5"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="166.5"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="TWV-5v-bTe"/>
@@ -225,7 +276,7 @@
                                 </constraints>
                             </webView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Loading Description..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yj7-g5-FS2">
-                                <rect key="frame" x="16" y="210.5" width="288" height="81"/>
+                                <rect key="frame" x="16" y="220.5" width="288" height="91"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="8ll-WR-PpN"/>
@@ -266,11 +317,11 @@
             <objects>
                 <viewController storyboardIdentifier="categories" id="Duf-v2-CV9" customClass="CategoriesViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CvI-mh-4JV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sWC-n5-xZY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="210" id="IxV-jf-eIf" customClass="CategoryRow" customModule="TedActu" customModuleProvider="target">
@@ -440,7 +491,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="uHn-MT-C4f"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G7P-LH-YpJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -459,7 +510,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="mQ4-79-USK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H9o-70-iQM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -474,7 +525,7 @@
         <!--Splash Screen View-->
         <scene sceneID="8Ua-mf-Zzp">
             <objects>
-                <viewController storyboardIdentifier="LaunchScreenViewController" id="fma-Tx-cP7" customClass="SplashScreenView" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashScreenView" id="fma-Tx-cP7" customClass="SplashScreenView" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rMX-R6-icu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -495,7 +546,8 @@
                     <navigationItem key="navigationItem" id="eN6-Uj-ZpQ"/>
                     <connections>
                         <outlet property="launchImgVw" destination="Reh-wg-T6M" id="f4d-FG-PD4"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" id="3wh-hy-JsE"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="" id="Xh6-Hn-HbF"/>
+                        <segue destination="1nT-C6-Ihh" kind="show" id="vmp-Uv-qBA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUa-ly-fXB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -505,8 +557,10 @@
         <!--Navigation Controller-->
         <scene sceneID="aLC-eb-dbG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="evn-Ie-ZwN" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="evn-Ie-ZwN" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QGH-L9-3Jm">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
