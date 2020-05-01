@@ -83,7 +83,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource{
         //    self.activityIndicatory.startAnimating()
         //    self.activityIndicatory.isHidden = false
 
-            TedActuAPIManager.shared.get(url: "http://ted.policite.org/wp-json/wp/v2/posts?page=\(loadNumber)&categories=16&_embed") { (result, error) in
+            TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?page=\(loadNumber)&categories=16&_embed") { (result, error) in
                 if error != nil{
                     // print(error!)
                     let errorAlertController = UIAlertController(title: "Cannot Get Data", message: "The Internet connections appears to be offline", preferredStyle: .alert)

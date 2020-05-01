@@ -60,7 +60,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private func getPostList(){
         
         self.activityIndicatory.startAnimating() //====================
-         TedActuAPIManager.shared.get(url: "http://ted.policite.org/wp-json/wp/v2/posts?&page=\(loadNumber)&_embed") { (result, error) in
+         TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&_embed") { (result, error) in
          
          if error != nil{
                 let errorAlertController = UIAlertController(title: "On ne peut pas obtenir de données", message: "La connexion Internet semble être hors ligne", preferredStyle: .alert)
@@ -85,7 +85,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.activityIndicatory.startAnimating()
         self.activityIndicatory.isHidden = false
         loadNumber = loadNumber + 1
-         TedActuAPIManager.shared.get(url: "http://ted.policite.org/wp-json/wp/v2/posts?&page=\(loadNumber)&_embed") { (result, error) in
+         TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&_embed") { (result, error) in
             
                 if error != nil{
                     let errorAlertController = UIAlertController(title: "On ne peut pas obtenir de données", message: "La connexion Internet semble être hors ligne", preferredStyle: .alert)
@@ -256,6 +256,25 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailsPostSegue" {
+            let detailViewController = segue.destination as! DetailsPostViewController
+             print("DetailsPost View segue")
+             let cell = sender as! UITableViewCell
+             let indexPath = tableView.indexPath(for: cell)
+             let post = posts[(indexPath?.row)!]
+             let postTitle = postsTitle[(indexPath?.row)!]
+             let postContent = postsContent[(indexPath?.row)!]
+             let imgPost = postsEmbed[(indexPath?.row)!]
+             let nameString = postsEmbed[(indexPath?.row)!]
+             detailViewController.post = post
+             detailViewController.nameString = nameString
+             detailViewController.postTitle = postTitle
+             detailViewController.postContent = postContent
+             detailViewController.imgPost = imgPost
+        }
+     }
     
 }// End of Class
 

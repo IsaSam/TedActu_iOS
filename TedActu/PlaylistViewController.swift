@@ -13,7 +13,7 @@ import Alamofire
 class PlaylistViewController: UIViewController {
     
     let UPLOADS_PLAYLIST_ID =  "UUYwjO810TxGsyEG9ytlRtbQ"
-    let API_KEY = "AIzaSyBQqgKRuhh2JuqOpKpwRULqtydyYSRkvn4"
+    let API_KEY = "AIzaSyAz-8jvbmxn-9NAZoIxtkrDvaXVyu6vq0E"
     let urlString = "https://www.googleapis.com/youtube/v3/playlistItems"
     
     var snippet: [[String: Any]] = []
@@ -32,7 +32,7 @@ class PlaylistViewController: UIViewController {
             tableView.delegate = self
             tableView.dataSource = self
             
-            getFeedsVideos()
+ //           getFeedsVideos()
             
 
         }

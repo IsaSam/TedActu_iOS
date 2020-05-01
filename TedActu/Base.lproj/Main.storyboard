@@ -198,7 +198,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imagePost" destination="uev-qR-VxQ" id="fkL-t0-0aI"/>
-                                            <segue destination="XE3-gz-CqO" kind="show" id="1LI-jj-Zne"/>
+                                            <segue destination="95a-Zg-jEP" kind="show" identifier="detailsPostSegue" id="dbH-nR-zvz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -233,21 +233,75 @@
             </objects>
             <point key="canvasLocation" x="1786.9565217391305" y="101.78571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Details Post View Controller-->
         <scene sceneID="p9h-hW-hqg">
             <objects>
-                <viewController id="95a-Zg-jEP" sceneMemberID="viewController">
+                <viewController id="95a-Zg-jEP" customClass="DetailsPostViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ug5-Ab-HXV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.10627212380000001" blue="0.28515332939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="hPc-3a-DEW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="322"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="322" id="xGW-M5-C1N"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beV-sc-8nk">
+                                <rect key="frame" x="16" y="357" width="288" height="191"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="191" id="Abe-yQ-1HN"/>
+                                </constraints>
+                                <string key="text">Fusce ante tortor, rhoncus rhoncus turpis at, dictum luctus orci. Cras mauris ante, gravida a velit ac, pellentesque porttitor neque. Nunc pretium sed sapien et lobortis nullam nec commodo arcu. Donec vitae sapien vel quam mattis ullamcorper.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="0.0" green="0.10627212380000001" blue="0.28515332939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5O4-2g-6TO">
+                                <rect key="frame" x="56" y="325" width="26" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="26" id="PPf-LC-K81"/>
+                                    <constraint firstAttribute="height" constant="24" id="uqJ-gF-2cV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" image="share-24"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-Ps-5cn">
+                                <rect key="frame" x="16" y="326" width="16" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="X9i-9v-lql"/>
+                                    <constraint firstAttribute="width" constant="16" id="hnF-ni-qz8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" image="download26"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sw5-Ps-5cn" firstAttribute="top" secondItem="hPc-3a-DEW" secondAttribute="bottom" constant="4" id="0iR-5d-3i1"/>
+                            <constraint firstItem="hPc-3a-DEW" firstAttribute="trailing" secondItem="nza-Ie-RT9" secondAttribute="trailing" id="2zJ-gz-OrW"/>
+                            <constraint firstItem="beV-sc-8nk" firstAttribute="top" secondItem="sw5-Ps-5cn" secondAttribute="bottom" constant="11" id="5i5-Fy-taq"/>
+                            <constraint firstItem="hPc-3a-DEW" firstAttribute="leading" secondItem="nza-Ie-RT9" secondAttribute="leading" id="Mfx-91-TOt"/>
+                            <constraint firstItem="beV-sc-8nk" firstAttribute="top" secondItem="5O4-2g-6TO" secondAttribute="bottom" constant="8" id="S7l-o4-LHY"/>
+                            <constraint firstItem="beV-sc-8nk" firstAttribute="leading" secondItem="nza-Ie-RT9" secondAttribute="leading" constant="16" id="SdC-Rg-yRK"/>
+                            <constraint firstItem="hPc-3a-DEW" firstAttribute="top" secondItem="nza-Ie-RT9" secondAttribute="top" id="aud-O4-woy"/>
+                            <constraint firstItem="nza-Ie-RT9" firstAttribute="bottom" secondItem="beV-sc-8nk" secondAttribute="bottom" constant="20" id="bEQ-SR-h0J"/>
+                            <constraint firstItem="5O4-2g-6TO" firstAttribute="top" secondItem="hPc-3a-DEW" secondAttribute="bottom" constant="3" id="cR7-V6-XeO"/>
+                            <constraint firstItem="sw5-Ps-5cn" firstAttribute="leading" secondItem="nza-Ie-RT9" secondAttribute="leading" constant="16" id="fSI-QT-djc"/>
+                            <constraint firstItem="nza-Ie-RT9" firstAttribute="trailing" secondItem="beV-sc-8nk" secondAttribute="trailing" constant="16" id="nBA-vR-pvu"/>
+                            <constraint firstItem="5O4-2g-6TO" firstAttribute="leading" secondItem="sw5-Ps-5cn" secondAttribute="trailing" constant="24" id="xWH-Lt-v4P"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nza-Ie-RT9"/>
                     </view>
                     <navigationItem key="navigationItem" id="42s-yx-GV6"/>
+                    <connections>
+                        <outlet property="contentLabel" destination="beV-sc-8nk" id="Sia-hU-j0T"/>
+                        <outlet property="postImageView" destination="hPc-3a-DEW" id="c76-hS-t7g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSd-RD-eUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3708.6956521739135" y="98.4375"/>
+            <point key="canvasLocation" x="2782.5" y="100.35211267605634"/>
         </scene>
         <!--Video Detail View Controller-->
         <scene sceneID="End-Hc-6ch">
@@ -503,25 +557,6 @@
             </objects>
             <point key="canvasLocation" x="138" y="1481"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="M9o-Sc-HRB">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XE3-gz-CqO" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="mQ4-79-USK"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H9o-70-iQM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="95a-Zg-jEP" kind="relationship" relationship="rootViewController" id="ak4-hB-jhN"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ka-1g-WFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2798.5507246376815" y="98.4375"/>
-        </scene>
         <!--Splash Screen View-->
         <scene sceneID="8Ua-mf-Zzp">
             <objects>
@@ -578,6 +613,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="download26" width="26" height="26"/>
+        <image name="placeholderImage" width="274" height="184"/>
+        <image name="share-24" width="24" height="24"/>
         <image name="tedact0" width="1152" height="1152"/>
     </resources>
 </document>
