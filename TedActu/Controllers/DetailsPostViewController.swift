@@ -44,6 +44,11 @@ class DetailsPostViewController: UIViewController{
         super.viewDidLoad()
         
 //        activityIndicatoryWeb.hidesWhenStopped = true
+        CategoriesID()
+        PostSelect()
+
+         }
+    func CategoriesID(){
         if categoryID != nil{
                     if categoryID as? NSObject == [16] as? NSObject{
                         viewTitleLabel.backgroundColor = UIColor(red: 0.47, green: 0.12, blue: 0.07, alpha: 1.00)
@@ -76,10 +81,7 @@ class DetailsPostViewController: UIViewController{
                         categoryID = 18
                     }
         }
-//        topBarLogo()
-        PostSelect()
-
-         }
+    }
 //    // show indicator
 //    func webViewDidStartLoad(_ webView: UIWebView){
 //        activityIndicatoryWeb.startAnimating()
