@@ -33,6 +33,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var refreshControl: UIRefreshControl!
     
     var categoryID: [[String: Any]] = []
+    var c1: Any?
+    var c2: [[Any]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +75,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
          }
             
          self.posts = result!
+            //=============
+            
+
+            
+//            for anItem in result! as [Dictionary<String, AnyObject>] {
+//                let postID = anItem["categories"]
+//                self.c1.append(postID as! [Any])
+//            //    print(postID!)
+//
+//            }
+//            for c in self.c1{
+//                print(c)
+//            }
+//            print("*-*")
+                
+            //============
+            
             DispatchQueue.main.async {
                 self.tableView?.reloadData()
                 self.activityIndicatory.stopAnimating()
@@ -99,12 +118,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             
             if result != nil{
-                //=============
-                for anItem in result! as [Dictionary<String, AnyObject>] {
-                let postID = anItem["categories"] as! Int
-                print(postID)}
-                print("*-*")
-                //============
                 do{
 
                     for item in result!
@@ -146,15 +159,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! HomeTableViewCell
     //=====================================================================
             let post = posts[indexPath.row]
-        
-//        for anItem in result! as [Dictionary<String, AnyObject>] {
-//        let postID = anItem["id"] as! Int
-//        print(postID)}
-//        print("*-*")
-        
-   //         let array: AnyObject? = post["categories"] as AnyObject?
-     //       let cate = post["categories"] as? Int
-        
+        self.c1 = post["categories"] as? [Any]
+        if self.c1 as? NSObject == [22] as? NSObject{
+            print("yeye")
+        }else{
+            print("nop")
+        }
+        print(c1!)
+            print("ccc")
         print("---===")
         
         
@@ -179,22 +191,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let imgArray = (postImage as AnyObject).value(forKey: "wp:featuredmedia")
                 let mediaDetails = (imgArray as AnyObject).value(forKey: "media_details")
                 let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
-        
-        do{
-            
-                let nameC =  (postImage as AnyObject).value(forKey: "wp:term")
-            
-                let dataDic1 = nameC as? [[String: Any]]
-                if dataDic1 != nil{
-                self.categoryID = dataDic1!
-                for cat in categoryID{
-                    let name = cat["name"] as? String
-                    print(name!)
-                    print("---")
-                }
-                }else{print("datanil")}
-                
-    }
         
         //self.categoryID = nameC as! [[String : Any]]
         
@@ -344,6 +340,7 @@ extension Sequence {
         return map { $0[keyPath: keyPath] }
     }
 }
+
 
 
 
