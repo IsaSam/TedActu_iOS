@@ -32,6 +32,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var imagePost2: UIImage?
     var refreshControl: UIRefreshControl!
     
+    var categoryID: [[String: Any]] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -95,7 +97,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     
                     return
                 }
+            
             if result != nil{
+                //=============
+                for anItem in result! as [Dictionary<String, AnyObject>] {
+                let postID = anItem["categories"] as! Int
+                print(postID)}
+                print("*-*")
+                //============
                 do{
 
                     for item in result!
@@ -104,14 +113,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         self.posts.append(item)
                         
                     }
-                    
+
                     DispatchQueue.main.async {
                         self.tableView?.reloadData()
                         self.activityIndicatory.stopAnimating()
                         self.activityIndicatory.isHidden = true
                     }
                 }
-        }else{
+        }
+
+            else{
                 let errorAlertController = UIAlertController(title: "Désolé, Fin des articles!", message: "Remonter la liste", preferredStyle: .alert)
                 let cancelAction = UIAlertAction(title: "OK", style: .cancel)
                 errorAlertController.addAction(cancelAction)
@@ -135,27 +146,70 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! HomeTableViewCell
     //=====================================================================
             let post = posts[indexPath.row]
-            
+        
+//        for anItem in result! as [Dictionary<String, AnyObject>] {
+//        let postID = anItem["id"] as! Int
+//        print(postID)}
+//        print("*-*")
+        
+   //         let array: AnyObject? = post["categories"] as AnyObject?
+     //       let cate = post["categories"] as? Int
+        
+        print("---===")
+        
+        
             do{
                 let titleDic = (posts as AnyObject).value(forKey: "title")
                 let embedDic = (posts as AnyObject).value(forKey: "_embedded")
-                let contentDic = (posts as AnyObject).value(forKey: "content")
+                let excerptDic = (posts as AnyObject).value(forKey: "excerpt")
                 
                 let titleDicString = titleDic as? [[String: Any]]
                 let embedDicString = embedDic as? [[String: Any]]
-                let contentDicString = contentDic as? [[String: Any]]
+                let excerptDicString = excerptDic as? [[String: Any]]
                 
                 self.postsTitle = titleDicString!
                 self.postsEmbed = embedDicString!
-                self.postsContent = contentDicString!
+                self.postsContent = excerptDicString!
             }
             let postTitle = postsTitle[indexPath.row]
             let postContent = postsContent[indexPath.row]
             let postImage = postsEmbed[indexPath.row]
-            
+
+        
             let imgArray = (postImage as AnyObject).value(forKey: "wp:featuredmedia")
-            let mediaDetails = (imgArray as AnyObject).value(forKey: "media_details")
-            let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
+                let mediaDetails = (imgArray as AnyObject).value(forKey: "media_details")
+                let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
+        
+        do{
+            
+                let nameC =  (postImage as AnyObject).value(forKey: "wp:term")
+            
+                let dataDic1 = nameC as? [[String: Any]]
+                if dataDic1 != nil{
+                self.categoryID = dataDic1!
+                for cat in categoryID{
+                    let name = cat["name"] as? String
+                    print(name!)
+                    print("---")
+                }
+                }else{print("datanil")}
+                
+    }
+        
+        //self.categoryID = nameC as! [[String : Any]]
+        
+//        for dic in categoryID{
+//            let name =  categoryID["name"] as? String
+//        }
+        
+        
+//                let jsonArray = nameC as? [[String: Any]]
+                print("===")
+//                print(jsonArray!)
+                //Now get title value
+//                guard let title = jsonArray[0]["title"] as? String else { return } print(title) //compiler outout -  delectus aut autem
+//                print(nameC!)
+                
             
             let encoded = postTitle["rendered"] as? String
 //            cell.titleLabel.text = encoded?.stringByDecodingHTMLEntities
@@ -203,8 +257,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //            }
             
             do{
-                let medium =  (sizes as AnyObject).value(forKey: "full")
-                let dataDic = medium as? [[String: Any]]
+                let full =  (sizes as AnyObject).value(forKey: "full")
+                let dataDic = full as? [[String: Any]]
                 if dataDic != nil{
                     
                     self.imgPosts = dataDic!
@@ -277,6 +331,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
      }
     
 }// End of Class
+extension String {
+    func contains(find: String) -> Bool{
+        return self.range(of: find) != nil
+    }
+    func containsIgnoringCase(find: String) -> Bool{
+        return self.range(of: find, options: .caseInsensitive) != nil
+    }
+}
+extension Sequence {
+    func map<T>(_ keyPath: KeyPath<Element, T>) -> [T] {
+        return map { $0[keyPath: keyPath] }
+    }
+}
 
 
 

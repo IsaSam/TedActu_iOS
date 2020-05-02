@@ -21,6 +21,7 @@ class DetailsPostViewController: UIViewController{
     @IBOutlet var postImageView: UIImageView!
 //    @IBOutlet var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var viewTitleLabel: UIView!
     
 //    @IBOutlet weak var searchBar: UISearchBar!
 //    @IBOutlet weak var activityIndicatory: UIActivityIndicatorView!
@@ -77,7 +78,7 @@ class DetailsPostViewController: UIViewController{
     func PostSelect(){
         
 //        let titleDic = (post as AnyObject).value(forKey: "title")
-        let contentDic = (post as AnyObject).value(forKey: "content")
+        let contentDic = (post as AnyObject).value(forKey: "excerpt")
         let embedDic = (post as AnyObject).value(forKey: "_embedded")
         
 //        let titleDicString = titleDic! as! [String : Any]
