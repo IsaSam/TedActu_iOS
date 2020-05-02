@@ -32,7 +32,7 @@ class PlaylistViewController: UIViewController {
             tableView.delegate = self
             tableView.dataSource = self
             
-            getFeedsVideos()
+ //           getFeedsVideos()
             
 
         }

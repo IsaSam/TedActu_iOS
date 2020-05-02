@@ -32,14 +32,28 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var imagePost2: UIImage?
     var refreshControl: UIRefreshControl!
     
+   // var categoryID: [[String: Any]] = []
+    var c1: Any?
+    var categoryID: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl.addTarget(self, action: #selector(HomeViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
         
-        getPostList()
+        if Reachability.isConnectedToNetwork(){
+            print("Internet Connection Available!")
+            getPostList()
+        }else{
+                print("Internet Connection not Available!")
+                let errorAlertController = UIAlertController(title: "On ne peut pas obtenir de données", message: "La connexion Internet semble être hors ligne", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "Réessayer", style: .cancel)
+                   errorAlertController.addAction(cancelAction)
+                self.present(errorAlertController, animated: true)
+        }
     }
     
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
@@ -50,7 +64,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private func getPostList(){
         
         self.activityIndicatory.startAnimating() //====================
-         TedActuAPIManager.shared.get(url: "http://ted.policite.org/wp-json/wp/v2/posts?&page=\(loadNumber)&_embed") { (result, error) in
+         TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&_embed") { (result, error) in
          
          if error != nil{
                 let errorAlertController = UIAlertController(title: "On ne peut pas obtenir de données", message: "La connexion Internet semble être hors ligne", preferredStyle: .alert)
@@ -61,6 +75,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
          }
             
          self.posts = result!
+            //=============
+            
+
+            
+//            for anItem in result! as [Dictionary<String, AnyObject>] {
+//                let postID = anItem["categories"]
+//                self.c1.append(postID as! [Any])
+//            //    print(postID!)
+//
+//            }
+//            for c in self.c1{
+//                print(c)
+//            }
+//            print("*-*")
+                
+            //============
+            
             DispatchQueue.main.async {
                 self.tableView?.reloadData()
                 self.activityIndicatory.stopAnimating()
@@ -75,7 +106,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.activityIndicatory.startAnimating()
         self.activityIndicatory.isHidden = false
         loadNumber = loadNumber + 1
-         TedActuAPIManager.shared.get(url: "http://ted.policite.org/wp-json/wp/v2/posts?&page=\(loadNumber)&_embed") { (result, error) in
+         TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&_embed") { (result, error) in
             
                 if error != nil{
                     let errorAlertController = UIAlertController(title: "On ne peut pas obtenir de données", message: "La connexion Internet semble être hors ligne", preferredStyle: .alert)
@@ -85,6 +116,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     
                     return
                 }
+            
             if result != nil{
                 do{
 
@@ -94,14 +126,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         self.posts.append(item)
                         
                     }
-                    
+
                     DispatchQueue.main.async {
                         self.tableView?.reloadData()
                         self.activityIndicatory.stopAnimating()
                         self.activityIndicatory.isHidden = true
                     }
                 }
-        }else{
+        }
+
+            else{
                 let errorAlertController = UIAlertController(title: "Désolé, Fin des articles!", message: "Remonter la liste", preferredStyle: .alert)
                 let cancelAction = UIAlertAction(title: "OK", style: .cancel)
                 errorAlertController.addAction(cancelAction)
@@ -125,28 +159,31 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! HomeTableViewCell
     //=====================================================================
             let post = posts[indexPath.row]
-            
+////       self.c1 = post["categories"] as? [Any]
+     
             do{
                 let titleDic = (posts as AnyObject).value(forKey: "title")
                 let embedDic = (posts as AnyObject).value(forKey: "_embedded")
-                let contentDic = (posts as AnyObject).value(forKey: "content")
+                let excerptDic = (posts as AnyObject).value(forKey: "excerpt")
                 
                 let titleDicString = titleDic as? [[String: Any]]
                 let embedDicString = embedDic as? [[String: Any]]
-                let contentDicString = contentDic as? [[String: Any]]
+                let excerptDicString = excerptDic as? [[String: Any]]
                 
                 self.postsTitle = titleDicString!
                 self.postsEmbed = embedDicString!
-                self.postsContent = contentDicString!
+                self.postsContent = excerptDicString!
             }
             let postTitle = postsTitle[indexPath.row]
             let postContent = postsContent[indexPath.row]
             let postImage = postsEmbed[indexPath.row]
-            
+
+        
             let imgArray = (postImage as AnyObject).value(forKey: "wp:featuredmedia")
-            let mediaDetails = (imgArray as AnyObject).value(forKey: "media_details")
-            let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
-            
+                let mediaDetails = (imgArray as AnyObject).value(forKey: "media_details")
+                let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
+        
+                print("===")
             let encoded = postTitle["rendered"] as? String
 //            cell.titleLabel.text = encoded?.stringByDecodingHTMLEntities
             let title_ = encoded?.stringByDecodingHTMLEntities
@@ -193,8 +230,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //            }
             
             do{
-                let medium =  (sizes as AnyObject).value(forKey: "medium_large")
-                let dataDic = medium as? [[String: Any]]
+                let full =  (sizes as AnyObject).value(forKey: "full")
+                let dataDic = full as? [[String: Any]]
                 if dataDic != nil{
                     
                     self.imgPosts = dataDic!
@@ -246,8 +283,46 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailsPostSegue" {
+            let detailViewController = segue.destination as! DetailsPostViewController
+             print("DetailsPost View segue")
+             let cell = sender as! UITableViewCell
+             let indexPath = tableView.indexPath(for: cell)
+             let post = posts[(indexPath?.row)!]
+             let postTitle = postsTitle[(indexPath?.row)!]
+             let postContent = postsContent[(indexPath?.row)!]
+             let imgPost = postsEmbed[(indexPath?.row)!]
+             let nameString = postsEmbed[(indexPath?.row)!]
+    //         self.c1 = post["categories"] as? [Any]
+            let cate = post["categories"] as? [Any]
+             
+            
+             detailViewController.post = post
+             detailViewController.nameString = nameString
+             detailViewController.postTitle = postTitle
+             detailViewController.postContent = postContent
+             detailViewController.imgPost = imgPost
+            detailViewController.categoryID = cate
+        }
+     }
     
 }// End of Class
+extension String {
+    func contains(find: String) -> Bool{
+        return self.range(of: find) != nil
+    }
+    func containsIgnoringCase(find: String) -> Bool{
+        return self.range(of: find, options: .caseInsensitive) != nil
+    }
+}
+extension Sequence {
+    func map<T>(_ keyPath: KeyPath<Element, T>) -> [T] {
+        return map { $0[keyPath: keyPath] }
+    }
+}
+
 
 
 
