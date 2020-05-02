@@ -82,6 +82,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imagePost" destination="LRc-t6-7OK" id="0ro-aO-OZJ"/>
+                                            <segue destination="95a-Zg-jEP" kind="show" identifier="detailsPostSegue" id="fw7-na-gke"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -251,7 +252,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="95a-Zg-jEP" kind="show" identifier="detailsPostSegue" id="dbH-nR-zvz"/>
+                                            <segue destination="95a-Zg-jEP" kind="show" identifier="detailsPostSegue1" id="dbH-nR-zvz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -691,4 +692,7 @@
         <image name="share-24" width="24" height="24"/>
         <image name="tedact0" width="1152" height="1152"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fw7-na-gke"/>
+    </inferredMetricsTieBreakers>
 </document>
