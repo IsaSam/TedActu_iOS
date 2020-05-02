@@ -32,9 +32,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var imagePost2: UIImage?
     var refreshControl: UIRefreshControl!
     
-    var categoryID: [[String: Any]] = []
+   // var categoryID: [[String: Any]] = []
     var c1: Any?
-    var c2: [[Any]] = []
+    var categoryID: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -159,17 +159,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! HomeTableViewCell
     //=====================================================================
             let post = posts[indexPath.row]
-        self.c1 = post["categories"] as? [Any]
-        if self.c1 as? NSObject == [22] as? NSObject{
-            print("yeye")
-        }else{
-            print("nop")
-        }
-        print(c1!)
-            print("ccc")
-        print("---===")
-        
-        
+////       self.c1 = post["categories"] as? [Any]
+     
             do{
                 let titleDic = (posts as AnyObject).value(forKey: "title")
                 let embedDic = (posts as AnyObject).value(forKey: "_embedded")
@@ -192,21 +183,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 let mediaDetails = (imgArray as AnyObject).value(forKey: "media_details")
                 let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
         
-        //self.categoryID = nameC as! [[String : Any]]
-        
-//        for dic in categoryID{
-//            let name =  categoryID["name"] as? String
-//        }
-        
-        
-//                let jsonArray = nameC as? [[String: Any]]
                 print("===")
-//                print(jsonArray!)
-                //Now get title value
-//                guard let title = jsonArray[0]["title"] as? String else { return } print(title) //compiler outout -  delectus aut autem
-//                print(nameC!)
-                
-            
             let encoded = postTitle["rendered"] as? String
 //            cell.titleLabel.text = encoded?.stringByDecodingHTMLEntities
             let title_ = encoded?.stringByDecodingHTMLEntities
@@ -318,11 +295,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
              let postContent = postsContent[(indexPath?.row)!]
              let imgPost = postsEmbed[(indexPath?.row)!]
              let nameString = postsEmbed[(indexPath?.row)!]
+    //         self.c1 = post["categories"] as? [Any]
+            let cate = post["categories"] as? [Any]
+             
+            
              detailViewController.post = post
              detailViewController.nameString = nameString
              detailViewController.postTitle = postTitle
              detailViewController.postContent = postContent
              detailViewController.imgPost = imgPost
+            detailViewController.categoryID = cate
         }
      }
     

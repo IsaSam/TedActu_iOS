@@ -36,6 +36,7 @@ class DetailsPostViewController: UIViewController{
     var postContent: [String: Any]?
     var postImage: [String: Any]?
     var imgPosts: [[String: Any]] = []
+    var categoryID: Any?
     
     // MARK: - Main
     
@@ -43,7 +44,38 @@ class DetailsPostViewController: UIViewController{
         super.viewDidLoad()
         
 //        activityIndicatoryWeb.hidesWhenStopped = true
-        
+        if categoryID != nil{
+                    if categoryID as? NSObject == [16] as? NSObject{
+                        viewTitleLabel.backgroundColor = UIColor(red: 0.47, green: 0.12, blue: 0.07, alpha: 1.00)
+                        print("Politique")
+                        categoryID = 16
+                    }else if categoryID as? NSObject == [22] as? NSObject{
+                        viewTitleLabel.backgroundColor = UIColor(red: 0.91, green: 0.72, blue: 0.18, alpha: 1.00)
+                        print("(((")
+                        print("Savoir+")
+                        categoryID = 22
+                    }
+                    else if categoryID as? NSObject == [23] as? NSObject{
+                        viewTitleLabel.backgroundColor = UIColor(red: 0.02, green: 0.02, blue: 0.02, alpha: 1.00)
+                        print("Anket")
+                        categoryID = 23
+                    }
+                    else if categoryID as? NSObject == [19] as? NSObject{
+                        viewTitleLabel.backgroundColor = UIColor(red: 0.19, green: 0.63, blue: 0.98, alpha: 1.00)
+                        print("Sport")
+                        categoryID = 19
+                    }
+                    else if categoryID as? NSObject == [20] as? NSObject{
+                        viewTitleLabel.backgroundColor = UIColor(red: 0.25, green: 0.54, blue: 0.16, alpha: 1.00)
+                        print("Culture")
+                        categoryID = 20
+                    }
+                    else if categoryID as? NSObject == [18] as? NSObject{
+                        viewTitleLabel.backgroundColor = UIColor(red: 0.50, green: 0.20, blue: 0.56, alpha: 1.00)
+                        print("Société")
+                        categoryID = 18
+                    }
+        }
 //        topBarLogo()
         PostSelect()
 
