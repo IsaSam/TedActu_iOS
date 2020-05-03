@@ -32,6 +32,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var imagePost2: UIImage?
     var refreshControl: UIRefreshControl!
     
+   
+    
    // var categoryID: [[String: Any]] = []
     var c1: Any?
     var categoryID: Int?
@@ -307,7 +309,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //         self.c1 = post["categories"] as? [Any]
             let cate = post["categories"] as? [Any]
              
-            
              detailViewController.post = post
              detailViewController.nameString = nameString
              detailViewController.postTitle = postTitle
