@@ -199,7 +199,6 @@
         <!--Details Post View Controller-->
         <scene sceneID="p9h-hW-hqg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tSd-RD-eUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="95a-Zg-jEP" customClass="DetailsPostViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ug5-Ab-HXV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -291,9 +290,11 @@
                     <connections>
                         <outlet property="contentLabel" destination="beV-sc-8nk" id="Sia-hU-j0T"/>
                         <outlet property="postImageView" destination="hPc-3a-DEW" id="c76-hS-t7g"/>
+                        <outlet property="titleLabel" destination="1vC-b7-tEZ" id="JwQ-bB-6Ba"/>
                         <outlet property="viewTitleLabel" destination="Enc-35-OKG" id="BZq-Ss-2oe"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tSd-RD-eUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3091.875" y="-1017.2535211267606"/>
         </scene>
@@ -435,7 +436,6 @@
         <!--Accueil-->
         <scene sceneID="pLG-ue-D2a">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KB7-kE-e9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QKj-av-JE1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Accueil" image="house" catalog="system" selectedImage="house.fill" id="YhX-3H-lnt"/>
                     <toolbarItems/>
@@ -448,6 +448,7 @@
                         <segue destination="Ken-hf-UEc" kind="relationship" relationship="rootViewController" id="76r-DP-9Sy"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KB7-kE-e9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1149.375" y="-1017.2535211267606"/>
         </scene>
