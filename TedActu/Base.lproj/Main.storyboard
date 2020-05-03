@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="evn-Ie-ZwN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sZB-8p-5IA">
     <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -11,18 +11,61 @@
         <!--Catégories-->
         <scene sceneID="ZjO-dK-2Gg">
             <objects>
-                <viewController id="sZB-8p-5IA" sceneMemberID="viewController">
+                <viewController id="sZB-8p-5IA" customClass="ListCategoriesViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Imi-ta-mUc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-2m-Y5x">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListCategoriesCell" rowHeight="120" id="T5t-QC-In0" customClass="ListCategoriesTableViewCell" customModule="TedActu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T5t-QC-In0" id="mT6-np-bak">
+                                            <rect key="frame" x="0.0" y="0.0" width="294" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CfR-tg-N0d">
+                                                    <rect key="frame" x="10" y="10" width="274" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="0uw-nx-iP6"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="CfR-tg-N0d" secondAttribute="bottom" constant="10" id="JdL-dm-OPm"/>
+                                                <constraint firstItem="CfR-tg-N0d" firstAttribute="leading" secondItem="mT6-np-bak" secondAttribute="leading" constant="10" id="dYa-8Q-PBD"/>
+                                                <constraint firstAttribute="trailing" secondItem="CfR-tg-N0d" secondAttribute="trailing" constant="10" id="iZ0-pD-vJz"/>
+                                                <constraint firstItem="CfR-tg-N0d" firstAttribute="top" secondItem="mT6-np-bak" secondAttribute="top" constant="10" id="xxU-U2-Mat"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="imageListCategories" destination="CfR-tg-N0d" id="LCQ-lZ-tgo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="sZB-8p-5IA" id="NM5-eM-SuN"/>
+                                    <outlet property="delegate" destination="sZB-8p-5IA" id="l0P-d2-tCf"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="OMc-5e-kvL" firstAttribute="bottom" secondItem="Toe-2m-Y5x" secondAttribute="bottom" id="SZF-Kg-wlm"/>
+                            <constraint firstItem="OMc-5e-kvL" firstAttribute="trailing" secondItem="Toe-2m-Y5x" secondAttribute="trailing" id="cEJ-Ha-Ht3"/>
+                            <constraint firstItem="Toe-2m-Y5x" firstAttribute="leading" secondItem="OMc-5e-kvL" secondAttribute="leading" id="cpr-uB-EC3"/>
+                            <constraint firstItem="Toe-2m-Y5x" firstAttribute="top" secondItem="OMc-5e-kvL" secondAttribute="top" id="reH-ca-7Md"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OMc-5e-kvL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Catégories" image="list.dash" catalog="system" selectedImage="list.bullet.indent" id="fMA-QE-mwm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8E-c7-pnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="140"/>
+            <point key="canvasLocation" x="138.75" y="139.43661971830986"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="lkL-vb-meA">
