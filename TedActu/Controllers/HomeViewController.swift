@@ -11,6 +11,11 @@ import AlamofireImage
 import SwiftyJSON
 import SDWebImage
 
+
+struct MyVariables {
+    static var rowSelect: Int?
+}
+
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
 
@@ -32,11 +37,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var imagePost2: UIImage?
     var refreshControl: UIRefreshControl!
     
-   
     
    // var categoryID: [[String: Any]] = []
     var c1: Any?
     var categoryID: Int?
+    var catID: String?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,10 +51,43 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+       
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("rowSelect: \(MyVariables.rowSelect ?? -1)")
+        
+        if MyVariables.rowSelect != -1{
+            if MyVariables.rowSelect == 0 {
+                   catID = "16"
+                   print("Catégorie POLITIQUE")
+               }
+               else if MyVariables.rowSelect == 1 {
+                   catID = "22"
+                   print("Catégorie SAVOIR+")
+               }
+                else if MyVariables.rowSelect == 2 {
+                    catID = "18"
+                    print("Catégorie SOCIÉTÉ")
+                }
+                else if MyVariables.rowSelect == 3 {
+                    catID = "19"
+                    print("Catégorie SPORT")
+                }
+                else if MyVariables.rowSelect == 4 {
+                    catID = "20"
+                    print("Catégorie CULTURE")
+                }
+                else if MyVariables.rowSelect == 5 {
+                    catID = "23"
+                    print("Catégorie ANKÈT")
+                }
+        }else{
+            catID = ""
+            print("Toutes les Catégories")
+        }
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl.addTarget(self, action: #selector(HomeViewController.didPullToRefresh(_:)), for: .valueChanged)
@@ -75,7 +113,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private func getPostList(){
         
         self.activityIndicatory.startAnimating() //====================
-         TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&_embed") { (result, error) in
+        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&categories=\(catID ?? "")&_embed") { (result, error) in
          
          if error != nil{
                 let errorAlertController = UIAlertController(title: "On ne peut pas obtenir de données", message: "La connexion Internet semble être hors ligne", preferredStyle: .alert)
@@ -104,7 +142,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             //============
             
             DispatchQueue.main.async {
-                self.tableView?.reloadData()
+                self.tableView.reloadData()
                 self.activityIndicatory.stopAnimating()
                 self.activityIndicatory.isHidden = true
             }
@@ -117,7 +155,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.activityIndicatory.startAnimating()
         self.activityIndicatory.isHidden = false
         loadNumber = loadNumber + 1
-         TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&_embed") { (result, error) in
+        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&categories=\(catID ?? "")&_embed") { (result, error) in
             
                 if error != nil{
                     let errorAlertController = UIAlertController(title: "On ne peut pas obtenir de données", message: "La connexion Internet semble être hors ligne", preferredStyle: .alert)
@@ -139,7 +177,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     }
 
                     DispatchQueue.main.async {
-                        self.tableView?.reloadData()
+                        self.tableView.reloadData()
                         self.activityIndicatory.stopAnimating()
                         self.activityIndicatory.isHidden = true
                     }

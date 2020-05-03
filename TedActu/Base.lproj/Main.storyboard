@@ -43,6 +43,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageListCategories" destination="CfR-tg-N0d" id="LCQ-lZ-tgo"/>
+                                            <segue destination="1nT-C6-Ihh" kind="show" identifier="CategoriesHome" id="h6W-cm-7Zq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -64,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8E-c7-pnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="193"/>
+            <point key="canvasLocation" x="1564" y="235"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="lkL-vb-meA">
@@ -354,7 +355,7 @@
         <scene sceneID="End-Hc-6ch">
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="t67-03-cAW" customClass="VideoDetailViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5YD-hH-jV7">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="5YD-hH-jV7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -491,6 +492,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QKj-av-JE1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Accueil" image="house" catalog="system" selectedImage="house.fill" id="YhX-3H-lnt"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="SNI-Ub-RE0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Olo-Mo-jmz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -517,4 +519,8 @@
         <image name="video" catalog="system" width="64" height="40"/>
         <image name="video.fill" catalog="system" width="64" height="40"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MQo-GV-Ygz"/>
+        <segue reference="h6W-cm-7Zq"/>
+    </inferredMetricsTieBreakers>
 </document>

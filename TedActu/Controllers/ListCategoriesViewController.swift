@@ -22,12 +22,7 @@ class ListCategoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
-
-
 }
 extension ListCategoriesViewController : UITableViewDataSource , UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,7 +38,11 @@ extension ListCategoriesViewController : UITableViewDataSource , UITableViewDele
         return cell
         
     }
- 
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        MyVariables.rowSelect = row
+        tableView.deselectRow(at: indexPath, animated: true) // to remove
+    }
+
+  
 }
