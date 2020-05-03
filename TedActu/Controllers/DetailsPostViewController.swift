@@ -142,18 +142,18 @@ class DetailsPostViewController: UIViewController{
     
     // MARK: - Share Button
 
-//    @IBAction func btnShareTapped(_ sender: Any) {
-//        let title = titleLabel.text
-//        let URl = post![PostKeys.link]
-//        let image = postImageView.image
-//
-//        let vc = UIActivityViewController(activityItems: [title, URl, image], applicationActivities: [])
-//        if let popoverController = vc.popoverPresentationController{
-//            popoverController.sourceView = self.view
-//            popoverController.sourceRect = self.view.bounds
-//        }
-//        self.present(vc, animated: true, completion: nil)
-//    }
+    @IBAction func btnShareTapped(_ sender: Any) {
+        let title = titleLabel.text
+        let URl = post![PostKeys.link]
+        let image = postImageView.image
+
+        let vc = UIActivityViewController(activityItems: [title, URl, image], applicationActivities: [])
+        if let popoverController = vc.popoverPresentationController{
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = self.view.bounds
+        }
+        self.present(vc, animated: true, completion: nil)
+    }
 
 
     override func didReceiveMemoryWarning() {

@@ -264,6 +264,9 @@
                                 <state key="normal" title="Partager" image="share-24">
                                     <color key="titleColor" red="0.0" green="0.10627212380000001" blue="0.28515332939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnShareTapped:" destination="95a-Zg-jEP" eventType="touchUpInside" id="nKs-DG-6Ad"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
