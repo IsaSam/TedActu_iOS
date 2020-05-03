@@ -43,11 +43,17 @@ class DetailsPostViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarController?.tabBar.isHidden = true
+        
 //        activityIndicatoryWeb.hidesWhenStopped = true
         CategoriesID()
         PostSelect()
 
          }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
     func CategoriesID(){
         if categoryID != nil{
                     if categoryID as? NSObject == [16] as? NSObject{
