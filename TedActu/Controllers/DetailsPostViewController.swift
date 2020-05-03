@@ -19,7 +19,7 @@ enum PostKeys {
 
 class DetailsPostViewController: UIViewController{
     @IBOutlet var postImageView: UIImageView!
-//    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var viewTitleLabel: UIView!
     
@@ -88,44 +88,21 @@ class DetailsPostViewController: UIViewController{
                     }
         }
     }
-//    // show indicator
-//    func webViewDidStartLoad(_ webView: UIWebView){
-//        activityIndicatoryWeb.startAnimating()
-//        activityIndicatoryWeb.isHidden = false
-//    }
-//    // hide indicator
-//    func webViewDidFinishLoad(_ webView: UIWebView){
-//        activityIndicatoryWeb.stopAnimating()
-//        activityIndicatoryWeb.isHidden = true
-//    }
-//     // hide indicator
-//    func webView(_ webView: UIWebView, didFailLoadWithError error: Error){
-//        activityIndicatoryWeb.stopAnimating()
-//        activityIndicatoryWeb.isHidden = true
-//    }
-    
-//    func topBarLogo(){
-//        let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
-//        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
-//        imageView.contentMode = .scaleAspectFit
-//        let image = UIImage(named: "ayibopost-logo-blanc-2.png")
-//        imageView.image = image
-//        logoContainer.addSubview(imageView)
-//        navigationItem.titleView = logoContainer
-//    }
-    
-    
+  
     func PostSelect(){
         
-//        let titleDic = (post as AnyObject).value(forKey: "title")
+        let titleDic = (post as AnyObject).value(forKey: "title")
         let contentDic = (post as AnyObject).value(forKey: "excerpt")
         let embedDic = (post as AnyObject).value(forKey: "_embedded")
         
-//        let titleDicString = titleDic! as! [String : Any]
+        let titleDicString = titleDic! as! [String : Any]
         let contentDicString = contentDic! as! [String: Any]
         let embedDicString = embedDic! as! [String: Any]
         
- //       titleLabel.text = (titleDicString as AnyObject).value(forKey: "rendered") as? String
+        let htmlTitle = (titleDicString as AnyObject).value(forKey: "rendered") as? String
+        let title = htmlTitle?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        titleLabel.text = title?.stringByDecodingHTMLEntities
+        
  //       BookmarksUp = false
         let htmlTag = (contentDicString as AnyObject).value(forKey: "rendered") as? String
         let content = htmlTag?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
@@ -137,122 +114,6 @@ class DetailsPostViewController: UIViewController{
         let mediaDetails = (imgArray as AnyObject).value(forKey: "media_details")
         let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
         
-//        //Author Name
-//        if let author = (embedDicString as AnyObject).value(forKey: "author"){
-//            let dataDicAuthor = author as? [[String: Any]]
-//            self.Name = dataDicAuthor!
-//
-//            let authorImg = (author as AnyObject).value(forKey: "simple_local_avatar")
-//            let authorImgDic = authorImg as? [[String: Any]]
-//            if authorImgDic != nil{
-//                self.authorsImg = authorImgDic!
-//            }
-//
-//        }
-        
-//        for author in Name{
-//            let authorNameE = author["name"] as? String
-//            let authorDescR = author["description"] as? String
-//            let authorName = authorNameE?.stringByDecodingHTMLEntities
-//            let authorDescr = authorDescR?.stringByDecodingHTMLEntities
-//            if authorName == "Guest author" || authorName == "Admin" || authorName == "Ayibopost" {
-//                authorNameLabel.text = ""
-//                authorNameLabel2.text = ""
-//            }else{
-//                authorNameLabel.text = "Par " + authorName!
-//                authorNameLabel2.text = authorName!
-//            }
-//            authorDesc.text = authorDescr!
-//        }
-        
-//        for image in authorsImg{
-//            let imageURL = image["80"] as? String
-//            let imageURL2 = image["80"] as? String
-//            if let imagePath = imageURL,
-//                let imgUrl = URL(string:  imagePath){
-//                authorPicture.layer.borderColor = UIColor.white.cgColor
-//                authorPicture.layer.borderWidth = 2.0
-//                authorPicture.layer.cornerRadius = authorPicture.frame.height / 2
-//                authorPicture.clipsToBounds = true
-//                authorPicture.af_setImage(withURL: imgUrl)
-//            }
-//            else{
-//                authorPicture.layer.borderColor = UIColor.white.cgColor
-//                authorPicture.layer.borderWidth = 2.0
-//                authorPicture.layer.cornerRadius = authorPicture.frame.height / 2
-//                authorPicture.clipsToBounds = true
-//                //cell.imageTeam.image = nil
-//                authorPicture.image = UIImage(named: "FN.jpg") //image place
-//            }
-//            if let imagePath2 = imageURL2,
-//                let imgUrl2 = URL(string: imagePath2){
-//                authorPicture2.layer.borderColor = UIColor.white.cgColor
-//                authorPicture2.layer.borderWidth = 2.0
-//                authorPicture2.layer.cornerRadius = authorPicture2.frame.height / 2
-//                authorPicture2.clipsToBounds = true
-//                authorPicture2.af_setImage(withURL: imgUrl2)
-//            }
-//            else{
-//                authorPicture2.layer.borderColor = UIColor.white.cgColor
-//                authorPicture2.layer.borderWidth = 2.0
-//                authorPicture2.layer.cornerRadius = authorPicture2.frame.height / 2
-//                authorPicture2.clipsToBounds = true
-//                //cell.imageTeam.image = nil
-//                authorPicture2.image = UIImage(named: "FN.jpg") //image place
-//            }
-//
-//        }
-        //Date
-        
-//        //date format conversion
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd"
-//        let newDateFormatter = DateFormatter()
-//        //        newDateFormatter.dateFormat = "MMM dd, yyyy"
-//        newDateFormatter.dateFormat = "dd MMM, yyyy"
-//        let timeFormatter = DateFormatter()
-//        timeFormatter.dateFormat = "HH-mm-ss"
-//        let newTimeFormatter = DateFormatter()
-//        newTimeFormatter.dateFormat = "h:mm a"
-//        let dateTime = post!["date"] as? String
-//        let dateComponents = dateTime?.components(separatedBy: "T")
-//        let splitDate = dateComponents![0]
-//        let splitTime = dateComponents![1]
-//        if let date = dateFormatter.date(from: splitDate) {
-//            convertedDate = newDateFormatter.string(from: date)
-//        }
-//        if let time = timeFormatter.date(from: splitTime){
-//            convertedTime = newTimeFormatter.string(from: time)
-//        }
-//        datePost.text = convertedDate
-//        //Images
-//        let html2 = htmlTag?.allStringsBetween(start: "<iframe src=", end: "</iframe>")
-//        let input = String(describing: html2)
-//        let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
-//        let matches = detector.matches(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count))
-//        for match in matches {
-//            guard let range = Range(match.range, in: input) else { continue }
-//            let urlYou = input[range]
-//            if urlYou != ""{
-//                urlYoutube = String(urlYou)
-//                webView.isHidden = false
-//            }
-//        }
-//        if urlYoutube != ""{
-//                   print(urlYoutube)
-//            self.postImageView.isHidden = true
-//            webView.isHidden = false
-//
-//            webView.allowsInlineMediaPlayback = true
-//            webView.loadHTMLString("<iframe width=\"\(webView.frame.width)\" height=\"\(webView.frame.height)\" src=\"\(urlYoutube)?&playsinline=1\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
-//       //     webView.delegate = self as? UIWebViewDelegate
-//            self.activityIndicatoryWeb.stopAnimating()
-//            self.activityIndicatoryWeb.isHidden = true
-//        }
-//        else{
-//            webView.isHidden = true
-//            self.activityIndicatoryWeb.stopAnimating()
-//            //for images
 
      //   do{
             if let fullImg =  (sizes as AnyObject).value(forKey: "full"){
@@ -276,16 +137,11 @@ class DetailsPostViewController: UIViewController{
                             }
                         }
                     }
-              //  }
-           // }
-
-       // }
-
-        
+                //}
     }
     
-//    // MARK: - Share Button
-//
+    // MARK: - Share Button
+
 //    @IBAction func btnShareTapped(_ sender: Any) {
 //        let title = titleLabel.text
 //        let URl = post![PostKeys.link]
