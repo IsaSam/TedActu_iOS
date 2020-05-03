@@ -18,13 +18,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="OMc-5e-kvL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Catégories" id="fMA-QE-mwm"/>
+                    <tabBarItem key="tabBarItem" title="Catégories" image="list.dash" catalog="system" id="fMA-QE-mwm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8E-c7-pnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="140"/>
         </scene>
-        <!--Accueil-->
+        <!--Home View Controller-->
         <scene sceneID="lkL-vb-meA">
             <objects>
                 <viewController storyboardIdentifier="homeView" id="Ken-hf-UEc" customClass="HomeViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CAb-Hi-ngn">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="330.5" id="5Zc-or-nJs" customClass="HomeTableViewCell" customModule="TedActu" customModuleProvider="target">
@@ -85,7 +85,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BBd-ym-nLo"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Accueil" id="YhX-3H-lnt"/>
+                    <navigationItem key="navigationItem" id="1lf-Ys-rTs"/>
                     <connections>
                         <outlet property="activityIndicatory" destination="FFS-K9-t8k" id="GM1-UT-JkV"/>
                         <outlet property="tableView" destination="CAb-Hi-ngn" id="GjB-TI-LSh"/>
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HxM-Zc-FI6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1149.375" y="-1017.2535211267606"/>
+            <point key="canvasLocation" x="2146.875" y="-1017.2535211267606"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="uLG-2W-bUX">
@@ -106,7 +106,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Ken-hf-UEc" kind="relationship" relationship="viewControllers" id="mgs-PY-fM3"/>
+                        <segue destination="QKj-av-JE1" kind="relationship" relationship="viewControllers" id="mgs-PY-fM3"/>
                         <segue destination="sZB-8p-5IA" kind="relationship" relationship="viewControllers" id="MQo-GV-Ygz"/>
                         <segue destination="NBU-UO-i4F" kind="relationship" relationship="viewControllers" id="JVd-sQ-dht"/>
                     </connections>
@@ -231,10 +231,10 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Enc-35-OKG">
-                                <rect key="frame" x="0.0" y="73" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="117" width="320" height="26"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un amendement de l'accord de subvention pour la reconstruction d'haiti" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vC-b7-tEZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="26"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -288,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSd-RD-eUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2096" y="-1017"/>
+            <point key="canvasLocation" x="3091.875" y="-1017.2535211267606"/>
         </scene>
         <!--Video Detail View Controller-->
         <scene sceneID="End-Hc-6ch">
@@ -410,7 +410,7 @@
         <scene sceneID="PaR-Si-ZsF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NBU-UO-i4F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Playlist" id="hp6-tb-LfK"/>
+                    <tabBarItem key="tabBarItem" title="Playlist" image="video" catalog="system" id="hp6-tb-LfK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zxh-tk-oUf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -425,11 +425,33 @@
             </objects>
             <point key="canvasLocation" x="1149" y="-336"/>
         </scene>
+        <!--Accueil-->
+        <scene sceneID="pLG-ue-D2a">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QKj-av-JE1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Accueil" image="house" catalog="system" id="YhX-3H-lnt"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Olo-Mo-jmz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ken-hf-UEc" kind="relationship" relationship="rootViewController" id="76r-DP-9Sy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KB7-kE-e9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1149.375" y="-1017.2535211267606"/>
+        </scene>
     </scenes>
     <resources>
         <image name="download26" width="26" height="26"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="list.dash" catalog="system" width="64" height="42"/>
         <image name="placeholderImage" width="274" height="184"/>
         <image name="share-24" width="24" height="24"/>
         <image name="tedact0" width="1152" height="1152"/>
+        <image name="video" catalog="system" width="64" height="40"/>
     </resources>
 </document>
