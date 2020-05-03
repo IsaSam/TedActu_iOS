@@ -22,6 +22,7 @@ class DetailsPostViewController: UIViewController{
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var viewTitleLabel: UIView!
+    @IBOutlet var downloadButton: UIButton!
     
 //    @IBOutlet weak var searchBar: UISearchBar!
 //    @IBOutlet weak var activityIndicatory: UIActivityIndicatorView!
@@ -37,6 +38,7 @@ class DetailsPostViewController: UIViewController{
     var postImage: [String: Any]?
     var imgPosts: [[String: Any]] = []
     var categoryID: Any?
+    var imgURLShare: String?
     
     // MARK: - Main
     
@@ -115,7 +117,7 @@ class DetailsPostViewController: UIViewController{
         let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
         
 
-     //   do{
+        do{
             if let fullImg =  (sizes as AnyObject).value(forKey: "full"){
                         let dataDic = fullImg as? [[String: Any]]
 
@@ -128,6 +130,7 @@ class DetailsPostViewController: UIViewController{
                         }
                         for images in imgPosts{
                             let imageURL = images["source_url"] as? String
+                            imgURLShare = imageURL
                             if let imagePath = imageURL,
                                 let imgUrl = URL(string:  imagePath){
                                 postImageView.af_setImage(withURL: imgUrl)
@@ -137,10 +140,10 @@ class DetailsPostViewController: UIViewController{
                             }
                         }
                     }
-                //}
+                }
     }
     
-    // MARK: - Share Button
+    // MARK: - Share and Download Image
 
     @IBAction func btnShareTapped(_ sender: Any) {
         let title = titleLabel.text
@@ -153,6 +156,26 @@ class DetailsPostViewController: UIViewController{
             popoverController.sourceRect = self.view.bounds
         }
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    //Download functions
+    @IBAction func downloadButtonAction(_ sender: UIButton) {
+        downloadImage(url: imgURLShare!)
+    }
+    func downloadImage(url: String) {
+        guard let imageUrl = URL(string: url) else { return }
+        getDataFromUrl(url: imageUrl) { data, _, _ in
+            DispatchQueue.main.async() {
+                let activityViewController = UIActivityViewController(activityItems: [data ?? ""], applicationActivities: nil)
+                activityViewController.modalPresentationStyle = .fullScreen
+                self.present(activityViewController, animated: true, completion: nil)
+            }
+        }
+    }
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            completion(data, response, error)
+        }.resume()
     }
 
 

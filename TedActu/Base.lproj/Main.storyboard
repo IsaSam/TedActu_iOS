@@ -253,6 +253,9 @@
                                 <state key="normal" title="Télécharger" image="download26">
                                     <color key="titleColor" red="0.0" green="0.10627212380000001" blue="0.28515332939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="downloadButtonAction:" destination="95a-Zg-jEP" eventType="touchUpInside" id="ngo-pR-zuc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5O4-2g-6TO">
                                 <rect key="frame" x="184" y="384" width="95" height="24"/>
@@ -295,6 +298,7 @@
                     <navigationItem key="navigationItem" id="42s-yx-GV6"/>
                     <connections>
                         <outlet property="contentLabel" destination="beV-sc-8nk" id="Sia-hU-j0T"/>
+                        <outlet property="downloadButton" destination="sw5-Ps-5cn" id="RJq-XA-LNQ"/>
                         <outlet property="postImageView" destination="hPc-3a-DEW" id="c76-hS-t7g"/>
                         <outlet property="titleLabel" destination="1vC-b7-tEZ" id="JwQ-bB-6Ba"/>
                         <outlet property="viewTitleLabel" destination="Enc-35-OKG" id="BZq-Ss-2oe"/>
