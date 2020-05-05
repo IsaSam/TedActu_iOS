@@ -8,16 +8,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Catégories-->
+        <!--Gallery-->
+        <scene sceneID="uTX-pU-9cr">
+            <objects>
+                <viewController id="vIL-0h-gVH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ucY-RI-QQr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7OD-ko-CjG"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Gallery" image="gallery-Small" selectedImage="gallery-select-Small" id="vX9-3p-bXv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHt-6L-eAq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="265" y="470"/>
+        </scene>
+        <!--Categories-->
         <scene sceneID="ZjO-dK-2Gg">
             <objects>
                 <viewController id="sZB-8p-5IA" customClass="ListCategoriesViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Imi-ta-mUc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-2m-Y5x">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="2" indentationWidth="2" reuseIdentifier="ListCategoriesCell" rowHeight="120" id="T5t-QC-In0" customClass="ListCategoriesTableViewCell" customModule="TedActu" customModuleProvider="target">
@@ -61,7 +77,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OMc-5e-kvL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Catégories" image="list.dash" catalog="system" selectedImage="list.bullet.indent" id="fMA-QE-mwm"/>
+                    <tabBarItem key="tabBarItem" title="Categories" image="category-Small" selectedImage="category-select-Small" id="fMA-QE-mwm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8E-c7-pnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,11 +88,11 @@
             <objects>
                 <viewController storyboardIdentifier="homeView" id="Ken-hf-UEc" customClass="HomeViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IA4-hJ-luX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CAb-Hi-ngn">
-                                <rect key="frame" x="0.0" y="56" width="320" height="492"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="330.5" id="5Zc-or-nJs" customClass="HomeTableViewCell" customModule="TedActu" customModuleProvider="target">
@@ -113,7 +129,7 @@
                                 </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FFS-K9-t8k">
-                                <rect key="frame" x="141.5" y="255.5" width="37" height="37"/>
+                                <rect key="frame" x="141.5" y="265.5" width="37" height="37"/>
                                 <color key="color" red="0.0" green="0.10627212380000001" blue="0.28515332939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -146,12 +162,16 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Dx-Bc-vX3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.94283473490000003" green="0.46693152189999998" blue="0.18875449899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.10627212380000001" blue="0.28515332939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.94283473490000003" green="0.46693152189999998" blue="0.18875449899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="QKj-av-JE1" kind="relationship" relationship="viewControllers" id="mgs-PY-fM3"/>
                         <segue destination="sZB-8p-5IA" kind="relationship" relationship="viewControllers" id="MQo-GV-Ygz"/>
                         <segue destination="NBU-UO-i4F" kind="relationship" relationship="viewControllers" id="JVd-sQ-dht"/>
+                        <segue destination="vIL-0h-gVH" kind="relationship" relationship="viewControllers" id="r8n-uJ-xuS"/>
+                        <segue destination="Rg8-Ua-mWR" kind="relationship" relationship="viewControllers" id="Mzg-c4-CFV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywf-Yo-ERc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -163,11 +183,11 @@
             <objects>
                 <viewController storyboardIdentifier="PlayListView" id="dv5-JI-dEA" customClass="PlaylistViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="duB-fu-8EF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TNM-MC-Pnb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="143" id="MVK-9N-1O7">
@@ -244,11 +264,11 @@
             <objects>
                 <viewController id="95a-Zg-jEP" customClass="DetailsPostViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ug5-Ab-HXV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Enc-35-OKG">
-                                <rect key="frame" x="0.0" y="118" width="320" height="85"/>
+                                <rect key="frame" x="0.0" y="128" width="320" height="85"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un amendement de l'accord de subvention pour la reconstruction d'haiti" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vC-b7-tEZ">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="64.5"/>
@@ -270,14 +290,14 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="hPc-3a-DEW">
-                                <rect key="frame" x="0.0" y="182" width="320" height="184"/>
+                                <rect key="frame" x="0.0" y="192" width="320" height="184"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="BEe-9D-5Mi"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="184" id="aYY-Ba-AFD"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beV-sc-8nk">
-                                <rect key="frame" x="16" y="456" width="288" height="92"/>
+                                <rect key="frame" x="16" y="476" width="288" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="92" id="KdT-2B-C6R"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="x6n-Xo-URy"/>
@@ -287,7 +307,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-Ps-5cn">
-                                <rect key="frame" x="42" y="374" width="122" height="20"/>
+                                <rect key="frame" x="42" y="384" width="122" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="GeW-oK-3eR"/>
                                     <constraint firstAttribute="width" constant="122" id="fV8-oB-HRj"/>
@@ -301,7 +321,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5O4-2g-6TO">
-                                <rect key="frame" x="184" y="374" width="95" height="24"/>
+                                <rect key="frame" x="184" y="384" width="95" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Qfd-Jm-A5D"/>
                                     <constraint firstAttribute="width" constant="95" id="YJl-vq-QDU"/>
@@ -356,7 +376,7 @@
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="t67-03-cAW" customClass="VideoDetailViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" ambiguous="YES" id="5YD-hH-jV7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZy-q7-jbJ">
@@ -467,14 +487,14 @@
             </objects>
             <point key="canvasLocation" x="-1386" y="-338"/>
         </scene>
-        <!--Playlist-->
+        <!--Videos-->
         <scene sceneID="PaR-Si-ZsF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NBU-UO-i4F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Playlist" image="video" catalog="system" selectedImage="video.fill" id="hp6-tb-LfK"/>
+                    <tabBarItem key="tabBarItem" title="Videos" image="video-Small" selectedImage="video-select-Small" id="hp6-tb-LfK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zxh-tk-oUf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -486,15 +506,31 @@
             </objects>
             <point key="canvasLocation" x="1564" y="-518"/>
         </scene>
-        <!--Accueil-->
+        <!--About-->
+        <scene sceneID="zqH-Cr-IRf">
+            <objects>
+                <viewController id="Rg8-Ua-mWR" customClass="AboutViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Qk-qW-K5O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="5Y6-7t-nIy"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="About" image="about-Small" selectedImage="about-select-Small" id="ylZ-Uv-B5X"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KBv-f6-oQu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="276" y="-1175"/>
+        </scene>
+        <!--Feeds-->
         <scene sceneID="pLG-ue-D2a">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QKj-av-JE1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Accueil" image="house" catalog="system" selectedImage="house.fill" id="YhX-3H-lnt"/>
+                    <tabBarItem key="tabBarItem" title="Feeds" image="feeds-Small" selectedImage="feeds-select-Small" id="YhX-3H-lnt"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="SNI-Ub-RE0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Olo-Mo-jmz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -508,18 +544,23 @@
         </scene>
     </scenes>
     <resources>
+        <image name="about-Small" width="29" height="29"/>
+        <image name="about-select-Small" width="29" height="29"/>
+        <image name="category-Small" width="29" height="29"/>
+        <image name="category-select-Small" width="29" height="29"/>
         <image name="download26" width="26" height="26"/>
-        <image name="house" catalog="system" width="64" height="54"/>
-        <image name="house.fill" catalog="system" width="64" height="52"/>
-        <image name="list.bullet.indent" catalog="system" width="64" height="36"/>
-        <image name="list.dash" catalog="system" width="64" height="42"/>
+        <image name="feeds-Small" width="29" height="29"/>
+        <image name="feeds-select-Small" width="29" height="29"/>
+        <image name="gallery-Small" width="29" height="29"/>
+        <image name="gallery-select-Small" width="29" height="29"/>
         <image name="placeholderImage" width="274" height="184"/>
         <image name="share-24" width="24" height="24"/>
         <image name="tedact0" width="1152" height="1152"/>
-        <image name="video" catalog="system" width="64" height="40"/>
-        <image name="video.fill" catalog="system" width="64" height="40"/>
+        <image name="video-Small" width="29" height="29"/>
+        <image name="video-select-Small" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="MQo-GV-Ygz"/>
         <segue reference="h6W-cm-7Zq"/>
     </inferredMetricsTieBreakers>
 </document>

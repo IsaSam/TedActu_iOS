@@ -46,6 +46,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
+        
+        let AboutViewController:UIViewController = UIViewController()
+        // The following statement is what you need
+        let customTabBarItem:UITabBarItem = UITabBarItem(title: nil, image: UIImage(named: "about-Small")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), selectedImage: UIImage(named: "about-select-Small"))
+        AboutViewController.tabBarItem = customTabBarItem
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -370,8 +377,6 @@ extension Sequence {
         return map { $0[keyPath: keyPath] }
     }
 }
-
-
 
 
 
