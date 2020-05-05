@@ -10,6 +10,7 @@
 		96105A0F245E9CA800905C90 /* ListCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96105A0E245E9CA700905C90 /* ListCategoriesViewController.swift */; };
 		96105A11245EA29C00905C90 /* ListCategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96105A10245EA29C00905C90 /* ListCategoriesTableViewCell.swift */; };
 		963D64F7246202F800B8982D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D64F6246202F800B8982D /* AboutViewController.swift */; };
+		963D64F92462245A00B8982D /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D64F82462245A00B8982D /* CategoryViewController.swift */; };
 		964D6B51242421C900504E42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D6B50242421C900504E42 /* AppDelegate.swift */; };
 		964D6B53242421C900504E42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D6B52242421C900504E42 /* SceneDelegate.swift */; };
 		964D6B58242421C900504E42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964D6B56242421C900504E42 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		96105A0E245E9CA700905C90 /* ListCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoriesViewController.swift; sourceTree = "<group>"; };
 		96105A10245EA29C00905C90 /* ListCategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoriesTableViewCell.swift; sourceTree = "<group>"; };
 		963D64F6246202F800B8982D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		963D64F82462245A00B8982D /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		964D6B4D242421C900504E42 /* TedActu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TedActu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		964D6B50242421C900504E42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		964D6B52242421C900504E42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				964DB5F2245B76FF00F0DFD9 /* DetailsPostViewController.swift */,
 				96105A0E245E9CA700905C90 /* ListCategoriesViewController.swift */,
 				963D64F6246202F800B8982D /* AboutViewController.swift */,
+				963D64F82462245A00B8982D /* CategoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				96F80B3724308C7200E119B8 /* PlaylistViewController.swift in Sources */,
 				96F80B3E2430979F00E119B8 /* VideoDetailViewController.swift in Sources */,
 				96655AD5245B2595007D2BDF /* Swift+Gif.swift in Sources */,
+				963D64F92462245A00B8982D /* CategoryViewController.swift in Sources */,
 				96F23F56243F7F6400CD634C /* Post.swift in Sources */,
 				964D6B51242421C900504E42 /* AppDelegate.swift in Sources */,
 				964D6B53242421C900504E42 /* SceneDelegate.swift in Sources */,

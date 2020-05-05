@@ -1,8 +1,8 @@
 //
-//  HomeViewController.swift
+//  CategoryViewController.swift
 //  TedActu
 //
-//  Created by Isaac Samuel on 4/2/20.
+//  Created by Isaac Samuel on 5/5/20.
 //  Copyright © 2020 Isaac Samuel. All rights reserved.
 //
 
@@ -11,12 +11,11 @@ import AlamofireImage
 import SwiftyJSON
 import SDWebImage
 
+struct MyVariables {
+    static var rowSelect: Int?
+}
 
-//struct MyVariables {
-//    static var rowSelect: Int?
-//}
-
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class CategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
 
     @IBOutlet weak var activityIndicatory: UIActivityIndicatorView!
@@ -37,20 +36,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var imagePost2: UIImage?
     var refreshControl: UIRefreshControl!
     
+    
+   // var categoryID: [[String: Any]] = []
     var c1: Any?
-//    var categoryID: Int?
+    var categoryID: Int?
     var catID: String?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         
-        
-//        let AboutViewController:UIViewController = UIViewController()
-//        // The following statement is what you need
-//        let customTabBarItem:UITabBarItem = UITabBarItem(title: nil, image: UIImage(named: "about-Small")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), selectedImage: UIImage(named: "about-select-Small"))
-//        AboutViewController.tabBarItem = customTabBarItem
-//
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,13 +58,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         
         print("rowSelect: \(MyVariables.rowSelect ?? -1)")
-//        selectCategory()
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl.addTarget(self, action: #selector(HomeViewController.didPullToRefresh(_:)), for: .valueChanged)
-        tableView.insertSubview(refreshControl, at: 0)
+        selectCategory()
         
         if Reachability.isConnectedToNetwork(){
             print("Internet Connection Available!")
+                self.refreshControl = UIRefreshControl()
+                self.refreshControl.addTarget(self, action: #selector(HomeViewController.didPullToRefresh(_:)), for: .valueChanged)
+            
+                tableView.delegate = self
+//                tableView.rowHeight = 320
+                self.tableView.estimatedRowHeight = UITableView.automaticDimension
+                tableView.insertSubview(refreshControl, at: 0)
+                tableView.dataSource = self
             getPostList()
         }else{
                 print("Internet Connection not Available!")
@@ -78,39 +78,40 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                    errorAlertController.addAction(cancelAction)
                 self.present(errorAlertController, animated: true)
         }
+        
     }
     
-//    func selectCategory(){
-//        if MyVariables.rowSelect != -1{
-//            if MyVariables.rowSelect == 0 {
-//                   catID = "16"
-//                   print("Catégorie POLITIQUE")
-//               }
-//               else if MyVariables.rowSelect == 1 {
-//                   catID = "22"
-//                   print("Catégorie SAVOIR+")
-//               }
-//                else if MyVariables.rowSelect == 2 {
-//                    catID = "18"
-//                    print("Catégorie SOCIÉTÉ")
-//                }
-//                else if MyVariables.rowSelect == 3 {
-//                    catID = "19"
-//                    print("Catégorie SPORT")
-//                }
-//                else if MyVariables.rowSelect == 4 {
-//                    catID = "20"
-//                    print("Catégorie CULTURE")
-//                }
-//                else if MyVariables.rowSelect == 5 {
-//                    catID = "23"
-//                    print("Catégorie ANKÈT")
-//                }
-//        }else{
-//            catID = ""
-//            print("Toutes les Catégories")
-//        }
-//    }
+    func selectCategory(){
+        if MyVariables.rowSelect != -1{
+            if MyVariables.rowSelect == 0 {
+                   catID = "16"
+                   print("Catégorie POLITIQUE")
+               }
+               else if MyVariables.rowSelect == 1 {
+                   catID = "22"
+                   print("Catégorie SAVOIR+")
+               }
+                else if MyVariables.rowSelect == 2 {
+                    catID = "18"
+                    print("Catégorie SOCIÉTÉ")
+                }
+                else if MyVariables.rowSelect == 3 {
+                    catID = "19"
+                    print("Catégorie SPORT")
+                }
+                else if MyVariables.rowSelect == 4 {
+                    catID = "20"
+                    print("Catégorie CULTURE")
+                }
+                else if MyVariables.rowSelect == 5 {
+                    catID = "23"
+                    print("Catégorie ANKÈT")
+                }
+        }else{
+            catID = ""
+            print("Toutes les Catégories")
+        }
+    }
     
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
         getPostList()
@@ -129,20 +130,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.present(errorAlertController, animated: true)
          return
          }
-         
              
         if result != nil{
-                do{
-         self.posts = result!
+            do{
 
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.activityIndicatory.stopAnimating()
-                self.activityIndicatory.isHidden = true
+                DispatchQueue.main.async {
+                    self.posts = result!
+                    self.tableView.reloadData()
+                    self.activityIndicatory.stopAnimating()
+                    self.activityIndicatory.isHidden = true
             }
             
             }//// end of do
-        }            else{
+        }  else{
                         print("*** end of posts")
                         DispatchQueue.main.async {
                             self.activityIndicatory.stopAnimating()
@@ -176,12 +176,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             
             if result != nil{
-                do{
+                print("*** result: \(result!)")
+           //     do{
 
                     for item in result!
                     {
-                        
+                        print("*** item: \(item)")
                         self.posts.append(item)
+                        
                         
                     }
 
@@ -190,26 +192,26 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         self.activityIndicatory.stopAnimating()
                         self.activityIndicatory.isHidden = true
                     }
-                }
+            //    }
         }
 
-                        else{
-                            print("*** end of posts")
-                            DispatchQueue.main.async {
-                                self.activityIndicatory.stopAnimating()
-                                self.activityIndicatory.isHidden = true
-                            }
-            //                let errorAlertController = UIAlertController(title: "Désolé, Fin des articles!", message: "Remonter la liste", preferredStyle: .alert)
-            //                let cancelAction = UIAlertAction(title: "OK", style: .cancel)
-            //                errorAlertController.addAction(cancelAction)
-            //                self.present(errorAlertController, animated: true)
-                        }
+            else{
+                print("*** end of posts")
+                DispatchQueue.main.async {
+                    self.activityIndicatory.stopAnimating()
+                    self.activityIndicatory.isHidden = true
+                }
+//                let errorAlertController = UIAlertController(title: "Désolé, Fin des articles!", message: "Remonter la liste", preferredStyle: .alert)
+//                let cancelAction = UIAlertAction(title: "OK", style: .cancel)
+//                errorAlertController.addAction(cancelAction)
+//                self.present(errorAlertController, animated: true)
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row + 1 == posts.count{
-            print("load more...")
+            print("*** load more posts...")
             loadMorePosts()
         }
     }
@@ -341,7 +343,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     }
                 }else{}
             }
-            return cell  
+            return cell
         }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -349,7 +351,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detailsPostSegue" {
+        if segue.identifier == "detailsCategorySegue" {
             let detailViewController = segue.destination as! DetailsPostViewController
              print("DetailsPost View segue")
              let cell = sender as! UITableViewCell

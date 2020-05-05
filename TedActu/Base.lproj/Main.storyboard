@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="vIL-0h-gVH" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ucY-RI-QQr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="7OD-ko-CjG"/>
@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="265" y="470"/>
         </scene>
-        <!--Categories-->
+        <!--List Categories View Controller-->
         <scene sceneID="ZjO-dK-2Gg">
             <objects>
                 <viewController id="sZB-8p-5IA" customClass="ListCategoriesViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-2m-Y5x">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="475"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="2" indentationWidth="2" reuseIdentifier="ListCategoriesCell" rowHeight="120" id="T5t-QC-In0" customClass="ListCategoriesTableViewCell" customModule="TedActu" customModuleProvider="target">
@@ -59,7 +59,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageListCategories" destination="CfR-tg-N0d" id="LCQ-lZ-tgo"/>
-                                            <segue destination="1nT-C6-Ihh" kind="show" identifier="CategoriesHome" id="h6W-cm-7Zq"/>
+                                            <segue destination="eSG-lm-fMW" kind="show" identifier="CategoriesHome" id="e6y-4q-vz6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -77,11 +77,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OMc-5e-kvL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Categories" image="category-Small" selectedImage="category-select-Small" id="fMA-QE-mwm"/>
+                    <navigationItem key="navigationItem" id="EjJ-mZ-aFG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8E-c7-pnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="235"/>
+            <point key="canvasLocation" x="2561.25" y="234.50704225352112"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="lkL-vb-meA">
@@ -102,7 +102,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="330.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tedact0" translatesAutoresizingMaskIntoConstraints="NO" id="LRc-t6-7OK">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="LRc-t6-7OK">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="322"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="320" id="N9V-L7-OmI"/>
@@ -168,7 +168,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="QKj-av-JE1" kind="relationship" relationship="viewControllers" id="mgs-PY-fM3"/>
-                        <segue destination="sZB-8p-5IA" kind="relationship" relationship="viewControllers" id="MQo-GV-Ygz"/>
+                        <segue destination="BJN-6t-bBD" kind="relationship" relationship="viewControllers" id="MQo-GV-Ygz"/>
                         <segue destination="NBU-UO-i4F" kind="relationship" relationship="viewControllers" id="JVd-sQ-dht"/>
                         <segue destination="vIL-0h-gVH" kind="relationship" relationship="viewControllers" id="r8n-uJ-xuS"/>
                         <segue destination="Rg8-Ua-mWR" kind="relationship" relationship="viewControllers" id="Mzg-c4-CFV"/>
@@ -369,7 +369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSd-RD-eUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3184" y="-1257"/>
+            <point key="canvasLocation" x="3210" y="-1257"/>
         </scene>
         <!--Video Detail View Controller-->
         <scene sceneID="End-Hc-6ch">
@@ -432,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uml-lV-x0O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3184" y="-519"/>
+            <point key="canvasLocation" x="3210" y="-519"/>
         </scene>
         <!--Splash Screen View-->
         <scene sceneID="8Ua-mf-Zzp">
@@ -542,6 +542,96 @@
             </objects>
             <point key="canvasLocation" x="1564" y="-1257"/>
         </scene>
+        <!--Category View Controller-->
+        <scene sceneID="MSq-nL-amv">
+            <objects>
+                <viewController storyboardIdentifier="CategoryView" id="eSG-lm-fMW" customClass="CategoryViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DIW-dK-PvE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I4W-jE-hyh">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="330.5" id="tW6-YI-MvC" customClass="HomeTableViewCell" customModule="TedActu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="330.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tW6-YI-MvC" id="cZO-PN-6Td">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="330.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="DKo-OC-vdI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="322"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="322" id="Dhq-Dr-okE"/>
+                                                        <constraint firstAttribute="width" constant="320" id="oQx-ES-CMR"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DKo-OC-vdI" firstAttribute="leading" secondItem="cZO-PN-6Td" secondAttribute="leading" id="QeS-dK-3U4"/>
+                                                <constraint firstAttribute="trailing" secondItem="DKo-OC-vdI" secondAttribute="trailing" id="S0s-wE-uqn"/>
+                                                <constraint firstItem="DKo-OC-vdI" firstAttribute="top" secondItem="cZO-PN-6Td" secondAttribute="top" id="oMH-W9-zuT"/>
+                                                <constraint firstAttribute="bottom" secondItem="DKo-OC-vdI" secondAttribute="bottom" constant="8.5" id="px0-tP-SWa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imagePost" destination="DKo-OC-vdI" id="nSU-ba-K8J"/>
+                                            <segue destination="95a-Zg-jEP" kind="show" identifier="detailsCategorySegue" id="kYy-s2-sCJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="eSG-lm-fMW" id="Qan-R7-qZX"/>
+                                    <outlet property="delegate" destination="eSG-lm-fMW" id="gKF-Vd-sph"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hp0-Ku-WMH">
+                                <rect key="frame" x="141.5" y="265.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.10627212380000001" blue="0.28515332939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hp0-Ku-WMH" firstAttribute="centerX" secondItem="DIW-dK-PvE" secondAttribute="centerX" id="3Yy-mD-Xww"/>
+                            <constraint firstItem="hp0-Ku-WMH" firstAttribute="centerY" secondItem="DIW-dK-PvE" secondAttribute="centerY" id="GJv-Eq-68W"/>
+                            <constraint firstItem="I4W-jE-hyh" firstAttribute="top" secondItem="FV7-l8-GBR" secondAttribute="top" id="PNs-PY-688"/>
+                            <constraint firstItem="I4W-jE-hyh" firstAttribute="trailing" secondItem="FV7-l8-GBR" secondAttribute="trailing" id="XjK-3H-Z3N"/>
+                            <constraint firstAttribute="bottom" secondItem="I4W-jE-hyh" secondAttribute="bottom" id="fNs-5C-hOg"/>
+                            <constraint firstItem="I4W-jE-hyh" firstAttribute="leading" secondItem="FV7-l8-GBR" secondAttribute="leading" id="ovo-jG-eO0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FV7-l8-GBR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xSj-Qg-NVO"/>
+                    <connections>
+                        <outlet property="activityIndicatory" destination="hp0-Ku-WMH" id="sCr-PG-PLa"/>
+                        <outlet property="tableView" destination="I4W-jE-hyh" id="gP8-Qn-kHq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qf5-VB-Cco" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3388.125" y="234.50704225352112"/>
+        </scene>
+        <!--Categories-->
+        <scene sceneID="VBK-kY-HxD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BJN-6t-bBD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Categories" image="category-Small" selectedImage="category-select-Small" id="fMA-QE-mwm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CxK-zH-C5v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sZB-8p-5IA" kind="relationship" relationship="rootViewController" id="u3G-ko-CLD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aBG-wo-3LZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1563.75" y="234.50704225352112"/>
+        </scene>
     </scenes>
     <resources>
         <image name="about-Small" width="29" height="29"/>
@@ -555,12 +645,10 @@
         <image name="gallery-select-Small" width="29" height="29"/>
         <image name="placeholderImage" width="274" height="184"/>
         <image name="share-24" width="24" height="24"/>
-        <image name="tedact0" width="1152" height="1152"/>
         <image name="video-Small" width="29" height="29"/>
         <image name="video-select-Small" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MQo-GV-Ygz"/>
-        <segue reference="h6W-cm-7Zq"/>
+        <segue reference="kYy-s2-sCJ"/>
     </inferredMetricsTieBreakers>
 </document>
