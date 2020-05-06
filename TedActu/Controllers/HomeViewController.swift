@@ -51,6 +51,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
        // navigationController?.setNavigationBarHidden(false, animated: animated)
+        print("---- wildisa")
+        view.backgroundColor = .black
        
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +90,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .black
         
         print("rowSelect: \(MyVariables2.rowSelect ?? -1)")
         selectCategory()
