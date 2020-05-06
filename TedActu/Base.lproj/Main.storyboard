@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="evn-Ie-ZwN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1nT-C6-Ihh">
     <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -95,26 +95,26 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="330.5" id="5Zc-or-nJs" customClass="HomeTableViewCell" customModule="TedActu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="330.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="220" id="5Zc-or-nJs" customClass="HomeTableViewCell" customModule="TedActu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Zc-or-nJs" id="Oz8-2a-1qx">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="330.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderImage" translatesAutoresizingMaskIntoConstraints="NO" id="LRc-t6-7OK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="322"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRc-t6-7OK">
+                                                    <rect key="frame" x="10" y="10" width="300" height="195"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="320" id="N9V-L7-OmI"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="322" id="wyd-0W-slO"/>
+                                                        <constraint firstAttribute="width" constant="300" id="fIa-ja-vvP"/>
+                                                        <constraint firstAttribute="height" constant="200" id="gV4-Jp-sJ1"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="LRc-t6-7OK" secondAttribute="bottom" constant="8.5" id="D5E-jb-CV8"/>
-                                                <constraint firstAttribute="trailing" secondItem="LRc-t6-7OK" secondAttribute="trailing" id="HvJ-vm-b33"/>
-                                                <constraint firstItem="LRc-t6-7OK" firstAttribute="leading" secondItem="Oz8-2a-1qx" secondAttribute="leading" id="LVv-sW-A7a"/>
-                                                <constraint firstItem="LRc-t6-7OK" firstAttribute="top" secondItem="Oz8-2a-1qx" secondAttribute="top" id="TtG-uZ-r0H"/>
+                                                <constraint firstItem="LRc-t6-7OK" firstAttribute="top" secondItem="Oz8-2a-1qx" secondAttribute="top" constant="10" id="UjS-6F-GLp"/>
+                                                <constraint firstItem="LRc-t6-7OK" firstAttribute="leading" secondItem="Oz8-2a-1qx" secondAttribute="leading" constant="10" id="bdZ-jw-3Ei"/>
+                                                <constraint firstAttribute="bottom" secondItem="LRc-t6-7OK" secondAttribute="bottom" constant="15" id="fct-f8-eia"/>
+                                                <constraint firstAttribute="trailing" secondItem="LRc-t6-7OK" secondAttribute="trailing" constant="10" id="oHZ-9y-puh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HxM-Zc-FI6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2391" y="-1257"/>
+            <point key="canvasLocation" x="2390.625" y="-1257.0422535211267"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="uLG-2W-bUX">
