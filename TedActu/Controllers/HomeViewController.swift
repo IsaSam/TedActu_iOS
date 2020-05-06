@@ -12,9 +12,9 @@ import SwiftyJSON
 import SDWebImage
 
 
-//struct MyVariables {
-//    static var rowSelect: Int?
-//}
+struct MyVariables2 {
+    static var rowSelect: Int?
+}
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
@@ -41,29 +41,49 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //    var categoryID: Int?
     var catID: String?
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        
-        
-//        let AboutViewController:UIViewController = UIViewController()
-//        // The following statement is what you need
-//        let customTabBarItem:UITabBarItem = UITabBarItem(title: nil, image: UIImage(named: "about-Small")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), selectedImage: UIImage(named: "about-select-Small"))
-//        AboutViewController.tabBarItem = customTabBarItem
-//
+    override func viewDidAppear(_ animated: Bool) {
+        print("---- didap")
+            }
+    override func viewDidDisappear(_ animated: Bool) {
+       print("---- disap")
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+       // navigationController?.setNavigationBarHidden(false, animated: animated)
        
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //tabBarColor
+        self.tabBarController?.tabBar.barTintColor = UIColor(red: 0.01, green: 0.05, blue: 0.14, alpha: 1.00)
+        
+        // hide navigationBar
+     //   navigationController?.setNavigationBarHidden(true, animated: animated)
+        topBarLogo()
+        
+    }
+    func topBarLogo(){
+        let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "logo-text-white.png")
+        imageView.image = image
+        logoContainer.addSubview(imageView)
+        navigationItem.titleView = logoContainer
+        //Background
+        navigationController?.navigationBar.backgroundColor = UIColor(red:0.00, green:0.11, blue:0.29, alpha:1.00)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("rowSelect: \(MyVariables.rowSelect ?? -1)")
-//        selectCategory()
+        print("rowSelect: \(MyVariables2.rowSelect ?? -1)")
+        selectCategory()
+        
         self.refreshControl = UIRefreshControl()
         self.refreshControl.addTarget(self, action: #selector(HomeViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
@@ -71,6 +91,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if Reachability.isConnectedToNetwork(){
             print("Internet Connection Available!")
             getPostList()
+            
         }else{
                 print("Internet Connection not Available!")
                 let errorAlertController = UIAlertController(title: "On ne peut pas obtenir de données", message: "La connexion Internet semble être hors ligne", preferredStyle: .alert)
@@ -79,60 +100,69 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.present(errorAlertController, animated: true)
         }
     }
+
     
-//    func selectCategory(){
-//        if MyVariables.rowSelect != -1{
-//            if MyVariables.rowSelect == 0 {
-//                   catID = "16"
-//                   print("Catégorie POLITIQUE")
-//               }
-//               else if MyVariables.rowSelect == 1 {
-//                   catID = "22"
-//                   print("Catégorie SAVOIR+")
-//               }
-//                else if MyVariables.rowSelect == 2 {
-//                    catID = "18"
-//                    print("Catégorie SOCIÉTÉ")
-//                }
-//                else if MyVariables.rowSelect == 3 {
-//                    catID = "19"
-//                    print("Catégorie SPORT")
-//                }
-//                else if MyVariables.rowSelect == 4 {
-//                    catID = "20"
-//                    print("Catégorie CULTURE")
-//                }
-//                else if MyVariables.rowSelect == 5 {
-//                    catID = "23"
-//                    print("Catégorie ANKÈT")
-//                }
-//        }else{
-//            catID = ""
-//            print("Toutes les Catégories")
-//        }
-//    }
+    func selectCategory(){
+        if MyVariables2.rowSelect != -1{
+            if MyVariables2.rowSelect == 0 {
+                   catID = "16"
+                   print("Catégorie POLITIQUE")
+               }
+               else if MyVariables2.rowSelect == 1 {
+                   catID = "22"
+                   print("Catégorie SAVOIR+")
+               }
+                else if MyVariables2.rowSelect == 2 {
+                    catID = "18"
+                    print("Catégorie SOCIÉTÉ")
+                }
+                else if MyVariables2.rowSelect == 3 {
+                    catID = "19"
+                    print("Catégorie SPORT")
+                }
+                else if MyVariables2.rowSelect == 4 {
+                    catID = "20"
+                    print("Catégorie CULTURE")
+                }
+                else if MyVariables2.rowSelect == 5 {
+                    catID = "23"
+                    print("Catégorie ANKÈT")
+                }
+        }else{
+            catID = ""
+            print("Toutes les Catégories")
+        }
+    }
     
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
         getPostList()
     }
     
     // GET Post
-    private func getPostList(){
+     func getPostList(){
         
         self.activityIndicatory.startAnimating() //====================
         TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&categories=\(catID ?? "")&_embed") { (result, error) in
          
          if error != nil{
+            DispatchQueue.main.async {
+
+                self.activityIndicatory.stopAnimating()
+                self.activityIndicatory.isHidden = true
+                
+            }
                 let errorAlertController = UIAlertController(title: "On ne peut pas obtenir de données", message: "La connexion Internet semble être hors ligne", preferredStyle: .alert)
                 let cancelAction = UIAlertAction(title: "Réessayer", style: .cancel)
                 errorAlertController.addAction(cancelAction)
                 self.present(errorAlertController, animated: true)
+           //     self.dismiss(animated: true, completion: nil)
          return
          }
          
              
         if result != nil{
                 do{
+                    print("===========")
          self.posts = result!
 
             DispatchQueue.main.async {
@@ -143,7 +173,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             }//// end of do
         }            else{
-                        print("*** end of posts")
+                        print("**** end of posts")
                         DispatchQueue.main.async {
                             self.activityIndicatory.stopAnimating()
                             self.activityIndicatory.isHidden = true
@@ -155,8 +185,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     }
             
          }
-        
-         self.refreshControl.endRefreshing()
+        DispatchQueue.main.async {
+            self.refreshControl.endRefreshing()
+        }
         
     }
     // Get More Posts
@@ -372,6 +403,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
      }
     
 }// End of Class
+
 
 
 

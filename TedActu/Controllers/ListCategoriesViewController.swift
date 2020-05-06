@@ -11,14 +11,38 @@ import UIKit
 class ListCategoriesViewController: UIViewController {
     
     var myImages: [UIImage] = [
-        UIImage(named: "Politique_BG_Blanc.jpg")!,
-        UIImage(named: "Savoir+_BG_Blanc.jpg")!,
-        UIImage(named: "Societe_BG_Blanc.jpg")!,
-        UIImage(named: "Sport_BG_Blanc.jpg")!,
-        UIImage(named: "Culture_BG_Blanc.jpg")!,
-        UIImage(named: "Anket_BG_Blanc.jpg")!
+        UIImage(named: "Politique_BG_Color.jpg")!,
+        UIImage(named: "Savoir+_BG_Color.jpg")!,
+        UIImage(named: "Societe_BG_Color.jpg")!,
+        UIImage(named: "Sport_BG_Color.jpg")!,
+        UIImage(named: "Culture_BG_Color.jpg")!,
+        UIImage(named: "Anket_BG_Color.jpg")!
         
     ]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //tabBarColor
+        self.tabBarController?.tabBar.barTintColor = UIColor(red: 0.01, green: 0.05, blue: 0.14, alpha: 1.00)
+        
+        topBarLogo()
+        
+    }
+    func topBarLogo(){
+        let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "logo-text-white.png")
+        imageView.image = image
+        logoContainer.addSubview(imageView)
+        navigationItem.titleView = logoContainer
+        //Background
+        navigationController?.navigationBar.backgroundColor = .systemBlue
+        navigationController?.navigationBar.barStyle = .blackTranslucent
+//        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.00, green:0.11, blue:0.29, alpha:1.00)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +64,7 @@ extension ListCategoriesViewController : UITableViewDataSource , UITableViewDele
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
-        MyVariables.rowSelect = row
+        MyVariables2.rowSelect = row
         tableView.deselectRow(at: indexPath, animated: true) // to remove
     }
 
