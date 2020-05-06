@@ -196,24 +196,29 @@ class DetailsPostViewController: UIViewController{
         self.present(vc, animated: true, completion: nil)
     }
     
-    //Download functions
-    @IBAction func downloadButtonAction(_ sender: UIButton) {
-        downloadImage(url: imgURLShare!)
+    //MARK: - Saving Image here
+    @IBAction func save(_ sender: AnyObject) {
+        guard let selectedImage = postImageView.image else {
+            print("Image not found!")
+            return
+        }
+        UIImageWriteToSavedPhotosAlbum(selectedImage, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
-    func downloadImage(url: String) {
-        guard let imageUrl = URL(string: url) else { return }
-        getDataFromUrl(url: imageUrl) { data, _, _ in
-            DispatchQueue.main.async() {
-                let activityViewController = UIActivityViewController(activityItems: [data ?? ""], applicationActivities: nil)
-                activityViewController.modalPresentationStyle = .fullScreen
-                self.present(activityViewController, animated: true, completion: nil)
-            }
+    
+    //MARK: - Add image to Library
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            showAlertWith(title: "Save error", message: error.localizedDescription)
+        } else {
+            showAlertWith(title: "Image Saved!", message: "Your image has been saved to your photos.")
         }
     }
-    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            completion(data, response, error)
-        }.resume()
+
+    func showAlertWith(title: String, message: String){
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
 
 
