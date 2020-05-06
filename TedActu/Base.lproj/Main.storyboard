@@ -106,7 +106,7 @@
                                                     <rect key="frame" x="10" y="10" width="300" height="315"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="300" id="fIa-ja-vvP"/>
-                                                        <constraint firstAttribute="height" constant="320" id="gV4-Jp-sJ1"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="320" id="gV4-Jp-sJ1"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>

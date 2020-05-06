@@ -369,7 +369,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                             
                             cell.imagePost.sd_setImage(with: imgUrl, placeholderImage:nil, completed: { (image, error, cacheType, imgUrl) -> Void in
                                 if ((error) != nil) {
-                                    cell.imagePost.image = UIImage(named: "placeholderImage.png")
+                   // to add1                cell.imagePost.image = UIImage(named: "placeholderImage.png")
                                 } else {
                                     //     print("Success let using the image...")
                                     cell.imagePost.sd_setImage(with: imgUrl)
@@ -389,7 +389,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         }
                         if let imagePath = imageURL,
                             let imgUrl = URL(string:  imagePath){
-                            cell.imagePost.image = UIImage(named: "loading4.jpg") //image place
+                  // to add1          cell.imagePost.image = UIImage(named: "loading4.jpg") //image place
                             cell.imagePost.af_setImage(withURL: imgUrl)
                         }
                         else{
