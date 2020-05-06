@@ -95,15 +95,15 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="340" id="5Zc-or-nJs" customClass="HomeTableViewCell" customModule="TedActu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="340"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="360" id="5Zc-or-nJs" customClass="HomeTableViewCell" customModule="TedActu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="360"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Zc-or-nJs" id="Oz8-2a-1qx">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="360"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRc-t6-7OK">
-                                                    <rect key="frame" x="10" y="10" width="300" height="315"/>
+                                                    <rect key="frame" x="10" y="10" width="300" height="320"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="300" id="fIa-ja-vvP"/>
                                                         <constraint firstAttribute="height" constant="320" id="gV4-Jp-sJ1"/>
@@ -113,7 +113,7 @@
                                             <constraints>
                                                 <constraint firstItem="LRc-t6-7OK" firstAttribute="top" secondItem="Oz8-2a-1qx" secondAttribute="top" constant="10" id="UjS-6F-GLp"/>
                                                 <constraint firstItem="LRc-t6-7OK" firstAttribute="leading" secondItem="Oz8-2a-1qx" secondAttribute="leading" constant="10" id="bdZ-jw-3Ei"/>
-                                                <constraint firstAttribute="bottom" secondItem="LRc-t6-7OK" secondAttribute="bottom" constant="15" id="fct-f8-eia"/>
+                                                <constraint firstAttribute="bottom" secondItem="LRc-t6-7OK" secondAttribute="bottom" constant="30" id="fct-f8-eia"/>
                                                 <constraint firstAttribute="trailing" secondItem="LRc-t6-7OK" secondAttribute="trailing" constant="10" id="oHZ-9y-puh"/>
                                             </constraints>
                                         </tableViewCellContentView>
