@@ -298,8 +298,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.postsEmbed = embedDicString!
                 self.postsContent = excerptDicString!
             }
-            let postTitle = postsTitle[indexPath.row]
-            let postContent = postsContent[indexPath.row]
+////            let postTitle = postsTitle[indexPath.row]
+////            let postContent = postsContent[indexPath.row]
             let postImage = postsEmbed[indexPath.row]
 
         
@@ -308,12 +308,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
         
                 print("===")
-            let encoded = postTitle["rendered"] as? String
+////            let encoded = postTitle["rendered"] as? String
 //            cell.titleLabel.text = encoded?.stringByDecodingHTMLEntities
-            let title_ = encoded?.stringByDecodingHTMLEntities
-            let htmlTag =  postContent["rendered"] as! String
-            let content = htmlTag.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-            let content_ = content.stringByDecodingHTMLEntities
+////            let title_ = encoded?.stringByDecodingHTMLEntities
+////            let htmlTag =  postContent["rendered"] as! String
+////            let content = htmlTag.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+////            let content_ = content.stringByDecodingHTMLEntities
             
             //date format conversion
             let dateFormatter = DateFormatter()
@@ -335,7 +335,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if let time = timeFormatter.date(from: splitTime){
                 convertedTime = newTimeFormatter.string(from: time)
             }
-            let datePost_ = convertedDate
+////            let datePost_ = convertedDate
             
 //            let html2 = htmlTag.allStringsBetween(start: "<iframe src=", end: "</iframe>")
 //            let input = String(describing: html2)
