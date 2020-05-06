@@ -16,15 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="byL-8o-sXB">
-                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
-                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-img-white" translatesAutoresizingMaskIntoConstraints="NO" id="Wob-ht-CpU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0036190925166010857" green="0.083339817821979523" blue="0.28906852006912231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="byL-8o-sXB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8rQ-um-PcL"/>
-                            <constraint firstItem="byL-8o-sXB" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Mk2-81-iEj"/>
+                            <constraint firstItem="Wob-ht-CpU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IuS-7n-HF5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wob-ht-CpU" secondAttribute="bottom" id="P55-dK-UcN"/>
+                            <constraint firstItem="Wob-ht-CpU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rY8-Eh-sc7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wob-ht-CpU" secondAttribute="trailing" id="wqA-Co-sTU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -34,4 +34,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back-img-white" width="700" height="1243"/>
+    </resources>
 </document>

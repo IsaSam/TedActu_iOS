@@ -46,6 +46,7 @@ class DetailsPostViewController: UIViewController{
         super.viewWillAppear(animated)
         
         topBarLogo()
+        view.backgroundColor = .black
         
     }
     func topBarLogo(){
@@ -77,7 +78,7 @@ class DetailsPostViewController: UIViewController{
     
     // Set a background image scale to view
     func assignbackground(){
-          let background = UIImage(named: "back-img-white")
+          let background = UIImage(named: "back-img-white2")
 
           var imageView : UIImageView!
           imageView = UIImageView(frame: view.bounds)
