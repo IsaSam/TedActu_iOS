@@ -57,7 +57,17 @@ extension ListCategoriesViewController : UITableViewDataSource , UITableViewDele
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        ////
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCategoriesCell", for: indexPath) as! ListCategoriesTableViewCell
+        
+        // Add a background image view to the tableViewCell
+        let backgroundImage = UIImage(named: "back-img-white.png")
+        let imageView = UIImageView(image: backgroundImage)
+        
+        // Add a background image view to the tableView
+        tableView.backgroundView = imageView
+        cell.backgroundView = imageView
     
         cell.imageListCategories?.image = myImages[indexPath.row]
         

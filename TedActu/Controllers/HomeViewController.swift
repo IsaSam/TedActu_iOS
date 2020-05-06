@@ -71,7 +71,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
      //   navigationController?.setNavigationBarHidden(true, animated: animated)
         topBarLogo()
         
-        // Add a background view to the table view
+        // Add a background image view to the table view
         let backgroundImage = UIImage(named: "back-img-white")
         let imageView = UIImageView(image: backgroundImage)
         self.tableView.backgroundView = imageView
@@ -275,10 +275,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! HomeTableViewCell
 
-        
-//        let backgroundImage = UIImage(named: "back-img-white.png")
-//        let imageView = UIImageView(image: backgroundImage)
-//        self.tableView.backgroundView = imageView
+        // Add a background image view to the tableViewCell
+        let backgroundImage = UIImage(named: "back-img-white.png")
+        let imageView = UIImageView(image: backgroundImage)
+        cell.backgroundView = imageView
     //=====================================================================
             let post = posts[indexPath.row]
 ////       self.c1 = post["categories"] as? [Any]
