@@ -159,7 +159,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="tabBarController" id="1nT-C6-Ihh" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="k2Q-mE-8kt"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="9Dx-Bc-vX3">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Dx-Bc-vX3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="selectedImageTintColor" red="0.94283473490000003" green="0.46693152189999998" blue="0.18875449899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -373,7 +373,7 @@
         <scene sceneID="End-Hc-6ch">
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="t67-03-cAW" customClass="VideoDetailViewController" customModule="TedActu" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="5YD-hH-jV7">
+                    <view key="view" contentMode="scaleToFill" id="5YD-hH-jV7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -580,6 +580,6 @@
         <image name="video-select-Small" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="amV-00-VGe"/>
+        <segue reference="76r-DP-9Sy"/>
     </inferredMetricsTieBreakers>
 </document>

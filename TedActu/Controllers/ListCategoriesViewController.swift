@@ -24,7 +24,7 @@ class ListCategoriesViewController: UIViewController {
         super.viewWillAppear(animated)
         
         //tabBarColor
-        self.tabBarController?.tabBar.barTintColor = UIColor(red: 0.01, green: 0.05, blue: 0.14, alpha: 1.00)
+        self.tabBarController?.tabBar.barTintColor = UIColor(red: 0.00, green: 0.11, blue: 0.29, alpha: 1.00)
         
         topBarLogo()
         

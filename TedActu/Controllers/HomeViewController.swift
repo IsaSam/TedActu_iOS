@@ -56,8 +56,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        //backButton color
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.94, green: 0.47, blue: 0.19, alpha: 1.00)
+        
         //tabBarColor
-        self.tabBarController?.tabBar.barTintColor = UIColor(red: 0.01, green: 0.05, blue: 0.14, alpha: 1.00)
+        self.tabBarController?.tabBar.barTintColor = UIColor(red: 0.00, green: 0.11, blue: 0.29, alpha: 1.00)
         
         // hide navigationBar
      //   navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -73,8 +76,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         imageView.image = image
         logoContainer.addSubview(imageView)
         navigationItem.titleView = logoContainer
+        
         //Background
-        navigationController?.navigationBar.backgroundColor = UIColor(red:0.00, green:0.11, blue:0.29, alpha:1.00)
+        
+        navigationController?.navigationBar.backgroundColor = .systemBlue
+        navigationController?.navigationBar.barStyle = .blackTranslucent
+        
+    //    navigationController?.navigationBar.backgroundColor = UIColor(red:0.00, green:0.11, blue:0.29, alpha:1.00)
     }
     
     
