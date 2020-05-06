@@ -58,6 +58,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // remove separator
+        tableView.separatorColor = .clear
+        
         //backButton color
         self.navigationController?.navigationBar.tintColor = UIColor(red: 0.94, green: 0.47, blue: 0.19, alpha: 1.00)
         
@@ -67,6 +70,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // hide navigationBar
      //   navigationController?.setNavigationBarHidden(true, animated: animated)
         topBarLogo()
+        
+        // Add a background view to the table view
+        let backgroundImage = UIImage(named: "back-img-white")
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
         
     }
     func topBarLogo(){
@@ -112,6 +120,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.present(errorAlertController, animated: true)
         }
     }
+    
+    
 
     
     func selectCategory(){
@@ -264,6 +274,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! HomeTableViewCell
+
+        
+//        let backgroundImage = UIImage(named: "back-img-white.png")
+//        let imageView = UIImageView(image: backgroundImage)
+//        self.tableView.backgroundView = imageView
     //=====================================================================
             let post = posts[indexPath.row]
 ////       self.c1 = post["categories"] as? [Any]

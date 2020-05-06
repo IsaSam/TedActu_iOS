@@ -66,6 +66,7 @@ class DetailsPostViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        assignbackground()
         self.tabBarController?.tabBar.isHidden = true
         
 //        activityIndicatoryWeb.hidesWhenStopped = true
@@ -73,6 +74,21 @@ class DetailsPostViewController: UIViewController{
         PostSelect()
 
          }
+    
+    // Set a background image scale to view
+    func assignbackground(){
+          let background = UIImage(named: "back-img-white")
+
+          var imageView : UIImageView!
+          imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIView.ContentMode.scaleToFill
+          imageView.clipsToBounds = true
+          imageView.image = background
+          imageView.center = view.center
+          view.addSubview(imageView)
+          self.view.sendSubviewToBack(imageView)
+      }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
