@@ -209,11 +209,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     }
             
          }
-        DispatchQueue.main.async {
-            self.activityIndicatory.stopAnimating()
-            self.activityIndicatory.isHidden = true
-            self.refreshControl.endRefreshing()
-        }
+//        DispatchQueue.main.async {
+//            self.activityIndicatory.stopAnimating()
+//            self.activityIndicatory.isHidden = true
+//            self.refreshControl.endRefreshing()
+//        }
         
     }
     // Get More Posts
