@@ -36,6 +36,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var imagePost1: UIImageView?
     var imagePost2: UIImage?
     var refreshControl: UIRefreshControl!
+    var pp = 0
     
     var c1: Any?
 //    var categoryID: Int?
@@ -166,7 +167,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
      func getPostList(){
         
         self.activityIndicatory.startAnimating() //====================
-        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&categories=\(catID ?? "")&_embed") { (result, error) in
+//        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&categories=\(catID ?? "")&_embed") { (result, error) in
+          
+        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&per_page=40&categories=\(catID ?? "")&_embed") { (result, error) in
+            
          
          if error != nil{
             DispatchQueue.main.async {
@@ -221,7 +225,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.activityIndicatory.startAnimating()
         self.activityIndicatory.isHidden = false
         loadNumber = loadNumber + 1
-        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&categories=\(catID ?? "")&_embed") { (result, error) in
+        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&per_page=40&categories=\(catID ?? "")&_embed") { (result, error) in
             
                 if error != nil{
                     let errorAlertController = UIAlertController(title: "On ne peut pas obtenir de données", message: "La connexion Internet semble être hors ligne", preferredStyle: .alert)
@@ -283,6 +287,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let backgroundImage = UIImage(named: "back-img-white.png")
         let imageView = UIImageView(image: backgroundImage)
         cell.backgroundView = imageView
+        
+        
+        
     //=====================================================================
             let post = posts[indexPath.row]
 ////       self.c1 = post["categories"] as? [Any]
