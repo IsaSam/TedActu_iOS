@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NUJ-vz-Clj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1nT-C6-Ihh">
     <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -393,6 +393,12 @@
                                             <outlet property="dataSource" destination="95a-Zg-jEP" id="0fd-Pu-Qfd"/>
                                         </connections>
                                     </collectionView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TUJ-uJ-iBe">
+                                        <rect key="frame" x="0.0" y="311" width="320" height="164"/>
+                                        <connections>
+                                            <segue destination="YjM-jG-7wH" kind="embed" id="HKP-Uk-kKt"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -400,11 +406,15 @@
                                     <constraint firstAttribute="trailing" secondItem="MKS-QW-pfB" secondAttribute="trailing" constant="16" id="HLc-s4-ao1"/>
                                     <constraint firstItem="BCi-GG-Te3" firstAttribute="top" secondItem="jgv-gP-jBm" secondAttribute="top" constant="16" id="LP7-cB-Dtp"/>
                                     <constraint firstItem="WfU-tG-K5x" firstAttribute="leading" secondItem="jgv-gP-jBm" secondAttribute="leading" id="OlG-d3-dr1"/>
+                                    <constraint firstItem="TUJ-uJ-iBe" firstAttribute="leading" secondItem="jgv-gP-jBm" secondAttribute="leading" id="Olb-Rp-Ef8"/>
                                     <constraint firstAttribute="bottom" secondItem="WfU-tG-K5x" secondAttribute="bottom" id="T4B-O6-Mpy"/>
                                     <constraint firstItem="BCi-GG-Te3" firstAttribute="leading" secondItem="jgv-gP-jBm" secondAttribute="leading" constant="16" id="UNx-7o-mv5"/>
                                     <constraint firstItem="MKS-QW-pfB" firstAttribute="top" secondItem="BCi-GG-Te3" secondAttribute="bottom" constant="45" id="Xed-9I-CrA"/>
                                     <constraint firstItem="WfU-tG-K5x" firstAttribute="top" secondItem="jgv-gP-jBm" secondAttribute="top" id="YAO-31-bKd"/>
                                     <constraint firstAttribute="trailing" secondItem="BCi-GG-Te3" secondAttribute="trailing" constant="16" id="eQb-NU-Zj4"/>
+                                    <constraint firstAttribute="trailing" secondItem="TUJ-uJ-iBe" secondAttribute="trailing" id="giU-Vf-Q8M"/>
+                                    <constraint firstAttribute="bottom" secondItem="TUJ-uJ-iBe" secondAttribute="bottom" id="jb0-Bg-3yH"/>
+                                    <constraint firstItem="TUJ-uJ-iBe" firstAttribute="top" secondItem="BCi-GG-Te3" secondAttribute="bottom" constant="45" id="n4K-Bt-qot"/>
                                     <constraint firstAttribute="bottom" secondItem="MKS-QW-pfB" secondAttribute="bottom" id="nlp-q2-ESO"/>
                                     <constraint firstAttribute="trailing" secondItem="WfU-tG-K5x" secondAttribute="trailing" id="t2Y-gC-M9J"/>
                                 </constraints>
@@ -938,7 +948,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                         <viewControllerLayoutGuide type="bottom" id="QKG-U0-xYF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GLw-He-wNa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YiT-s2-rQT">
@@ -1003,11 +1013,11 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                         <viewControllerLayoutGuide type="bottom" id="Ptz-MB-POt"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="Rfu-Ey-3zy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0M-e2-uN5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                                 <connections>
                                     <segue destination="t9T-JE-EZU" kind="embed" id="pg6-7a-aRq"/>
                                 </connections>
@@ -1106,23 +1116,19 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
             </objects>
             <point key="canvasLocation" x="2370" y="1046"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="CN7-1d-xAT">
+        <!--View Controller-->
+        <scene sceneID="zeH-GE-7Oo">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NUJ-vz-Clj" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="p3y-vM-ibd">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="7Mq-Ta-0Ia" kind="relationship" relationship="viewControllers" id="B0x-7b-RzP"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rGe-iW-Il0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="mDF-eR-52X" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8K3-8M-ATW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nsc-0F-cRr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="1046"/>
+            <point key="canvasLocation" x="3401" y="-1739"/>
         </scene>
     </scenes>
     <resources>
@@ -1145,6 +1151,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
         <image name="video-select-Small" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="HKP-Uk-kKt"/>
         <segue reference="amV-00-VGe"/>
     </inferredMetricsTieBreakers>
 </document>
