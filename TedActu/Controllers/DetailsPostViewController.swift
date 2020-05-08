@@ -24,6 +24,8 @@ class DetailsPostViewController: UIViewController{
 //    @IBOutlet weak var viewTitleLabel: UIView!
     @IBOutlet var downloadButton: UIButton!
     @IBOutlet weak var viewCategory: UIView!
+    @IBOutlet weak var imgFeaturedGallery: UIImageView!
+    @IBOutlet weak var backImgCat: UIImageView!
     
 //    @IBOutlet weak var searchBar: UISearchBar!
 //    @IBOutlet weak var activityIndicatory: UIActivityIndicatorView!
@@ -48,6 +50,8 @@ class DetailsPostViewController: UIViewController{
         super.viewWillAppear(animated)
         if postFormat == "gallery"{
            viewCategory.isHidden = false
+            
+            
         }else{
             viewCategory.isHidden = true
         }
@@ -178,6 +182,14 @@ class DetailsPostViewController: UIViewController{
                             if let imagePath = imageURL,
                                 let imgUrl = URL(string:  imagePath){
                                 postImageView.af_setImage(withURL: imgUrl)
+                                imgFeaturedGallery.af_setImage(withURL: imgUrl)
+                                
+                                imgFeaturedGallery.layer.cornerRadius = 17.0
+                                imgFeaturedGallery.clipsToBounds = true
+                                imgFeaturedGallery.layer.borderWidth = 2.0
+ //                               imgFeaturedGallery.layer.masksToBounds = false
+                                imgFeaturedGallery.layer.borderColor = UIColor.white.cgColor
+                                
                             }
                             else{
                                 postImageView.image = nil

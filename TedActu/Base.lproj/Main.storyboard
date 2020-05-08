@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="evn-Ie-ZwN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1nT-C6-Ihh">
     <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -345,7 +345,27 @@
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgv-gP-jBm">
                                 <rect key="frame" x="0.0" y="44" width="320" height="475"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-img-white" translatesAutoresizingMaskIntoConstraints="NO" id="WfU-tG-K5x">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="475.00000000000023"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BCi-GG-Te3">
+                                        <rect key="frame" x="16" y="16" width="288" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="Wcw-vS-Sfp"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="BCi-GG-Te3" firstAttribute="top" secondItem="jgv-gP-jBm" secondAttribute="top" constant="16" id="LP7-cB-Dtp"/>
+                                    <constraint firstItem="WfU-tG-K5x" firstAttribute="leading" secondItem="jgv-gP-jBm" secondAttribute="leading" id="OlG-d3-dr1"/>
+                                    <constraint firstAttribute="bottom" secondItem="WfU-tG-K5x" secondAttribute="bottom" id="T4B-O6-Mpy"/>
+                                    <constraint firstItem="BCi-GG-Te3" firstAttribute="leading" secondItem="jgv-gP-jBm" secondAttribute="leading" constant="16" id="UNx-7o-mv5"/>
+                                    <constraint firstItem="WfU-tG-K5x" firstAttribute="top" secondItem="jgv-gP-jBm" secondAttribute="top" id="YAO-31-bKd"/>
+                                    <constraint firstAttribute="trailing" secondItem="BCi-GG-Te3" secondAttribute="trailing" constant="16" id="eQb-NU-Zj4"/>
+                                    <constraint firstAttribute="trailing" secondItem="WfU-tG-K5x" secondAttribute="trailing" id="t2Y-gC-M9J"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -377,6 +397,7 @@
                     <connections>
                         <outlet property="contentLabel" destination="beV-sc-8nk" id="Sia-hU-j0T"/>
                         <outlet property="downloadButton" destination="sw5-Ps-5cn" id="RJq-XA-LNQ"/>
+                        <outlet property="imgFeaturedGallery" destination="BCi-GG-Te3" id="FDU-OS-Hiy"/>
                         <outlet property="postImageView" destination="hPc-3a-DEW" id="c76-hS-t7g"/>
                         <outlet property="titleLabel" destination="1vC-b7-tEZ" id="JwQ-bB-6Ba"/>
                         <outlet property="viewCategory" destination="jgv-gP-jBm" id="PQb-li-Azf"/>
@@ -870,6 +891,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
         <image name="about-Small" width="29" height="29"/>
         <image name="about-select-Small" width="29" height="29"/>
         <image name="app-store" width="512" height="512"/>
+        <image name="back-img-white" width="700" height="1243"/>
         <image name="category-Small" width="29" height="29"/>
         <image name="category-select-Small" width="29" height="29"/>
         <image name="download26" width="26" height="26"/>
