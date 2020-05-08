@@ -378,13 +378,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                                 } else {
                                     //     print("Success let using the image...")
                                     cell.imagePost.sd_setImage(with: imgUrl)
-                                    let h = image?.size.height
-                                    let h1 = Float(h!)
-                                    print("hhh: \(h!)")
-                                    if h1 > 1400.0{
+                                    
+// MARK: - IMG HEIGHT
+                                    let heightCell = cell.frame.height
+                                    print(heightCell)
+                                    let imgSize = image?.size.height
+                                    let imgSize_f = Float(imgSize!)
+                                    
+                                    print(tableView.frame.height)
+                                    
+                                    print("hhh: \(imgSize!)")
+                                    if imgSize_f > 1400.0{
                                         print("yesss")
-                                        print("h1: \(h1)")
+                                        print("h1: \(imgSize_f)")
                                     }
+// MARK: - //
                                 }
                             })
                             
@@ -416,6 +424,22 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
             return cell  
         }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        print("*-")
+  //      print(tableView.rowHeight)
+    //    print(tableView.frame.height)
+     //   return 800
+        var height:CGFloat = CGFloat()
+        if indexPath.row == 4 {
+            height = 800
+        }
+        else {
+            height = 410.3333435058594
+        }
+
+        return height
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

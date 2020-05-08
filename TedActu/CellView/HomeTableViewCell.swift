@@ -12,6 +12,9 @@ class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imagePost: UIImageView!
     
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

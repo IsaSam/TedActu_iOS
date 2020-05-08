@@ -118,6 +118,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imageHeightConstraint" destination="gV4-Jp-sJ1" id="gTg-SI-ZzO"/>
                                             <outlet property="imagePost" destination="LRc-t6-7OK" id="0ro-aO-OZJ"/>
                                             <segue destination="95a-Zg-jEP" kind="show" identifier="detailsPostSegue" id="fw7-na-gke"/>
                                         </connections>
