@@ -36,8 +36,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var imagePost1: UIImageView?
     var imagePost2: UIImage?
     var refreshControl: UIRefreshControl!
-    var pp = 0
-    
     var c1: Any?
 //    var categoryID: Int?
     var catID: String?
@@ -288,8 +286,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let imageView = UIImageView(image: backgroundImage)
         cell.backgroundView = imageView
         
-        
-        
     //=====================================================================
             let post = posts[indexPath.row]
 ////       self.c1 = post["categories"] as? [Any]
@@ -382,6 +378,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                                 } else {
                                     //     print("Success let using the image...")
                                     cell.imagePost.sd_setImage(with: imgUrl)
+                                    let h = image?.size.height
+                                    let h1 = Float(h!)
+                                    print("hhh: \(h!)")
+                                    if h1 > 1400.0{
+                                        print("yesss")
+                                        print("h1: \(h1)")
+                                    }
                                 }
                             })
                             
@@ -400,6 +403,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                             let imgUrl = URL(string:  imagePath){
                   // to add1          cell.imagePost.image = UIImage(named: "loading4.jpg") //image place
                             cell.imagePost.af_setImage(withURL: imgUrl)
+                            
                         }
                         else{
                             cell.imagePost.image = nil
