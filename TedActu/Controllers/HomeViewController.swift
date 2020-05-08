@@ -171,7 +171,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.activityIndicatory.startAnimating() //====================
 //        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&categories=\(catID ?? "")&_embed") { (result, error) in
           
-        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&per_page=40&categories=\(catID ?? "")&_embed") { (result, error) in
+        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&per_page=20&categories=\(catID ?? "")&_embed") { (result, error) in
             
          
          if error != nil{
@@ -207,23 +207,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         do{
                                         let dataDic = mediaDetails as? [[String: Any]]
                                         if dataDic != nil{
-                                            print("+++")
-                                            print(dataDic!)
                                             self.imgPosts1 = dataDic!
                                             for images in self.imgPosts1{
                                                 let h = images["height"] as? Int
-                                                 print("height1: \(h!)")
+                                         //        print("height1: \(h!)")
                                                 
                                                         let imgSize = h
                                                 let imgSize_f = imgSize
                                                 if imgSize_f! > 1800{
-                                                    print("- imageHeight >>>>: \(imgSize_f!)")
+                                          //          print("- imageHeight >>>>: \(imgSize_f!)")
                                                             self.fixHeight = 1200
                                                         }else if imgSize_f! > 1400{
-                                                            print("- imageHeight >>: \(imgSize_f!)")
+                                           //                 print("- imageHeight >>: \(imgSize_f!)")
                                                             self.fixHeight = 800
                                                         }else{
-                                                            print("- imageHeight: \(imgSize!)")
+                                            //                print("- imageHeight: \(imgSize!)")
                                                             self.fixHeight = 400
                                                         }
                                                 
@@ -265,7 +263,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.activityIndicatory.startAnimating()
         self.activityIndicatory.isHidden = false
         loadNumber = loadNumber + 1
-        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&per_page=40&categories=\(catID ?? "")&_embed") { (result, error) in
+        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&per_page=20&categories=\(catID ?? "")&_embed") { (result, error) in
             
                 if error != nil{
                     let errorAlertController = UIAlertController(title: "On ne peut pas obtenir de données", message: "La connexion Internet semble être hors ligne", preferredStyle: .alert)
@@ -327,11 +325,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let backgroundImage = UIImage(named: "back-img-white.png")
         let imageView = UIImageView(image: backgroundImage)
         cell.backgroundView = imageView
-        
+    
     //=====================================================================
             let post = posts[indexPath.row]
 ////       self.c1 = post["categories"] as? [Any]
-     
+        
             do{
                 let titleDic = (posts as AnyObject).value(forKey: "title")
                 let embedDic = (posts as AnyObject).value(forKey: "_embedded")
@@ -428,13 +426,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                                     
                             //        print(tableView.frame.height)
                                     if imgSize_f > 1800.0{
-                                        print("\(indexPath.row) - imageHeight >>>>: \(imgSize_f)")
+                            //            print("\(indexPath.row) - imageHeight >>>>: \(imgSize_f)")
                                         self.fixHeight = 1200
                                     }else if imgSize_f > 1400.0{
-                                        print("\(indexPath.row) - imageHeight >>: \(imgSize_f)")
+                             //           print("\(indexPath.row) - imageHeight >>: \(imgSize_f)")
                                         self.fixHeight = 800
                                     }else{
-                                        print("\(indexPath.row) - imageHeight: \(imgSize!)")
+                            //            print("\(indexPath.row) - imageHeight: \(imgSize!)")
                                         self.fixHeight = 400
                                     }
 // MARK: - //
@@ -493,6 +491,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
              let nameString = postsEmbed[(indexPath?.row)!]
     //         self.c1 = post["categories"] as? [Any]
             let cate = post["categories"] as? [Any]
+            let postFormat = post["format"]
+            print(postFormat!)
              
              detailViewController.post = post
              detailViewController.nameString = nameString
