@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AlamofireImage
+import SDWebImage
 //import WebKit
 
 enum PostKeys {
@@ -24,12 +26,12 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
     let reuseIdentifier = "cellGallery" // also enter this string as the cell identifier in the storyboard
     var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
     
-    var urlImage: String?
+    var imageUrlIframe: [String] = []
     
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        return self.imageUrlIframe.count
     }
     
     
@@ -42,10 +44,25 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
 
         
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
-        cell.myLabel.text = self.items[indexPath.item]
+        cell.myLabel.text = ""
         cell.myLabel.textColor = .black
         cell.backgroundColor = UIColor(red: 0.96, green: 0.97, blue: 0.96, alpha: 1.00)// make cell more visible in our example project
         cell.imageCellCategory.backgroundColor = UIColor(red: 0.96, green: 0.97, blue: 0.96, alpha: 1.00)
+        
+        let imageURL = imageUrlIframe[indexPath.row]
+        print("urlI: \(imageURL) - \(indexPath.row)")
+     
+        let imagePath = imageURL
+        let imgUrl = URL(string:  imagePath)
+                         cell.imageCellCategory.sd_setImage(with: imgUrl, placeholderImage:nil, completed: { (image, error, cacheType, imgUrl) -> Void in
+                             if ((error) != nil) {
+                             } else {
+                                 print("Success let using the image...")
+                                 cell.imageCellCategory.sd_setImage(with: imgUrl)
+                                 
+                            }
+            })
+        
 
         return cell
     }
@@ -243,8 +260,8 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
             guard let range = Range(match.range, in: input) else { continue }
             let urlIMG = input[range]
             if urlIMG != ""{
-                urlImage = String(urlIMG)
-                print("ImageFrame: \(urlImage ?? "nil")")
+                imageUrlIframe.append(String(urlIMG))
+                print("ImageFrame: \(urlIMG)")
             }else{print("nnnil2")}
         }
         
