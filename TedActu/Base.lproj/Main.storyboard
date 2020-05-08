@@ -95,18 +95,18 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="360" id="5Zc-or-nJs" customClass="HomeTableViewCell" customModule="TedActu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="360"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="400" id="5Zc-or-nJs" customClass="HomeTableViewCell" customModule="TedActu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Zc-or-nJs" id="Oz8-2a-1qx">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="360"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRc-t6-7OK">
-                                                    <rect key="frame" x="10" y="10" width="300" height="320"/>
+                                                    <rect key="frame" x="10" y="10" width="300" height="360"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="300" id="fIa-ja-vvP"/>
-                                                        <constraint firstAttribute="height" constant="320" id="gV4-Jp-sJ1"/>
+                                                        <constraint firstAttribute="height" constant="360" id="gV4-Jp-sJ1"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -699,7 +699,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6vi-yV-SpN">
                                                 <rect key="frame" x="20" y="78" width="280" height="364"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXa-qX-Xq6">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IXa-qX-Xq6">
                                                         <rect key="frame" x="8" y="153" width="264" height="145"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-store" translatesAutoresizingMaskIntoConstraints="NO" id="nGU-GI-Noi">
@@ -761,69 +761,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                                                             <constraint firstAttribute="height" constant="145" id="mPn-KO-DVM"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSZ-s0-iMg">
-                                                        <rect key="frame" x="8" y="0.0" width="264" height="145"/>
-                                                        <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-google-play-96" translatesAutoresizingMaskIntoConstraints="NO" id="T4y-Qd-kdX">
-                                                                <rect key="frame" x="8" y="8" width="80" height="80"/>
-                                                                <color key="backgroundColor" red="0.97245675330000003" green="0.97261565920000004" blue="0.97242289780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="80" id="W9c-IH-ZbB"/>
-                                                                    <constraint firstAttribute="width" constant="80" id="WOo-BP-Kwt"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="tedactu.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSB-cR-KFG">
-                                                                <rect key="frame" x="96" y="38" width="94" height="17"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="94" id="08B-i3-sVA"/>
-                                                                    <constraint firstAttribute="height" constant="17" id="X5T-3w-VuY"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gratuit sur playStore ▷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdh-ro-gpf">
-                                                                <rect key="frame" x="96" y="59" width="162" height="17"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="17" id="AvG-1s-hPD"/>
-                                                                    <constraint firstAttribute="width" constant="162" id="i9I-4p-ja6"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                <color key="textColor" red="0.0078431372550000003" green="0.047058823530000002" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xp-tg-f8M">
-                                                                <rect key="frame" x="75" y="96" width="114" height="36"/>
-                                                                <color key="backgroundColor" red="0.91372549020000005" green="0.91764705879999997" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="114" id="4nL-J0-sMk"/>
-                                                                    <constraint firstAttribute="height" constant="36" id="exS-OW-dIL"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                                <state key="normal" title="Partager"/>
-                                                                <connections>
-                                                                    <action selector="shareButton1:" destination="DOC-D5-msj" eventType="touchUpInside" id="2jD-6e-1i4"/>
-                                                                </connections>
-                                                            </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo-text-blue" translatesAutoresizingMaskIntoConstraints="NO" id="ZeD-3q-3lA">
-                                                                <rect key="frame" x="96" y="17" width="87" height="17"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstItem="Gdh-ro-gpf" firstAttribute="leading" secondItem="T4y-Qd-kdX" secondAttribute="trailing" constant="8" id="J0y-97-rzn"/>
-                                                            <constraint firstItem="cSB-cR-KFG" firstAttribute="leading" secondItem="T4y-Qd-kdX" secondAttribute="trailing" constant="8" id="Jfz-dH-1r7"/>
-                                                            <constraint firstAttribute="height" constant="145" id="Jo1-nf-6dt"/>
-                                                            <constraint firstItem="T4y-Qd-kdX" firstAttribute="leading" secondItem="iSZ-s0-iMg" secondAttribute="leading" constant="8" id="Nkp-8v-f3w"/>
-                                                            <constraint firstItem="Gdh-ro-gpf" firstAttribute="top" secondItem="cSB-cR-KFG" secondAttribute="bottom" constant="4" id="bJr-Am-UPA"/>
-                                                            <constraint firstItem="T4y-Qd-kdX" firstAttribute="top" secondItem="iSZ-s0-iMg" secondAttribute="top" constant="8" id="dYu-xa-rDU"/>
-                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="264" id="iqV-Mk-Ixy"/>
-                                                            <constraint firstItem="8Xp-tg-f8M" firstAttribute="centerX" secondItem="iSZ-s0-iMg" secondAttribute="centerX" id="xpQ-Yp-JPh"/>
-                                                            <constraint firstItem="8Xp-tg-f8M" firstAttribute="top" secondItem="T4y-Qd-kdX" secondAttribute="bottom" constant="8" id="yEB-Ch-Y3x"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N’hésitez pas à partager l’application à votre entourage à travers les réseaux sociaux. Merci d'utiliser Ted'Actu" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eS7-6r-O7c">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="N’hésitez pas à partager l’application à votre entourage à travers les réseaux sociaux. Merci d'utiliser Ted'Actu" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eS7-6r-O7c">
                                                         <rect key="frame" x="8" y="306" width="264" height="54"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="264" id="4ah-gp-0Qj"/>
@@ -835,15 +773,11 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="iSZ-s0-iMg" firstAttribute="top" secondItem="6vi-yV-SpN" secondAttribute="top" id="37G-qP-0Ni"/>
                                                     <constraint firstAttribute="trailing" secondItem="eS7-6r-O7c" secondAttribute="trailing" constant="8" id="C7z-c8-3hO"/>
-                                                    <constraint firstAttribute="trailing" secondItem="iSZ-s0-iMg" secondAttribute="trailing" constant="8" id="JIe-DS-rO3"/>
                                                     <constraint firstAttribute="trailing" secondItem="IXa-qX-Xq6" secondAttribute="trailing" constant="8" id="LDN-rh-sgl"/>
                                                     <constraint firstItem="eS7-6r-O7c" firstAttribute="top" secondItem="IXa-qX-Xq6" secondAttribute="bottom" constant="8" id="LWz-fG-efp"/>
-                                                    <constraint firstItem="iSZ-s0-iMg" firstAttribute="leading" secondItem="6vi-yV-SpN" secondAttribute="leading" constant="8" id="S2A-Ew-aAx"/>
                                                     <constraint firstItem="IXa-qX-Xq6" firstAttribute="leading" secondItem="6vi-yV-SpN" secondAttribute="leading" constant="8" id="TwJ-P7-Bm2"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="VIr-Mt-nY3"/>
-                                                    <constraint firstItem="IXa-qX-Xq6" firstAttribute="top" secondItem="iSZ-s0-iMg" secondAttribute="bottom" constant="8" id="Zjm-8s-uza"/>
                                                     <constraint firstAttribute="height" constant="364" id="qcf-8C-WqI"/>
                                                     <constraint firstItem="eS7-6r-O7c" firstAttribute="leading" secondItem="6vi-yV-SpN" secondAttribute="leading" constant="8" id="syQ-nf-3Eg"/>
                                                 </constraints>
@@ -881,10 +815,8 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                     </navigationItem>
                     <connections>
                         <outlet property="contentShare" destination="IXa-qX-Xq6" id="anC-1k-kHN"/>
-                        <outlet property="contentShare1" destination="iSZ-s0-iMg" id="tfp-vs-eI7"/>
                         <outlet property="imageLogo" destination="nGU-GI-Noi" id="Nll-YP-buk"/>
                         <outlet property="shareButton" destination="j2c-NP-bO2" id="Fb9-eC-fby"/>
-                        <outlet property="shareButton1" destination="8Xp-tg-f8M" id="W8t-jj-etU"/>
                         <outlet property="sharePage" destination="6vi-yV-SpN" id="pTX-IN-zQE"/>
                     </connections>
                 </viewController>
@@ -904,7 +836,6 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
         <image name="feeds-select-Small" width="29" height="29"/>
         <image name="gallery-Small" width="29" height="29"/>
         <image name="gallery-select-Small" width="29" height="29"/>
-        <image name="icons8-google-play-96" width="96" height="96"/>
         <image name="logo-text-blue" width="370" height="74"/>
         <image name="share-24" width="24" height="24"/>
         <image name="video-Small" width="29" height="29"/>
