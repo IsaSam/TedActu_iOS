@@ -14,4 +14,23 @@ class cellGallery: UICollectionViewCell {
     @IBOutlet weak var widthImageConstraint: NSLayoutConstraint!
     @IBOutlet weak var heightImageConstraint: NSLayoutConstraint!
     
+    override var isHighlighted: Bool {
+           willSet {
+               if newValue == true {
+                   UIView.transition(with: imageCellCategory, duration: 5.0, options: .transitionCrossDissolve, animations: {
+                       self.imageCellCategory.isHighlighted = newValue
+                   })
+               }
+           }
+       }
+       
+    override var isSelected: Bool {
+           willSet {
+               if newValue == false {
+                   UIView.transition(with: imageCellCategory, duration: 5.0, options: .transitionCrossDissolve, animations: {
+                       self.imageCellCategory.isHighlighted = newValue
+                   })
+               }
+           }
+       }
 }

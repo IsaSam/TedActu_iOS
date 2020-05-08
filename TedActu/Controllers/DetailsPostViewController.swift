@@ -70,7 +70,6 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
       
                             }
             })
-        
 
         return cell
     }
@@ -98,7 +97,9 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+        
     }
+    
     
     
     @IBOutlet var postImageView: UIImageView!
