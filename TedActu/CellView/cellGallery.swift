@@ -11,5 +11,7 @@ import UIKit
 class cellGallery: UICollectionViewCell {
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var imageCellCategory: UIImageView!
+    @IBOutlet weak var widthImageConstraint: NSLayoutConstraint!
+    @IBOutlet weak var heightImageConstraint: NSLayoutConstraint!
     
 }

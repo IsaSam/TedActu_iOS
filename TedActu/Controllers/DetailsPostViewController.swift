@@ -24,9 +24,11 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
     @IBOutlet weak var collectionView: UICollectionView!
     
     let reuseIdentifier = "cellGallery" // also enter this string as the cell identifier in the storyboard
-    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
     
     var imageUrlIframe: [String] = []
+    var cellWidth: CGFloat?
+    var cellHeight: CGFloat?
+    
     
     
     // tell the collection view how many cells to make
@@ -42,12 +44,18 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
                // get a reference to our storyboard cell
                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! cellGallery
 
+        cell.imageCellCategory.layer.cornerRadius = 17.0
+        cell.imageCellCategory.clipsToBounds = true
+        cell.imageCellCategory.layer.borderWidth = 2.0
+        cell.imageCellCategory.layer.borderColor = UIColor.white.cgColor
         
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
         cell.myLabel.text = ""
         cell.myLabel.textColor = .black
         cell.backgroundColor = UIColor(red: 0.96, green: 0.97, blue: 0.96, alpha: 1.00)// make cell more visible in our example project
         cell.imageCellCategory.backgroundColor = UIColor(red: 0.96, green: 0.97, blue: 0.96, alpha: 1.00)
+        cell.widthImageConstraint.constant = self.cellWidth!
+        cell.heightImageConstraint.constant = self.cellHeight!
         
         let imageURL = imageUrlIframe[indexPath.row]
         print("urlI: \(imageURL) - \(indexPath.row)")
@@ -59,7 +67,7 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
                              } else {
                                  print("Success let using the image...")
                                  cell.imageCellCategory.sd_setImage(with: imgUrl)
-                                 
+      
                             }
             })
         
@@ -72,6 +80,16 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
         let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
         let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
         let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
+        self.cellWidth = collectionView.frame.size.width
+        self.cellHeight = collectionView.frame.size.height
+        print("&&&: \(cellWidth!) - \(cellHeight!)")
+        
+        // corner image
+        collectionView.layer.cornerRadius = 17.0
+        collectionView.clipsToBounds = true
+        collectionView.layer.borderWidth = 2.0
+        collectionView.layer.borderColor = UIColor.white.cgColor
+        
         return CGSize(width: size, height: size)
     }
     
@@ -145,14 +163,7 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
         if postFormat == "gallery"{
             collectionView.delegate = self
             collectionView.dataSource = self
-            
-//            let layout =  collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
-//                layout!.minimumLineSpacing = 10
-//                    layout!.minimumInteritemSpacing = 10
-//                    layout!.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-//                    let size = CGSize(width:(collectionView!.bounds.width-30)/2, height: 250)
-//                    layout!.itemSize = size
-            
+            // corner image
         }
         
         assignbackground()
@@ -289,7 +300,6 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
                                 imgFeaturedGallery.layer.cornerRadius = 17.0
                                 imgFeaturedGallery.clipsToBounds = true
                                 imgFeaturedGallery.layer.borderWidth = 2.0
- //                               imgFeaturedGallery.layer.masksToBounds = false
                                 imgFeaturedGallery.layer.borderColor = UIColor.white.cgColor
                                 
                             }
