@@ -42,7 +42,7 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
         cell.myLabel.text = self.items[indexPath.item]
         cell.myLabel.textColor = .black
-        cell.backgroundColor = .red // make cell more visible in our example project
+        cell.backgroundColor = UIColor(red: 0.96, green: 0.97, blue: 0.96, alpha: 1.00)// make cell more visible in our example project
 
         return cell
     }
