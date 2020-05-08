@@ -24,6 +24,8 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
     let reuseIdentifier = "cellGallery" // also enter this string as the cell identifier in the storyboard
     var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
     
+    var urlImage: String?
+    
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -201,7 +203,7 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
     func PostSelect(){
         
         let titleDic = (post as AnyObject).value(forKey: "title")
-        let contentDic = (post as AnyObject).value(forKey: "excerpt")
+        let contentDic = (post as AnyObject).value(forKey: "content")
         let embedDic = (post as AnyObject).value(forKey: "_embedded")
         
         let titleDicString = titleDic! as! [String : Any]
@@ -223,6 +225,30 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
         let mediaDetails = (imgArray as AnyObject).value(forKey: "media_details")
         let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
         
+        // MARK: - Take image iframe
+        
+        //Images
+        print("htmlTag: \(htmlTag ?? "nil")")
+        let htmlTag2 = htmlTag?.stringByDecodingHTMLEntities
+        print("htmlTag2: \(htmlTag2 ?? "nil")")
+   //     let html2 = htmlTag2?.allStringsBetween(start: "<iframe src=", end: "</iframe>")
+        let html2 = htmlTag2?.allStringsBetween(start: "<iframe frameborder=", end: "</iframe>")
+        
+        let input = String(describing: html2)
+        print("input: \(input)")
+        let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+        let matches = detector.matches(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count))
+        print("match: \(matches)")
+        for match in matches {
+            guard let range = Range(match.range, in: input) else { continue }
+            let urlIMG = input[range]
+            if urlIMG != ""{
+                urlImage = String(urlIMG)
+                print("ImageFrame: \(urlImage ?? "nil")")
+            }else{print("nnnil2")}
+        }
+        
+        // MARK: -
 
         do{
             if let fullImg =  (sizes as AnyObject).value(forKey: "full"){
