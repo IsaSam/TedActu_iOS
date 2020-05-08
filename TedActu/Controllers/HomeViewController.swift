@@ -489,7 +489,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
              let postContent = postsContent[(indexPath?.row)!]
              let imgPost = postsEmbed[(indexPath?.row)!]
              let nameString = postsEmbed[(indexPath?.row)!]
-    //         self.c1 = post["categories"] as? [Any]
             let cate = post["categories"] as? [Any]
             let postFormat = post["format"] as? String
             print(postFormat!)
@@ -502,19 +501,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 detailViewController.categoryID = cate
                 detailViewController.postFormat = postFormat
             if postFormat == "gallery"{
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "GalleryID") as! GalleryViewController
-                self.present(vc, animated: true, completion: nil)
+              //  detailViewController.viewCategory.isHidden = false
+//                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "GalleryID") as! GalleryViewController
+//                self.present(vc, animated: true, completion: nil)
             }
             
             }
-//        else{
-//                    if segue.identifier == "postGallerySegue" {
-//                    let postGallery = segue.destination as! GalleryViewController
-//                        postGallery.postFormat = postFormat
-//                }
-                
-         //   }
-      //  }
      }
     
 }// End of Class

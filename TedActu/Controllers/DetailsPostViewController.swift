@@ -23,6 +23,7 @@ class DetailsPostViewController: UIViewController{
     @IBOutlet weak var contentLabel: UILabel!
 //    @IBOutlet weak var viewTitleLabel: UIView!
     @IBOutlet var downloadButton: UIButton!
+    @IBOutlet weak var viewCategory: UIView!
     
 //    @IBOutlet weak var searchBar: UISearchBar!
 //    @IBOutlet weak var activityIndicatory: UIActivityIndicatorView!
@@ -45,7 +46,11 @@ class DetailsPostViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        if postFormat == "gallery"{
+           viewCategory.isHidden = false
+        }else{
+            viewCategory.isHidden = true
+        }
         topBarLogo()
         view.backgroundColor = .black
         
@@ -65,14 +70,9 @@ class DetailsPostViewController: UIViewController{
         
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(postFormat!)
-        if postFormat == "gallery"{
-            self.performSegue(withIdentifier: "postGallerySegue", sender: self)
-        }
         assignbackground()
         self.tabBarController?.tabBar.isHidden = true
         
