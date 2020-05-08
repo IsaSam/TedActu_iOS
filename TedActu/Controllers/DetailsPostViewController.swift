@@ -39,6 +39,7 @@ class DetailsPostViewController: UIViewController{
     var imgPosts: [[String: Any]] = []
     var categoryID: Any?
     var imgURLShare: String?
+    var postFormat: String?
     
     // MARK: - Main
     
@@ -64,9 +65,14 @@ class DetailsPostViewController: UIViewController{
         
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(postFormat!)
+        if postFormat == "gallery"{
+            self.performSegue(withIdentifier: "postGallerySegue", sender: self)
+        }
         assignbackground()
         self.tabBarController?.tabBar.isHidden = true
         

@@ -19,6 +19,7 @@
 		96655AD1245B1C5A007D2BDF /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96655AD0245B1C59007D2BDF /* SplashScreenView.swift */; };
 		96655AD3245B23E8007D2BDF /* splashscreen_img.gif in Resources */ = {isa = PBXBuildFile; fileRef = 96655AD2245B23E7007D2BDF /* splashscreen_img.gif */; };
 		96655AD5245B2595007D2BDF /* Swift+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96655AD4245B2594007D2BDF /* Swift+Gif.swift */; };
+		969189D824651CBB00D88929 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969189D724651CBB00D88929 /* GalleryViewController.swift */; };
 		96A715FE2436AE9D00D579A5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A715FD2436AE9D00D579A5 /* HomeViewController.swift */; };
 		96A716022436BCFC00D579A5 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A716012436BCFC00D579A5 /* HomeTableViewCell.swift */; };
 		96F23F51243F7CF600CD634C /* TedActuAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F23F50243F7CF600CD634C /* TedActuAPIManager.swift */; };
@@ -49,6 +50,7 @@
 		96655AD0245B1C59007D2BDF /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		96655AD2245B23E7007D2BDF /* splashscreen_img.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = splashscreen_img.gif; sourceTree = "<group>"; };
 		96655AD4245B2594007D2BDF /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
+		969189D724651CBB00D88929 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		96A715FD2436AE9D00D579A5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		96A716012436BCFC00D579A5 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		96F23F50243F7CF600CD634C /* TedActuAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedActuAPIManager.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				964DB5F2245B76FF00F0DFD9 /* DetailsPostViewController.swift */,
 				96105A0E245E9CA700905C90 /* ListCategoriesViewController.swift */,
 				963D64F6246202F800B8982D /* AboutViewController.swift */,
+				969189D724651CBB00D88929 /* GalleryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				96655AD5245B2595007D2BDF /* Swift+Gif.swift in Sources */,
 				96F23F56243F7F6400CD634C /* Post.swift in Sources */,
 				964D6B51242421C900504E42 /* AppDelegate.swift in Sources */,
+				969189D824651CBB00D88929 /* GalleryViewController.swift in Sources */,
 				964D6B53242421C900504E42 /* SceneDelegate.swift in Sources */,
 				96105A0F245E9CA800905C90 /* ListCategoriesViewController.swift in Sources */,
 				96F23F5B243FED3A00CD634C /* Reachability.swift in Sources */,

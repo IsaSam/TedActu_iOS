@@ -491,16 +491,30 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
              let nameString = postsEmbed[(indexPath?.row)!]
     //         self.c1 = post["categories"] as? [Any]
             let cate = post["categories"] as? [Any]
-            let postFormat = post["format"]
+            let postFormat = post["format"] as? String
             print(postFormat!)
-             
-             detailViewController.post = post
-             detailViewController.nameString = nameString
-             detailViewController.postTitle = postTitle
-             detailViewController.postContent = postContent
-             detailViewController.imgPost = imgPost
-            detailViewController.categoryID = cate
-        }
+                
+                 detailViewController.post = post
+                 detailViewController.nameString = nameString
+                 detailViewController.postTitle = postTitle
+                 detailViewController.postContent = postContent
+                 detailViewController.imgPost = imgPost
+                detailViewController.categoryID = cate
+                detailViewController.postFormat = postFormat
+            if postFormat == "gallery"{
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "GalleryID") as! GalleryViewController
+                self.present(vc, animated: true, completion: nil)
+            }
+            
+            }
+//        else{
+//                    if segue.identifier == "postGallerySegue" {
+//                    let postGallery = segue.destination as! GalleryViewController
+//                        postGallery.postFormat = postFormat
+//                }
+                
+         //   }
+      //  }
      }
     
 }// End of Class
