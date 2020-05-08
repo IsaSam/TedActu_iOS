@@ -379,14 +379,23 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z0X-C5-d5y">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <color key="backgroundColor" red="0.96078431372549022" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="z0X-C5-d5y" secondAttribute="trailing" id="JQD-vp-GFT"/>
                                                         <constraint firstItem="2Zv-wd-48N" firstAttribute="centerX" secondItem="rAl-ud-cRn" secondAttribute="centerX" id="PlH-dg-wSk"/>
+                                                        <constraint firstItem="z0X-C5-d5y" firstAttribute="leading" secondItem="rAl-ud-cRn" secondAttribute="leading" id="ThY-VN-b7J"/>
+                                                        <constraint firstAttribute="bottom" secondItem="z0X-C5-d5y" secondAttribute="bottom" id="e7n-nL-kJp"/>
+                                                        <constraint firstItem="z0X-C5-d5y" firstAttribute="top" secondItem="rAl-ud-cRn" secondAttribute="top" id="mZs-Tc-zKa"/>
                                                         <constraint firstItem="2Zv-wd-48N" firstAttribute="centerY" secondItem="rAl-ud-cRn" secondAttribute="centerY" id="zTP-LV-XZs"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
+                                                    <outlet property="imageCellCategory" destination="z0X-C5-d5y" id="dy5-x5-PNU"/>
                                                     <outlet property="myLabel" destination="2Zv-wd-48N" id="YGA-hD-67E"/>
                                                 </connections>
                                             </collectionViewCell>

@@ -43,6 +43,7 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
         cell.myLabel.text = self.items[indexPath.item]
         cell.myLabel.textColor = .black
         cell.backgroundColor = UIColor(red: 0.96, green: 0.97, blue: 0.96, alpha: 1.00)// make cell more visible in our example project
+        cell.imageCellCategory.backgroundColor = UIColor(red: 0.96, green: 0.97, blue: 0.96, alpha: 1.00)
 
         return cell
     }
