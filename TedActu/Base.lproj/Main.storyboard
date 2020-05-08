@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -355,15 +356,57 @@
                                             <constraint firstAttribute="height" constant="250" id="Wcw-vS-Sfp"/>
                                         </constraints>
                                     </imageView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MKS-QW-pfB">
+                                        <rect key="frame" x="16" y="286" width="288" height="189"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="43E-XF-oUz">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="2"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellGallery" id="Z7y-Tk-sjT" customClass="cellGallery" customModule="TedActu" customModuleProvider="target">
+                                                <rect key="frame" x="2" y="2" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rAl-ud-cRn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zv-wd-48N">
+                                                            <rect key="frame" x="4" y="14.5" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="2Zv-wd-48N" firstAttribute="centerX" secondItem="rAl-ud-cRn" secondAttribute="centerX" id="PlH-dg-wSk"/>
+                                                        <constraint firstItem="2Zv-wd-48N" firstAttribute="centerY" secondItem="rAl-ud-cRn" secondAttribute="centerY" id="zTP-LV-XZs"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <connections>
+                                                    <outlet property="myLabel" destination="2Zv-wd-48N" id="YGA-hD-67E"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="95a-Zg-jEP" id="0fd-Pu-Qfd"/>
+                                        </connections>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="MKS-QW-pfB" firstAttribute="leading" secondItem="jgv-gP-jBm" secondAttribute="leading" constant="16" id="93i-6U-ZdU"/>
+                                    <constraint firstAttribute="trailing" secondItem="MKS-QW-pfB" secondAttribute="trailing" constant="16" id="HLc-s4-ao1"/>
                                     <constraint firstItem="BCi-GG-Te3" firstAttribute="top" secondItem="jgv-gP-jBm" secondAttribute="top" constant="16" id="LP7-cB-Dtp"/>
                                     <constraint firstItem="WfU-tG-K5x" firstAttribute="leading" secondItem="jgv-gP-jBm" secondAttribute="leading" id="OlG-d3-dr1"/>
                                     <constraint firstAttribute="bottom" secondItem="WfU-tG-K5x" secondAttribute="bottom" id="T4B-O6-Mpy"/>
                                     <constraint firstItem="BCi-GG-Te3" firstAttribute="leading" secondItem="jgv-gP-jBm" secondAttribute="leading" constant="16" id="UNx-7o-mv5"/>
+                                    <constraint firstItem="MKS-QW-pfB" firstAttribute="top" secondItem="BCi-GG-Te3" secondAttribute="bottom" constant="20" id="Xed-9I-CrA"/>
                                     <constraint firstItem="WfU-tG-K5x" firstAttribute="top" secondItem="jgv-gP-jBm" secondAttribute="top" id="YAO-31-bKd"/>
                                     <constraint firstAttribute="trailing" secondItem="BCi-GG-Te3" secondAttribute="trailing" constant="16" id="eQb-NU-Zj4"/>
+                                    <constraint firstAttribute="bottom" secondItem="MKS-QW-pfB" secondAttribute="bottom" id="nlp-q2-ESO"/>
                                     <constraint firstAttribute="trailing" secondItem="WfU-tG-K5x" secondAttribute="trailing" id="t2Y-gC-M9J"/>
                                 </constraints>
                             </view>
@@ -395,6 +438,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="42s-yx-GV6"/>
                     <connections>
+                        <outlet property="collectionView" destination="MKS-QW-pfB" id="WYZ-jU-pUu"/>
                         <outlet property="contentLabel" destination="beV-sc-8nk" id="Sia-hU-j0T"/>
                         <outlet property="downloadButton" destination="sw5-Ps-5cn" id="RJq-XA-LNQ"/>
                         <outlet property="imgFeaturedGallery" destination="BCi-GG-Te3" id="FDU-OS-Hiy"/>

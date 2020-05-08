@@ -17,7 +17,52 @@ enum PostKeys {
     static let link = "link"
 }
 
-class DetailsPostViewController: UIViewController{
+class DetailsPostViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let reuseIdentifier = "cellGallery" // also enter this string as the cell identifier in the storyboard
+    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+    
+    
+    // tell the collection view how many cells to make
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.items.count
+    }
+    
+    
+    // make a cell for each cell index path
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+                // get a reference to our storyboard cell
+               // get a reference to our storyboard cell
+               let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! cellGallery
+
+        
+        // Use the outlet in our custom class to get a reference to the UILabel in the cell
+        cell.myLabel.text = self.items[indexPath.item]
+        cell.myLabel.textColor = .black
+        cell.backgroundColor = .red // make cell more visible in our example project
+
+        return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
+        let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
+        let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
+        return CGSize(width: size, height: size)
+    }
+    
+    // MARK: - UICollectionViewDelegate protocol
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // handle tap events
+        print("You selected cell #\(indexPath.item)!")
+    }
+    
+    
     @IBOutlet var postImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
@@ -76,6 +121,19 @@ class DetailsPostViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if postFormat == "gallery"{
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            
+//            let layout =  collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
+//                layout!.minimumLineSpacing = 10
+//                    layout!.minimumInteritemSpacing = 10
+//                    layout!.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+//                    let size = CGSize(width:(collectionView!.bounds.width-30)/2, height: 250)
+//                    layout!.itemSize = size
+            
+        }
         
         assignbackground()
         self.tabBarController?.tabBar.isHidden = true
