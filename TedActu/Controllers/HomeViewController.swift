@@ -27,8 +27,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var postsTitle: [[String: Any]] = []
     var postsContent: [[String: Any]] = []
     var postsEmbed: [[String: Any]] = []
+    var postsEmbed1: [[String: Any]] = []
     
     var imgPosts: [[String: Any]] = []
+    var imgPosts1: [[String: Any]] = []
     var urlPost1: String?
     var loadNumber = 1
     var convertedDate: String = ""
@@ -37,6 +39,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var imagePost2: UIImage?
     var refreshControl: UIRefreshControl!
     var c1: Any?
+//    var fixHeight: CGFloat = 410.0
+    var fixHeight: CGFloat?
+    
 //    var categoryID: Int?
     var catID: String?
     
@@ -163,7 +168,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // GET Post
      func getPostList(){
-        
         self.activityIndicatory.startAnimating() //====================
 //        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&categories=\(catID ?? "")&_embed") { (result, error) in
           
@@ -190,7 +194,45 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 do{
                     print("===========")
          self.posts = result!
-
+                    ///////////////////
+// MARK: - BLOC TO GET HEIHT IMG FIRST
+                    
+                    let embedDic = (self.posts as AnyObject).value(forKey: "_embedded")
+                    let embedDicString = embedDic as? [[String: Any]]
+                    self.postsEmbed1 = embedDicString!
+                    for postImage in self.postsEmbed1{
+                        let imgArray = (postImage as AnyObject).value(forKey: "wp:featuredmedia")
+                        let mediaDetails = (imgArray as AnyObject).value(forKey: "media_details")
+                         
+                        do{
+                                        let dataDic = mediaDetails as? [[String: Any]]
+                                        if dataDic != nil{
+                                            print("+++")
+                                            print(dataDic!)
+                                            self.imgPosts1 = dataDic!
+                                            for images in self.imgPosts1{
+                                                let h = images["height"] as? Int
+                                                 print("height1: \(h!)")
+                                                
+                                                        let imgSize = h
+                                                let imgSize_f = imgSize
+                                                if imgSize_f! > 1800{
+                                                    print("- imageHeight >>>>: \(imgSize_f!)")
+                                                            self.fixHeight = 1200
+                                                        }else if imgSize_f! > 1400{
+                                                            print("- imageHeight >>: \(imgSize_f!)")
+                                                            self.fixHeight = 800
+                                                        }else{
+                                                            print("- imageHeight: \(imgSize!)")
+                                                            self.fixHeight = 400
+                                                        }
+                                                
+                                                }
+                                            }
+                                    }
+                    }
+// MARK: - //
+                    
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.activityIndicatory.stopAnimating()
@@ -311,8 +353,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let imgArray = (postImage as AnyObject).value(forKey: "wp:featuredmedia")
                 let mediaDetails = (imgArray as AnyObject).value(forKey: "media_details")
                 let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
-        
-                print("===")
 ////            let encoded = postTitle["rendered"] as? String
 //            cell.titleLabel.text = encoded?.stringByDecodingHTMLEntities
 ////            let title_ = encoded?.stringByDecodingHTMLEntities
@@ -379,18 +419,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                                     //     print("Success let using the image...")
                                     cell.imagePost.sd_setImage(with: imgUrl)
                                     
+                                    
 // MARK: - IMG HEIGHT
-                                    let heightCell = cell.frame.height
-                                    print(heightCell)
+//                                    let heightCell = cell.frame.height
+//                                    print(heightCell)
                                     let imgSize = image?.size.height
                                     let imgSize_f = Float(imgSize!)
                                     
-                                    print(tableView.frame.height)
-                                    
-                                    print("hhh: \(imgSize!)")
-                                    if imgSize_f > 1400.0{
-                                        print("yesss")
-                                        print("h1: \(imgSize_f)")
+                            //        print(tableView.frame.height)
+                                    if imgSize_f > 1800.0{
+                                        print("\(indexPath.row) - imageHeight >>>>: \(imgSize_f)")
+                                        self.fixHeight = 1200
+                                    }else if imgSize_f > 1400.0{
+                                        print("\(indexPath.row) - imageHeight >>: \(imgSize_f)")
+                                        self.fixHeight = 800
+                                    }else{
+                                        print("\(indexPath.row) - imageHeight: \(imgSize!)")
+                                        self.fixHeight = 400
                                     }
 // MARK: - //
                                 }
@@ -426,18 +471,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        print("*-")
-  //      print(tableView.rowHeight)
-    //    print(tableView.frame.height)
-     //   return 800
         var height:CGFloat = CGFloat()
-        if indexPath.row == 4 {
-            height = 800
-        }
-        else {
-            height = 410.3333435058594
-        }
-
+        height = fixHeight!
         return height
     }
     
