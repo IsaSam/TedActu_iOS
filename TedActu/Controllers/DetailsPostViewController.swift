@@ -19,9 +19,42 @@ enum PostKeys {
     static let link = "link"
 }
 
+struct myPostVar {
+    static var post: [String: Any]?
+}
+
 class DetailsPostViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+        
+        @IBOutlet var postImageView: UIImageView!
+        @IBOutlet var titleLabel: UILabel!
+        @IBOutlet weak var contentLabel: UILabel!
+    //    @IBOutlet weak var viewTitleLabel: UIView!
+        @IBOutlet var downloadButton: UIButton!
+        @IBOutlet weak var viewCategory: UIView!
+        @IBOutlet weak var imgFeaturedGallery: UIImageView!
+        @IBOutlet weak var backImgCat: UIImageView!
+        
+    //    @IBOutlet weak var searchBar: UISearchBar!
+    //    @IBOutlet weak var activityIndicatory: UIActivityIndicatorView!
+        
+        var filteredPosts: [String: Any]?
+        var post: [String: Any]?
+        var imgPost: [String: Any]?
+        var urlPost1: String?
+        var urlYoutube = ""
+        var nameString: [String: Any]?
+        var postTitle: [String: Any]?
+        var postContent: [String: Any]?
+        var postImage: [String: Any]?
+        var imgPosts: [[String: Any]] = []
+        var categoryID: Any?
+        var imgURLShare: String?
+        var postFormat: String?
+        
     
     let reuseIdentifier = "cellGallery" // also enter this string as the cell identifier in the storyboard
     
@@ -101,40 +134,14 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     
-    
-    @IBOutlet var postImageView: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
-//    @IBOutlet weak var viewTitleLabel: UIView!
-    @IBOutlet var downloadButton: UIButton!
-    @IBOutlet weak var viewCategory: UIView!
-    @IBOutlet weak var imgFeaturedGallery: UIImageView!
-    @IBOutlet weak var backImgCat: UIImageView!
-    
-//    @IBOutlet weak var searchBar: UISearchBar!
-//    @IBOutlet weak var activityIndicatory: UIActivityIndicatorView!
-    
-    var filteredPosts: [String: Any]?
-    var post: [String: Any]?
-    var imgPost: [String: Any]?
-    var urlPost1: String?
-    var urlYoutube = ""
-    var nameString: [String: Any]?
-    var postTitle: [String: Any]?
-    var postContent: [String: Any]?
-    var postImage: [String: Any]?
-    var imgPosts: [[String: Any]] = []
-    var categoryID: Any?
-    var imgURLShare: String?
-    var postFormat: String?
-    
+
     // MARK: - Main
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if postFormat == "gallery"{
            viewCategory.isHidden = false
-            
+           myPostVar.post = self.post
             
         }else{
             viewCategory.isHidden = true
@@ -143,6 +150,7 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
         view.backgroundColor = .black
         
     }
+    
     func topBarLogo(){
         let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
 
@@ -358,4 +366,11 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "seguePhoto" {
+            let detailViewController = segue.destination as! DetailsPostViewController
+        }
+        
+    }
+    
 }
