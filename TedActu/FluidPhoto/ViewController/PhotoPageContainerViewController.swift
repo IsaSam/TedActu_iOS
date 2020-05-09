@@ -53,7 +53,9 @@ class PhotoPageContainerViewController: UIViewController, UIGestureRecognizerDel
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(PhotoZoomViewController.self)") as! PhotoZoomViewController
         vc.delegate = self
         vc.index = self.currentIndex
-        vc.image = self.photos[self.currentIndex]
+        print("index: \(currentIndex)")
+        
+        vc.image = self.photos[self.currentIndex+1]
         self.singleTapGestureRecognizer.require(toFail: vc.doubleTapGestureRecognizer)
         let viewControllers = [
             vc

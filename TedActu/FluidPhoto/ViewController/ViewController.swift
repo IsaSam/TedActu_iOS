@@ -189,7 +189,6 @@ class ViewController: UIViewController {
            
     //       BookmarksUp = false
            let htmlTag = (contentDicString as AnyObject).value(forKey: "rendered") as? String
-           let content = htmlTag?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
 //           contentLabel.text = content?.stringByDecodingHTMLEntities
 //           contentLabel.text = "" // to remove
            
