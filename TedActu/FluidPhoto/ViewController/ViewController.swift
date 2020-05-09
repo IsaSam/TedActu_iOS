@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         @IBOutlet weak var backImgCat: UIImageView!
         
 //        var filteredPosts: [String: Any]?
-////        var post: [String: Any]?
+        var post: [String: Any]?
 //        var imgPost: [String: Any]?
 //        var urlPost1: String?
 //        var urlYoutube = ""
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("** \(myPostVar.post ?? nil)")
+      //  print("** \(myPostVar.post ?? [:])")
         
         /////////////////////////////////
                     collectionView.delegate = self
@@ -176,7 +176,7 @@ class ViewController: UIViewController {
        func PostSelect(){
            
 //           let titleDic = (post as AnyObject).value(forKey: "title")
-        let contentDic = (myPostVar.post as AnyObject).value(forKey: "content")
+        let contentDic = (post as AnyObject).value(forKey: "content")
 //        let embedDic = (myPostVar.post as AnyObject).value(forKey: "_embedded")
            
 //           let titleDicString = titleDic! as! [String : Any]
@@ -190,7 +190,7 @@ class ViewController: UIViewController {
     //       BookmarksUp = false
            let htmlTag = (contentDicString as AnyObject).value(forKey: "rendered") as? String
            let content = htmlTag?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-           contentLabel.text = content?.stringByDecodingHTMLEntities
+//           contentLabel.text = content?.stringByDecodingHTMLEntities
 //           contentLabel.text = "" // to remove
            
 //           // for images
@@ -378,10 +378,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-//***        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(PhotoCollectionViewCell.self)", for: indexPath) as! PhotoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(PhotoCollectionViewCell.self)", for: indexPath) as! PhotoCollectionViewCell
         
         //////////////////////////////////
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! PhotoCollectionViewCell //cellGallery
+///        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! PhotoCollectionViewCell //cellGallery
 
         cell.imageView.layer.cornerRadius = 17.0
         cell.imageView.clipsToBounds = true

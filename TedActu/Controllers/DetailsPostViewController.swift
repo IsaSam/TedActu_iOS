@@ -20,7 +20,7 @@ enum PostKeys {
 }
 
 struct myPostVar {
-    static var post: [String: Any]?
+ //   static var post: [String: Any]?
 }
 
 class DetailsPostViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -141,7 +141,7 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
         super.viewWillAppear(animated)
         if postFormat == "gallery"{
            viewCategory.isHidden = false
-           myPostVar.post = self.post
+      //     myPostVar.post = self.post
             
         }else{
             viewCategory.isHidden = true
@@ -368,7 +368,10 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "seguePhoto" {
-            let detailViewController = segue.destination as! DetailsPostViewController
+            let ViewController = segue.destination as! ViewController
+            print("** ssssssssegue")
+            ViewController.post = self.post
+            
         }
         
     }
