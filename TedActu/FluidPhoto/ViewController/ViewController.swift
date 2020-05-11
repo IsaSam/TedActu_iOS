@@ -16,32 +16,14 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-//***    var photos: [UIImage]!
     var selectedIndexPath: IndexPath!
     
     //////////////////////////////////
     
-        @IBOutlet var postImageView: UIImageView!
-        @IBOutlet var titleLabel: UILabel!
+ //       @IBOutlet var postImageView: UIImageView!
         @IBOutlet weak var contentLabel: UILabel!
-        @IBOutlet var downloadButton: UIButton!
-        @IBOutlet weak var viewCategory: UIView!
-        @IBOutlet weak var imgFeaturedGallery: UIImageView!
-        @IBOutlet weak var backImgCat: UIImageView!
         
-//        var filteredPosts: [String: Any]?
         var post: [String: Any]?
-//        var imgPost: [String: Any]?
-//        var urlPost1: String?
-//        var urlYoutube = ""
-//        var nameString: [String: Any]?
-//        var postTitle: [String: Any]?
-//        var postContent: [String: Any]?
-//        var postImage: [String: Any]?
-//        var imgPosts: [[String: Any]] = []
-//        var categoryID: Any?
-////        var imgURLShare: String?
-//        var postFormat: String?
     
     var imgPosts1:  [UIImage] = []
     let reuseIdentifier = "cellGallery"
@@ -51,75 +33,19 @@ class ViewController: UIViewController {
     var cellHeight: CGFloat?
     
     //////////////////////////////////
-    
-    //These variables are used to hold any updates to the safeAreaInsets
-    //that might not have been propagated to this ViewController. This is required
-    //for supporting devices running on >= iOS 11. These will be set manually from
-    //PhotoZoomViewController.swift to ensure any changes to the safeAreaInsets
-    //after the device rotates are pushed to this ViewController. This is required
-    //to ensure the collectionView.convert() function calculates the proper
-    //frame result inside referenceImageViewFrameInTransitioningView()
     var currentLeftSafeAreaInset  : CGFloat = 0.0
     var currentRightSafeAreaInset : CGFloat = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      //  print("** \(myPostVar.post ?? [:])")
         
         /////////////////////////////////
                     collectionView.delegate = self
                     collectionView.dataSource = self
-                
-        //        assignbackground()
-        //        self.tabBarController?.tabBar.isHidden = true
-                
-        //        activityIndicatoryWeb.hidesWhenStopped = true
-        //        CategoriesID()
+
                 PostSelect()
-        ////////////////////////////////
-        
-  /***      self.photos = [
-            #imageLiteral(resourceName: "1"),
-            #imageLiteral(resourceName: "2"),
-            #imageLiteral(resourceName: "3"),
-            #imageLiteral(resourceName: "4"),
-            #imageLiteral(resourceName: "5"),
-            #imageLiteral(resourceName: "6"),
-            #imageLiteral(resourceName: "7"),
-            #imageLiteral(resourceName: "8"),
-            #imageLiteral(resourceName: "9"),
-            #imageLiteral(resourceName: "10"),
-            #imageLiteral(resourceName: "11"),
-            #imageLiteral(resourceName: "12"),
-            #imageLiteral(resourceName: "13"),
-            #imageLiteral(resourceName: "14"),
-            #imageLiteral(resourceName: "15"),
-            #imageLiteral(resourceName: "16"),
-            #imageLiteral(resourceName: "17"),
-            #imageLiteral(resourceName: "18"),
-            #imageLiteral(resourceName: "1"),
-            #imageLiteral(resourceName: "2"),
-            #imageLiteral(resourceName: "3"),
-            #imageLiteral(resourceName: "4"),
-            #imageLiteral(resourceName: "5"),
-            #imageLiteral(resourceName: "6"),
-            #imageLiteral(resourceName: "7"),
-            #imageLiteral(resourceName: "8"),
-            #imageLiteral(resourceName: "9"),
-            #imageLiteral(resourceName: "10"),
-            #imageLiteral(resourceName: "11"),
-            #imageLiteral(resourceName: "12"),
-            #imageLiteral(resourceName: "13"),
-            #imageLiteral(resourceName: "14"),
-            #imageLiteral(resourceName: "15"),
-            #imageLiteral(resourceName: "16"),
-            #imageLiteral(resourceName: "17"),
-            #imageLiteral(resourceName: "18")
-        ]
-        */
-        //Manually set the collectionView frame to the size of the view bounds
-        //(this is required to support iOS 10 devices and earlier)
+
         self.collectionView.frame = self.view.bounds
         
     }
@@ -175,27 +101,11 @@ class ViewController: UIViewController {
     
        func PostSelect(){
            
-//           let titleDic = (post as AnyObject).value(forKey: "title")
         let contentDic = (post as AnyObject).value(forKey: "content")
-//        let embedDic = (myPostVar.post as AnyObject).value(forKey: "_embedded")
-           
-//           let titleDicString = titleDic! as! [String : Any]
            let contentDicString = contentDic! as! [String: Any]
-//           let embedDicString = embedDic! as! [String: Any]
-           
-//           let htmlTitle = (titleDicString as AnyObject).value(forKey: "rendered") as? String
-//           let title = htmlTitle?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-//           titleLabel.text = title?.stringByDecodingHTMLEntities
-           
-    //       BookmarksUp = false
+
            let htmlTag = (contentDicString as AnyObject).value(forKey: "rendered") as? String
-//           contentLabel.text = content?.stringByDecodingHTMLEntities
-//           contentLabel.text = "" // to remove
-           
-//           // for images
-//           let imgArray = (embedDicString as AnyObject).value(forKey: "wp:featuredmedia")
-//           let mediaDetails = (imgArray as AnyObject).value(forKey: "media_details")
-//           let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
+
            
            // MARK: - Take image iframe
            
@@ -222,37 +132,7 @@ class ViewController: UIViewController {
            
            // MARK: -
 
-//           do{
-//               if let fullImg =  (sizes as AnyObject).value(forKey: "full"){
-//                           let dataDic = fullImg as? [[String: Any]]
-//
-//                           if dataDic != nil{
-//                               self.imgPosts = dataDic!
-//                               print("image size full founded")
-//                           }
-//                           else{
-//                               print("saved sizes not founded")
-//                           }
-//                           for images in imgPosts{
-//                               let imageURL = images["source_url"] as? String
-//                               imgURLShare = imageURL
-//                               if let imagePath = imageURL,
-//                                   let imgUrl = URL(string:  imagePath){
-//                                   postImageView.af_setImage(withURL: imgUrl)
-//                                   imgFeaturedGallery.af_setImage(withURL: imgUrl)
-//
-//                                   imgFeaturedGallery.layer.cornerRadius = 17.0
-//                                   imgFeaturedGallery.clipsToBounds = true
-//                                   imgFeaturedGallery.layer.borderWidth = 2.0
-//                                   imgFeaturedGallery.layer.borderColor = UIColor.white.cgColor
-//
-//                               }
-//                               else{
-//                                   postImageView.image = nil
-//                               }
-//                           }
-//                       }
-//                   }
+
        }
 
     /////////////////////////////
@@ -271,16 +151,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        
-        //Only perform these changes for devices running iOS 11 and later. This is called
-        //inside viewWillLayoutSubviews() instead of viewWillTransition() because when the
-        //device rotates, the navBarHeight and statusBarHeight will be calculated inside
-        //viewWillTransition() using the current orientation, and not the orientation
-        //that the device will be at the end of the transition.
-        
-        //By the time that viewWillLayoutSubviews() is called, the views frames have been
-        //properly updated for the new orientation, so the navBar and statusBar height values
-        //can be calculated and applied directly as per the code below
+
         
         if #available(iOS 11, *) {
             
@@ -371,7 +242,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       //*** return self.photos.count
         return self.imageUrlIframe.count
     }
     
@@ -379,8 +249,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(PhotoCollectionViewCell.self)", for: indexPath) as! PhotoCollectionViewCell
         
-        //////////////////////////////////
-///        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! PhotoCollectionViewCell //cellGallery
 
         cell.imageView.layer.cornerRadius = 17.0
         cell.imageView.clipsToBounds = true
@@ -407,13 +275,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                                     let img = cell.imageView.image
                                    
                                     self.imgPosts1.append(img!)
-                                    //self.imgPosts1.append(cell.imageView.image!)
+                        
          
                                }
                })
         /////////////////////////////////
         
-      //***  cell.imageView.image = self.photos[indexPath.row]
         return cell
     }
     
@@ -536,14 +403,17 @@ extension ViewController: ZoomAnimatorDelegate {
     }
     
     func transitionDidEndWith(zoomAnimator: ZoomAnimator) {
-        let cell = self.collectionView.cellForItem(at: self.selectedIndexPath) as! PhotoCollectionViewCell
+        if selectedIndexPath != nil{
+            let cell = self.collectionView.cellForItem(at: self.selectedIndexPath) as! PhotoCollectionViewCell
+            
+            let cellFrame = self.collectionView.convert(cell.frame, to: self.view)
         
-        let cellFrame = self.collectionView.convert(cell.frame, to: self.view)
         
         if cellFrame.minY < self.collectionView.contentInset.top {
             self.collectionView.scrollToItem(at: self.selectedIndexPath, at: .top, animated: false)
         } else if cellFrame.maxY > self.view.frame.height - self.collectionView.contentInset.bottom {
             self.collectionView.scrollToItem(at: self.selectedIndexPath, at: .bottom, animated: false)
+            }
         }
     }
     
