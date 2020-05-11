@@ -29,8 +29,8 @@ class ViewController: UIViewController {
     let reuseIdentifier = "cellGallery"
     
     var imageUrlIframe: [String] = []
-    var cellWidth: CGFloat?
-    var cellHeight: CGFloat?
+//    var cellWidth: CGFloat?
+//    var cellHeight: CGFloat?
     
     //////////////////////////////////
     var currentLeftSafeAreaInset  : CGFloat = 0.0
@@ -289,16 +289,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
         let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
         let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
-        self.cellWidth = collectionView.frame.size.width
-        self.cellHeight = collectionView.frame.size.height
-        print("&&&: \(cellWidth!) - \(cellHeight!)")
-        
+//        self.cellWidth = collectionView.frame.size.width
+//        self.cellHeight = collectionView.frame.size.height
+//        print("&&&: \(cellWidth!) - \(cellHeight!)")
+
         // corner image
         collectionView.layer.cornerRadius = 17.0
         collectionView.clipsToBounds = true
         collectionView.layer.borderWidth = 2.0
         collectionView.layer.borderColor = UIColor.white.cgColor
-        
+
         return CGSize(width: size, height: size)
     }
     ///////////////////////////////
