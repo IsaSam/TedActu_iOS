@@ -47,6 +47,7 @@ class PhotoZoomViewController: UIViewController {
                                       height: self.image.size.height)
         self.view.addGestureRecognizer(self.doubleTapGestureRecognizer)        
     }
+
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
