@@ -16,6 +16,9 @@
 		964D6B5A242421D100504E42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 964D6B59242421D100504E42 /* Assets.xcassets */; };
 		964D6B5D242421D100504E42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964D6B5B242421D100504E42 /* LaunchScreen.storyboard */; };
 		964DB5F3245B76FF00F0DFD9 /* DetailsPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964DB5F2245B76FF00F0DFD9 /* DetailsPostViewController.swift */; };
+		965F0D7B2477941400A54A30 /* GalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F0D7A2477941300A54A30 /* GalleryTableViewCell.swift */; };
+		965F0D7D247795B700A54A30 /* ListGalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F0D7C247795B700A54A30 /* ListGalleryTableViewCell.swift */; };
+		965F0D7F247795DC00A54A30 /* ListGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F0D7E247795DC00A54A30 /* ListGalleryViewController.swift */; };
 		96655AD1245B1C5A007D2BDF /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96655AD0245B1C59007D2BDF /* SplashScreenView.swift */; };
 		96655AD3245B23E8007D2BDF /* splashscreen_img.gif in Resources */ = {isa = PBXBuildFile; fileRef = 96655AD2245B23E7007D2BDF /* splashscreen_img.gif */; };
 		96655AD5245B2595007D2BDF /* Swift+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96655AD4245B2594007D2BDF /* Swift+Gif.swift */; };
@@ -56,6 +59,9 @@
 		964D6B5C242421D100504E42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		964D6B5E242421D100504E42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		964DB5F2245B76FF00F0DFD9 /* DetailsPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPostViewController.swift; sourceTree = "<group>"; };
+		965F0D7A2477941300A54A30 /* GalleryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTableViewCell.swift; sourceTree = "<group>"; };
+		965F0D7C247795B700A54A30 /* ListGalleryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGalleryTableViewCell.swift; sourceTree = "<group>"; };
+		965F0D7E247795DC00A54A30 /* ListGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGalleryViewController.swift; sourceTree = "<group>"; };
 		96655AD0245B1C59007D2BDF /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		96655AD2245B23E7007D2BDF /* splashscreen_img.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = splashscreen_img.gif; sourceTree = "<group>"; };
 		96655AD4245B2594007D2BDF /* Swift+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swift+Gif.swift"; sourceTree = "<group>"; };
@@ -191,6 +197,7 @@
 				96105A0E245E9CA700905C90 /* ListCategoriesViewController.swift */,
 				963D64F6246202F800B8982D /* AboutViewController.swift */,
 				969189D724651CBB00D88929 /* GalleryViewController.swift */,
+				965F0D7E247795DC00A54A30 /* ListGalleryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -201,6 +208,8 @@
 				96A716012436BCFC00D579A5 /* HomeTableViewCell.swift */,
 				96105A10245EA29C00905C90 /* ListCategoriesTableViewCell.swift */,
 				969189D92465495200D88929 /* cellGallery.swift */,
+				965F0D7A2477941300A54A30 /* GalleryTableViewCell.swift */,
+				965F0D7C247795B700A54A30 /* ListGalleryTableViewCell.swift */,
 			);
 			path = CellView;
 			sourceTree = "<group>";
@@ -391,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				965F0D7D247795B700A54A30 /* ListGalleryTableViewCell.swift in Sources */,
 				969189EE2465CE3700D88929 /* ZoomDismissalInteractionController.swift in Sources */,
 				96F80B3724308C7200E119B8 /* PlaylistViewController.swift in Sources */,
 				96F80B3E2430979F00E119B8 /* VideoDetailViewController.swift in Sources */,
@@ -399,6 +409,7 @@
 				964D6B51242421C900504E42 /* AppDelegate.swift in Sources */,
 				969189D824651CBB00D88929 /* GalleryViewController.swift in Sources */,
 				964D6B53242421C900504E42 /* SceneDelegate.swift in Sources */,
+				965F0D7B2477941400A54A30 /* GalleryTableViewCell.swift in Sources */,
 				969189E42465CDE700D88929 /* ViewController.swift in Sources */,
 				96105A0F245E9CA800905C90 /* ListCategoriesViewController.swift in Sources */,
 				969189DA2465495200D88929 /* cellGallery.swift in Sources */,
@@ -412,6 +423,7 @@
 				969189EC2465CE3700D88929 /* ZoomTransitionController.swift in Sources */,
 				969189E72465CE1700D88929 /* PhotoCollectionViewCell.swift in Sources */,
 				96F23F53243F7D7D00CD634C /* HTTPHandler.swift in Sources */,
+				965F0D7F247795DC00A54A30 /* ListGalleryViewController.swift in Sources */,
 				96F80B3A2430953D00E119B8 /* Video.swift in Sources */,
 				96F23F59243F874700CD634C /* Extensions.swift in Sources */,
 				969189E22465CDE700D88929 /* PhotoPageContainerViewController.swift in Sources */,
