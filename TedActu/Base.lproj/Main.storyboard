@@ -289,7 +289,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ax-2P-3ms">
                                         <rect key="frame" x="0.0" y="-44" width="320" height="568"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un amendement de l'accord de subvention pour la reconstruction d'haiti" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beV-sc-8nk">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Un amendement de l'accord de subvention pour la reconstruction d'haiti" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beV-sc-8nk">
                                                 <rect key="frame" x="8" y="444" width="304" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="278" id="O5d-RY-KHg"/>
@@ -299,7 +299,7 @@
                                                 <color key="textColor" red="0.0" green="0.10627212380000001" blue="0.28515332939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-Ps-5cn">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw5-Ps-5cn">
                                                 <rect key="frame" x="20" y="398" width="117" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="117" id="Shn-nZ-Jfi"/>
@@ -313,7 +313,7 @@
                                                     <action selector="save:" destination="95a-Zg-jEP" eventType="touchUpInside" id="Ucw-qz-NDj"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5O4-2g-6TO">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5O4-2g-6TO">
                                                 <rect key="frame" x="208" y="398" width="90" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="7X3-OB-zJB"/>
@@ -327,7 +327,7 @@
                                                     <action selector="btnShareTapped:" destination="95a-Zg-jEP" eventType="touchUpInside" id="Yd3-Rs-UFl"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un amendement de l'accord de subvention pour la reconstruction d'haiti" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vC-b7-tEZ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Un amendement de l'accord de subvention pour la reconstruction d'haiti" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vC-b7-tEZ">
                                                 <rect key="frame" x="4" y="121" width="312" height="71"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -337,13 +337,12 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hPc-3a-DEW">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPc-3a-DEW">
                                                 <rect key="frame" x="4" y="192" width="312" height="184"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="1vC-b7-tEZ" firstAttribute="top" secondItem="9ax-2P-3ms" secondAttribute="top" constant="121" id="2Lh-QW-fTf"/>
                                             <constraint firstItem="sw5-Ps-5cn" firstAttribute="top" secondItem="hPc-3a-DEW" secondAttribute="bottom" constant="22" id="3ba-h0-BJ8"/>
                                             <constraint firstItem="5O4-2g-6TO" firstAttribute="top" secondItem="sw5-Ps-5cn" secondAttribute="top" id="B1L-kZ-5qS"/>
                                             <constraint firstItem="hPc-3a-DEW" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1vC-b7-tEZ" secondAttribute="trailing" id="BsB-Qj-U6i"/>
