@@ -38,6 +38,7 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
         @IBOutlet weak var imgFeaturedGallery: UIImageView!
         @IBOutlet weak var backImgCat: UIImageView!
         
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     //    @IBOutlet weak var searchBar: UISearchBar!
     //    @IBOutlet weak var activityIndicatory: UIActivityIndicatorView!
         
@@ -173,6 +174,7 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
             collectionView.delegate = self
             collectionView.dataSource = self
             // corner image
+
         }
         
         assignbackground()

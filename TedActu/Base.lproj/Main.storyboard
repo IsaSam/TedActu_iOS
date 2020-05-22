@@ -483,6 +483,7 @@
                         <outlet property="collectionView" destination="MKS-QW-pfB" id="WYZ-jU-pUu"/>
                         <outlet property="contentLabel" destination="beV-sc-8nk" id="Crn-88-Taq"/>
                         <outlet property="downloadButton" destination="sw5-Ps-5cn" id="oap-U1-daL"/>
+                        <outlet property="imageHeightConstraint" destination="Xf9-5T-LVY" id="sLW-IT-zn5"/>
                         <outlet property="imgFeaturedGallery" destination="BCi-GG-Te3" id="FDU-OS-Hiy"/>
                         <outlet property="postImageView" destination="hPc-3a-DEW" id="fDJ-0Z-xUz"/>
                         <outlet property="titleLabel" destination="1vC-b7-tEZ" id="zbt-2n-tmA"/>
