@@ -203,43 +203,8 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
                     ///////////////////////////////////////////////////////////////////
 
                     
-// MARK: - BLOC TO GET HEIHT IMG FIRST
-                if self.postFormat1 == "gallery"{
-                    let embedDic = (self.posts2 as AnyObject).value(forKey: "_embedded")
-                    let embedDicString = embedDic as? [[String: Any]]
-                    self.postsEmbed1 = embedDicString!
-                    for postImage in self.postsEmbed1{
-                        let imgArray = (postImage as AnyObject).value(forKey: "wp:featuredmedia")
-                        let mediaDetails = (imgArray as AnyObject).value(forKey: "media_details")
+// MARK: - BLOC TO GET HEIHT IMG FIRST >>>>removed
 
-                        do{
-                                        let dataDic = mediaDetails as? [[String: Any]]
-                                        if dataDic != nil{
-                                            self.imgPosts1 = dataDic!
-                                            for images in self.imgPosts1{
-                                                let h = images["height"] as? Int
-                                         //        print("height1: \(h!)")
-
-                                                        let imgSize = h
-                                                let imgSize_f = imgSize
-                                                if imgSize_f! > 1800{
-                                          //          print("- imageHeight >>>>: \(imgSize_f!)")
-                                                            self.fixHeight = 1200
-                                                        }else if imgSize_f! > 1400{
-                                           //                 print("- imageHeight >>: \(imgSize_f!)")
-                                                            self.fixHeight = 800
-                                                        }else{
-                                            //                print("- imageHeight: \(imgSize!)")
-                                                            self.fixHeight = 400
-                                                        }
-
-                                                }
-                                            }
-                                    }
-                    }
-                }
-                    
-                    
 // MARK: - //
                     
             DispatchQueue.main.async {
@@ -290,17 +255,12 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
 
                     for item in result!
                     {
-                        ///////
-                        
                         let postFormat = item["format"] as? String
                         self.postFormat1 = item["format"] as? String
                         print("fff2: \(postFormat!)")
                         if postFormat == "gallery"{
                             self.posts2.append(item)
                         }else{}
-                        ///////
-                    //    self.posts.append(item)
-                        
                     }
 
                     DispatchQueue.main.async {
@@ -362,20 +322,12 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
                 self.postsEmbed = embedDicString!
        //         self.postsContent = excerptDicString!
             }
-////            let postTitle = postsTitle[indexPath.row]
-////            let postContent = postsContent[indexPath.row]
             let postImage = postsEmbed[indexPath.row]
 
         
             let imgArray = (postImage as AnyObject).value(forKey: "wp:featuredmedia")
                 let mediaDetails = (imgArray as AnyObject).value(forKey: "media_details")
                 let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
-////            let encoded = postTitle["rendered"] as? String
-//            cell.titleLabel.text = encoded?.stringByDecodingHTMLEntities
-////            let title_ = encoded?.stringByDecodingHTMLEntities
-////            let htmlTag =  postContent["rendered"] as! String
-////            let content = htmlTag.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-////            let content_ = content.stringByDecodingHTMLEntities
             
             //date format conversion
             let dateFormatter = DateFormatter()
@@ -397,23 +349,6 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
             if let time = timeFormatter.date(from: splitTime){
                 convertedTime = newTimeFormatter.string(from: time)
             }
-////            let datePost_ = convertedDate
-            
-//            let html2 = htmlTag.allStringsBetween(start: "<iframe src=", end: "</iframe>")
-//            let input = String(describing: html2)
-//            let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
-//            let matches = detector.matches(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count))
-//            for match in matches {
-//                guard let range = Range(match.range, in: input) else { continue }
-//                let urlYou = input[range]
-//                if urlYou != ""{
-//                    urlYoutube = String(urlYou)
-//                    cell.picMedia.isHidden = false //icon for media files
-//                }
-//                else{
-//                    cell.picMedia.isHidden = true //icon for media files
-//                }
-//            }
             
             do{
                 let full =  (sizes as AnyObject).value(forKey: "full")
@@ -487,44 +422,26 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
             return cell
         }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        var height:CGFloat = CGFloat()
-//        height = fixHeight!
-//        return height
-//    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detailsPostSegue" {
+        if segue.identifier == "detailsGallerySegue" {
             let detailViewController = segue.destination as! DetailsPostViewController
              print("DetailsPost View segue")
              let cell = sender as! UITableViewCell
              let indexPath = tableView.indexPath(for: cell)
              let post = posts2[(indexPath?.row)!]
-             let postTitle = postsTitle[(indexPath?.row)!]
-             let postContent = postsContent[(indexPath?.row)!]
              let imgPost = postsEmbed[(indexPath?.row)!]
-             let nameString = postsEmbed[(indexPath?.row)!]
             let cate = post["categories"] as? [Any]
             let postFormat = post["format"] as? String
             print(postFormat!)
                 
                  detailViewController.post = post
-                 detailViewController.nameString = nameString
-                 detailViewController.postTitle = postTitle
-                 detailViewController.postContent = postContent
                  detailViewController.imgPost = imgPost
                 detailViewController.categoryID = cate
                 detailViewController.postFormat = postFormat
-            if postFormat == "gallery"{
-              //  detailViewController.viewCategory.isHidden = false
-//                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "GalleryID") as! GalleryViewController
-//                self.present(vc, animated: true, completion: nil)
-            }
-            
             }
      }
     

@@ -154,8 +154,8 @@
                         <segue destination="QKj-av-JE1" kind="relationship" relationship="viewControllers" id="mgs-PY-fM3"/>
                         <segue destination="BJN-6t-bBD" kind="relationship" relationship="viewControllers" id="MQo-GV-Ygz"/>
                         <segue destination="NBU-UO-i4F" kind="relationship" relationship="viewControllers" id="JVd-sQ-dht"/>
-                        <segue destination="beA-zY-krV" kind="relationship" relationship="viewControllers" id="Mzg-c4-CFV"/>
                         <segue destination="ygu-3j-YQv" kind="relationship" relationship="viewControllers" id="8W2-Br-S3E"/>
+                        <segue destination="beA-zY-krV" kind="relationship" relationship="viewControllers" id="Mzg-c4-CFV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywf-Yo-ERc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1185,6 +1185,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                                         <connections>
                                             <outlet property="imageHeightConstraint" destination="Xbo-B2-RRx" id="fEX-pJ-RSo"/>
                                             <outlet property="imagePost" destination="Ajg-hD-RqG" id="mB0-hj-mnm"/>
+                                            <segue destination="95a-Zg-jEP" kind="show" identifier="detailsGallerySegue" id="2BU-f1-bR5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1260,6 +1261,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HKP-Uk-kKt"/>
+        <segue reference="2BU-f1-bR5"/>
         <segue reference="76r-DP-9Sy"/>
     </inferredMetricsTieBreakers>
 </document>

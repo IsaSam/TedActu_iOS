@@ -378,24 +378,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if let time = timeFormatter.date(from: splitTime){
                 convertedTime = newTimeFormatter.string(from: time)
             }
-////            let datePost_ = convertedDate
-            
-//            let html2 = htmlTag.allStringsBetween(start: "<iframe src=", end: "</iframe>")
-//            let input = String(describing: html2)
-//            let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
-//            let matches = detector.matches(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count))
-//            for match in matches {
-//                guard let range = Range(match.range, in: input) else { continue }
-//                let urlYou = input[range]
-//                if urlYou != ""{
-//                    urlYoutube = String(urlYou)
-//                    cell.picMedia.isHidden = false //icon for media files
-//                }
-//                else{
-//                    cell.picMedia.isHidden = true //icon for media files
-//                }
-//            }
-            
             do{
                 let full =  (sizes as AnyObject).value(forKey: "full")
                 let dataDic = full as? [[String: Any]]
@@ -501,9 +483,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 detailViewController.categoryID = cate
                 detailViewController.postFormat = postFormat
             if postFormat == "gallery"{
-              //  detailViewController.viewCategory.isHidden = false
-//                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "GalleryID") as! GalleryViewController
-//                self.present(vc, animated: true, completion: nil)
             }
             
             }
