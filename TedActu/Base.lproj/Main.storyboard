@@ -361,7 +361,7 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="475"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-img-white" translatesAutoresizingMaskIntoConstraints="NO" id="WfU-tG-K5x">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="475.00000000000023"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BCi-GG-Te3">
                                         <rect key="frame" x="2" y="2" width="316" height="250"/>
@@ -1080,7 +1080,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="z9k-9i-UCF">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="206.00000000000006"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="640" height="412"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
