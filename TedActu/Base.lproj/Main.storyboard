@@ -1211,8 +1211,8 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                     </view>
                     <navigationItem key="navigationItem" id="mXY-N7-bWQ"/>
                     <connections>
-                        <outlet property="activityIndicatory" destination="51U-yq-mWa" id="dK7-0B-Fm6"/>
-                        <outlet property="tableView" destination="83V-XR-iHp" id="2js-K9-6gv"/>
+                        <outlet property="activityIndicatory" destination="51U-yq-mWa" id="WsZ-Xm-W6Z"/>
+                        <outlet property="tableView" destination="83V-XR-iHp" id="etr-nz-MuC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uy5-Qz-WhT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
