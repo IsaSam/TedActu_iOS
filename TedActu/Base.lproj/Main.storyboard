@@ -423,7 +423,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-img-white" translatesAutoresizingMaskIntoConstraints="NO" id="WfU-tG-K5x">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="475.00000000000023"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BCi-GG-Te3">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BCi-GG-Te3">
                                         <rect key="frame" x="2" y="2" width="316" height="250"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="Wcw-vS-Sfp"/>
@@ -1079,7 +1079,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pcg-Gl-D68" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3253" y="1046"/>
+            <point key="canvasLocation" x="2629" y="1045"/>
         </scene>
         <!--Zoom-->
         <scene sceneID="dgv-k4-2s7">
