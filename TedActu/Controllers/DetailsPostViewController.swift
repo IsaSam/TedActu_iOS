@@ -38,6 +38,7 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
         @IBOutlet weak var imgFeaturedGallery: UIImageView!
         @IBOutlet weak var backImgCat: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var imageHeigth: NSLayoutConstraint!
     
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     //    @IBOutlet weak var searchBar: UISearchBar!
@@ -172,6 +173,7 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
         super.viewDidLoad()
         
         scrollView.contentSize.height = 2000.0
+        imageHeigth.constant = 1000.0
         
         if postFormat == "gallery"{
             collectionView.delegate = self
