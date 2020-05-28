@@ -163,7 +163,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1lf-Ys-rTs">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="dWQ-1u-DR7">
+                        <barButtonItem key="rightBarButtonItem" title="Search" image="search-Small20" id="dWQ-1u-DR7">
                             <color key="tintColor" red="0.94283473490000003" green="0.46693152189999998" blue="0.18875449899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -1486,6 +1486,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
         <image name="gallery-select-Small" width="29" height="29"/>
         <image name="logo-text-blue" width="370" height="74"/>
         <image name="photo.fill" catalog="system" width="64" height="46"/>
+        <image name="search-Small20" width="20" height="20"/>
         <image name="share-24" width="24" height="24"/>
         <image name="video-Small" width="29" height="29"/>
         <image name="video-select-Small" width="29" height="29"/>
