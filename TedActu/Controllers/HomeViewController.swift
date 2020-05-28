@@ -42,7 +42,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //    var fixHeight: CGFloat = 410.0
     var fixHeight: CGFloat?
     
-//    var categoryID: Int?
+    var categoryID: Int?
     var catID: String?
     
     override func viewDidAppear(_ animated: Bool) {
@@ -337,20 +337,26 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if cateID != nil{
                     if cateID as? NSObject == [16] as? NSObject{
                         cell.viewBottomImg.backgroundColor = UIColor(red: 0.47, green: 0.12, blue: 0.07, alpha: 1.00)
+                        categoryID = 16
                     }else if cateID as? NSObject == [22] as? NSObject{
                         cell.viewBottomImg.backgroundColor = UIColor(red: 0.91, green: 0.72, blue: 0.18, alpha: 1.00)
+                        categoryID = 22
                     }
                     else if cateID as? NSObject == [23] as? NSObject{
                          cell.viewBottomImg.backgroundColor = UIColor(red: 0.02, green: 0.02, blue: 0.02, alpha: 1.00)
+                        categoryID = 23
                     }
                     else if cateID as? NSObject == [19] as? NSObject{
                         cell.viewBottomImg.backgroundColor = UIColor(red: 0.19, green: 0.63, blue: 0.98, alpha: 1.00)
+                        categoryID = 19
                     }
                     else if cateID as? NSObject == [20] as? NSObject{
                          cell.viewBottomImg.backgroundColor = UIColor(red: 0.25, green: 0.54, blue: 0.16, alpha: 1.00)
+                        categoryID = 20
                     }
                     else if cateID as? NSObject == [18] as? NSObject{
                         cell.viewBottomImg.backgroundColor = UIColor(red: 0.50, green: 0.20, blue: 0.56, alpha: 1.00)
+                        categoryID = 18
                     }
         }
 // MARK: -
