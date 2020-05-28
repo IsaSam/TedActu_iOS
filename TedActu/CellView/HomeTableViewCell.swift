@@ -13,6 +13,7 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var imagePost: UIImageView!
     
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var viewBottomImg: UIView!
     
     
     override func awakeFromNib() {

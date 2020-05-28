@@ -109,7 +109,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print("rowSelect: \(MyVariables2.rowSelect ?? -1)")
         selectCategory()
         
-        self.refreshControl = UIRefreshControl()
+     self.refreshControl = UIRefreshControl()
         self.refreshControl.addTarget(self, action: #selector(HomeViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
         
@@ -127,10 +127,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
 
     }
-    
-    
-
-    
+   
     func selectCategory(){
         if MyVariables2.rowSelect != -1{
             if MyVariables2.rowSelect == 0 {
@@ -328,10 +325,35 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.backgroundView = imageView
     */
         cell.backgroundColor = .clear
-    
+
     //=====================================================================
             let post = posts[indexPath.row]
 ////       self.c1 = post["categories"] as? [Any]
+        
+              
+              // MARK: - VIEW BOTTOM
+        let cateID = post["categories"] as? [Any]
+        
+        if cateID != nil{
+                    if cateID as? NSObject == [16] as? NSObject{
+                        cell.viewBottomImg.backgroundColor = UIColor(red: 0.47, green: 0.12, blue: 0.07, alpha: 1.00)
+                    }else if cateID as? NSObject == [22] as? NSObject{
+                        cell.viewBottomImg.backgroundColor = UIColor(red: 0.91, green: 0.72, blue: 0.18, alpha: 1.00)
+                    }
+                    else if cateID as? NSObject == [23] as? NSObject{
+                         cell.viewBottomImg.backgroundColor = UIColor(red: 0.02, green: 0.02, blue: 0.02, alpha: 1.00)
+                    }
+                    else if cateID as? NSObject == [19] as? NSObject{
+                        cell.viewBottomImg.backgroundColor = UIColor(red: 0.19, green: 0.63, blue: 0.98, alpha: 1.00)
+                    }
+                    else if cateID as? NSObject == [20] as? NSObject{
+                         cell.viewBottomImg.backgroundColor = UIColor(red: 0.25, green: 0.54, blue: 0.16, alpha: 1.00)
+                    }
+                    else if cateID as? NSObject == [18] as? NSObject{
+                        cell.viewBottomImg.backgroundColor = UIColor(red: 0.50, green: 0.20, blue: 0.56, alpha: 1.00)
+                    }
+        }
+// MARK: -
         
             do{
                 let titleDic = (posts as AnyObject).value(forKey: "title")
@@ -477,6 +499,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let cate = post["categories"] as? [Any]
             let postFormat = post["format"] as? String
             print(postFormat!)
+            
                 
                  detailViewController.post = post
                  detailViewController.nameString = nameString
