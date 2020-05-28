@@ -101,12 +101,23 @@
                                                         <constraint firstAttribute="height" constant="370" id="gV4-Jp-sJ1"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Rr-4k-FiM">
+                                                    <rect key="frame" x="10" y="331" width="300" height="49"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.10588235294117647" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="Qvo-fM-uCa"/>
+                                                        <constraint firstAttribute="height" constant="49" id="ksb-LS-7a3"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="3Rr-4k-FiM" firstAttribute="leading" secondItem="Oz8-2a-1qx" secondAttribute="leading" constant="10" id="7Jg-td-2Qk"/>
+                                                <constraint firstAttribute="bottom" secondItem="3Rr-4k-FiM" secondAttribute="bottom" constant="30" id="J8H-pz-XUh"/>
                                                 <constraint firstItem="LRc-t6-7OK" firstAttribute="top" secondItem="Oz8-2a-1qx" secondAttribute="top" constant="10" id="UjS-6F-GLp"/>
                                                 <constraint firstItem="LRc-t6-7OK" firstAttribute="leading" secondItem="Oz8-2a-1qx" secondAttribute="leading" constant="10" id="bdZ-jw-3Ei"/>
                                                 <constraint firstAttribute="bottom" secondItem="LRc-t6-7OK" secondAttribute="bottom" constant="30" id="fct-f8-eia"/>
                                                 <constraint firstAttribute="trailing" secondItem="LRc-t6-7OK" secondAttribute="trailing" constant="10" id="oHZ-9y-puh"/>
+                                                <constraint firstAttribute="trailing" secondItem="3Rr-4k-FiM" secondAttribute="trailing" constant="10" id="pmY-mk-nyp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -144,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HxM-Zc-FI6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="-1190"/>
+            <point key="canvasLocation" x="1852.5" y="-1190.4929577464789"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="uLG-2W-bUX">
@@ -1461,8 +1472,8 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
         <image name="video-select-Small" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FXZ-Xh-p86"/>
+        <segue reference="aDV-bW-qfn"/>
         <segue reference="v6t-92-nn9"/>
-        <segue reference="amV-00-VGe"/>
+        <segue reference="76r-DP-9Sy"/>
     </inferredMetricsTieBreakers>
 </document>
