@@ -101,6 +101,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -394,6 +395,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
             let encoded = postTitle["rendered"] as? String
             cell.titleLabel.text = encoded?.stringByDecodingHTMLEntities
+        if indexPath.row > 2{
+            cell.titleLabel.roundCorners([.topRight], radius: 15)
+        }
+               //                            cell.titleLabel?.layer.cornerRadius = 20.0
+        //       cell.titleLabel?.layer.masksToBounds = true
 ////            let title_ = encoded?.stringByDecodingHTMLEntities
 ////            let htmlTag =  postContent["rendered"] as! String
 ////            let content = htmlTag.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
@@ -466,6 +472,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                             
                             //          cell.posterImageView.layer.borderColor = UIColor.white.cgColor
                             //        cell.posterImageView.layer.borderWidth = 2.0
+                            
                             cell.imagePost.layer.cornerRadius = 4.0
                             cell.imagePost.clipsToBounds = true
                             cell.imagePost.af_setImage(withURL: imgUrl)
@@ -492,6 +499,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         var height:CGFloat = CGFloat()
         height = fixHeight!
         return height
@@ -531,6 +539,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
      }
     
 }// End of Class
+
+extension UIView {
+
+    func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
+         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+         let mask = CAShapeLayer()
+         mask.path = path.cgPath
+         self.layer.mask = mask
+    }
+
+}
+
+
 
 
 

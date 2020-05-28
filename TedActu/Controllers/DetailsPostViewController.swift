@@ -152,6 +152,7 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
         topBarLogo()
         view.backgroundColor = .black
         
+        
     }
     
     func topBarLogo(){
