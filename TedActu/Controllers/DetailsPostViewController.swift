@@ -172,8 +172,8 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView.contentSize.height = 2000.0
-        imageHeigth.constant = 1000.0
+//        scrollView.contentSize.height = 2000.0
+//        imageHeigth.constant = 1000.0
         
         if postFormat == "gallery"{
             collectionView.delegate = self
@@ -193,7 +193,7 @@ class DetailsPostViewController: UIViewController, UICollectionViewDataSource, U
     
     // Set a background image scale to view
     func assignbackground(){
-          let background = UIImage(named: "back-img-white2")
+          let background = UIImage(named: "back_img_blue")
 
           var imageView : UIImageView!
           imageView = UIImageView(frame: view.bounds)

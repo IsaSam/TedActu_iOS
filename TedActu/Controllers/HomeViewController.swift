@@ -76,7 +76,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         topBarLogo()
         
         // Add a background image view to the table view
-        let backgroundImage = UIImage(named: "back-img-white")
+        let backgroundImage = UIImage(named: "back_img_blue")
+        //back-img-white
         let imageView = UIImageView(image: backgroundImage)
         self.tableView.backgroundView = imageView
         
@@ -322,9 +323,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! HomeTableViewCell
 
         // Add a background image view to the tableViewCell
-        let backgroundImage = UIImage(named: "back-img-white.png")
+     /*   let backgroundImage = UIImage(named: "back_img_blue.png")
         let imageView = UIImageView(image: backgroundImage)
         cell.backgroundView = imageView
+    */
+        cell.backgroundColor = .clear
     
     //=====================================================================
             let post = posts[indexPath.row]

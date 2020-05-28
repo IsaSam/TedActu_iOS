@@ -72,7 +72,7 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
         topBarLogo()
         
         // Add a background image view to the table view
-        let backgroundImage = UIImage(named: "back-img-white")
+        let backgroundImage = UIImage(named: "back_img_blue")
         let imageView = UIImageView(image: backgroundImage)
         self.tableView.backgroundView = imageView
         
@@ -301,7 +301,7 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
             let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! HomeTableViewCell
 
         // Add a background image view to the tableViewCell
-        let backgroundImage = UIImage(named: "back-img-white.png")
+        let backgroundImage = UIImage(named: "back_img_blue.png")
         let imageView = UIImageView(image: backgroundImage)
         cell.backgroundView = imageView
     
