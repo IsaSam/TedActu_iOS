@@ -87,22 +87,22 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="410" id="5Zc-or-nJs" customClass="HomeTableViewCell" customModule="TedActu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="410"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="feedCell" rowHeight="451" id="5Zc-or-nJs" customClass="HomeTableViewCell" customModule="TedActu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="451"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Zc-or-nJs" id="Oz8-2a-1qx">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="451"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRc-t6-7OK">
-                                                    <rect key="frame" x="10" y="51" width="300" height="329"/>
+                                                    <rect key="frame" x="10" y="51" width="300" height="370"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="300" id="fIa-ja-vvP"/>
                                                         <constraint firstAttribute="height" constant="370" id="gV4-Jp-sJ1"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Rr-4k-FiM">
-                                                    <rect key="frame" x="10" y="331" width="300" height="49"/>
+                                                    <rect key="frame" x="10" y="372" width="300" height="49"/>
                                                     <color key="backgroundColor" red="0.0" green="0.10588235294117647" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="300" id="Qvo-fM-uCa"/>
@@ -115,7 +115,7 @@
                                                         <constraint firstAttribute="height" constant="41" id="kc7-5m-WHx"/>
                                                         <constraint firstAttribute="width" constant="300" id="xU4-dC-dXa"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1318,13 +1318,13 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                                     <action selector="btnShareTapped:" destination="JRL-4K-N1j" eventType="touchUpInside" id="uzA-dg-Pxr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un amendement de l'accord de subvention pour la reconstruction d'haiti" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1T-cv-Hwl">
-                                <rect key="frame" x="4" y="122" width="312" height="71"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un amendement de l'accord de subvention pour la reconstruction d'haiti" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1T-cv-Hwl">
+                                <rect key="frame" x="4" y="143" width="312" height="50"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="eK2-qk-ZJS"/>
+                                    <constraint firstAttribute="height" constant="50" id="eK2-qk-ZJS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1428,7 +1428,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="N1T-cv-Hwl" firstAttribute="top" secondItem="cm9-YA-Mcf" secondAttribute="top" constant="78" id="1gL-B3-DJv"/>
+                            <constraint firstItem="N1T-cv-Hwl" firstAttribute="top" secondItem="cm9-YA-Mcf" secondAttribute="top" constant="99" id="1gL-B3-DJv"/>
                             <constraint firstItem="R8o-rx-A8O" firstAttribute="centerX" secondItem="R1N-0y-mMu" secondAttribute="centerX" constant="74" id="5TV-mP-kJN"/>
                             <constraint firstItem="cm9-YA-Mcf" firstAttribute="trailing" secondItem="N1T-cv-Hwl" secondAttribute="trailing" constant="4" id="9U6-kk-WGw"/>
                             <constraint firstItem="P7G-xf-uFC" firstAttribute="leading" secondItem="cm9-YA-Mcf" secondAttribute="leading" id="A6f-Nd-xoU"/>
@@ -1464,7 +1464,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Wt-OK-0gm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2723" y="-1190"/>
+            <point key="canvasLocation" x="2722.5" y="-1190.4929577464789"/>
         </scene>
     </scenes>
     <resources>

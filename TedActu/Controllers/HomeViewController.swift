@@ -384,7 +384,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.postsEmbed = embedDicString!
                 self.postsContent = excerptDicString!
             }
-////            let postTitle = postsTitle[indexPath.row]
+                let postTitle = postsTitle[indexPath.row]
 ////            let postContent = postsContent[indexPath.row]
             let postImage = postsEmbed[indexPath.row]
 
@@ -392,8 +392,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let imgArray = (postImage as AnyObject).value(forKey: "wp:featuredmedia")
                 let mediaDetails = (imgArray as AnyObject).value(forKey: "media_details")
                 let sizes = (mediaDetails as AnyObject).value(forKey: "sizes")
-////            let encoded = postTitle["rendered"] as? String
-//            cell.titleLabel.text = encoded?.stringByDecodingHTMLEntities
+            let encoded = postTitle["rendered"] as? String
+            cell.titleLabel.text = encoded?.stringByDecodingHTMLEntities
 ////            let title_ = encoded?.stringByDecodingHTMLEntities
 ////            let htmlTag =  postContent["rendered"] as! String
 ////            let content = htmlTag.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
