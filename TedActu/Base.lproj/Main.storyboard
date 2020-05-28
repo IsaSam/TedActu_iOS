@@ -95,7 +95,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRc-t6-7OK">
-                                                    <rect key="frame" x="10" y="10" width="300" height="370"/>
+                                                    <rect key="frame" x="10" y="51" width="300" height="329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="300" id="fIa-ja-vvP"/>
                                                         <constraint firstAttribute="height" constant="370" id="gV4-Jp-sJ1"/>
@@ -109,13 +109,26 @@
                                                         <constraint firstAttribute="height" constant="49" id="ksb-LS-7a3"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un amendement de l'accord de subvention pour la reconstruction d'haiti" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpO-WU-hf2">
+                                                    <rect key="frame" x="10" y="10" width="300" height="41"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="41" id="kc7-5m-WHx"/>
+                                                        <constraint firstAttribute="width" constant="300" id="xU4-dC-dXa"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="SpO-WU-hf2" firstAttribute="leading" secondItem="Oz8-2a-1qx" secondAttribute="leading" constant="10" id="1Oz-TA-1Dy"/>
                                                 <constraint firstItem="3Rr-4k-FiM" firstAttribute="leading" secondItem="Oz8-2a-1qx" secondAttribute="leading" constant="10" id="7Jg-td-2Qk"/>
+                                                <constraint firstItem="LRc-t6-7OK" firstAttribute="top" secondItem="SpO-WU-hf2" secondAttribute="bottom" id="BES-dB-IzD"/>
                                                 <constraint firstAttribute="bottom" secondItem="3Rr-4k-FiM" secondAttribute="bottom" constant="30" id="J8H-pz-XUh"/>
-                                                <constraint firstItem="LRc-t6-7OK" firstAttribute="top" secondItem="Oz8-2a-1qx" secondAttribute="top" constant="10" id="UjS-6F-GLp"/>
                                                 <constraint firstItem="LRc-t6-7OK" firstAttribute="leading" secondItem="Oz8-2a-1qx" secondAttribute="leading" constant="10" id="bdZ-jw-3Ei"/>
+                                                <constraint firstAttribute="trailing" secondItem="SpO-WU-hf2" secondAttribute="trailing" constant="10" id="fTj-yd-KhZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="LRc-t6-7OK" secondAttribute="bottom" constant="30" id="fct-f8-eia"/>
+                                                <constraint firstItem="SpO-WU-hf2" firstAttribute="top" secondItem="Oz8-2a-1qx" secondAttribute="top" constant="10" id="m8N-fl-qRl"/>
                                                 <constraint firstAttribute="trailing" secondItem="LRc-t6-7OK" secondAttribute="trailing" constant="10" id="oHZ-9y-puh"/>
                                                 <constraint firstAttribute="trailing" secondItem="3Rr-4k-FiM" secondAttribute="trailing" constant="10" id="pmY-mk-nyp"/>
                                             </constraints>
@@ -123,6 +136,7 @@
                                         <connections>
                                             <outlet property="imageHeightConstraint" destination="gV4-Jp-sJ1" id="gTg-SI-ZzO"/>
                                             <outlet property="imagePost" destination="LRc-t6-7OK" id="0ro-aO-OZJ"/>
+                                            <outlet property="titleLabel" destination="SpO-WU-hf2" id="yi9-bH-jI1"/>
                                             <outlet property="viewBottomImg" destination="3Rr-4k-FiM" id="Zld-2W-yYE"/>
                                             <segue destination="JRL-4K-N1j" kind="push" identifier="detailsPostSegue" id="aDV-bW-qfn"/>
                                         </connections>
@@ -1450,7 +1464,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Wt-OK-0gm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4354" y="-1190"/>
+            <point key="canvasLocation" x="2723" y="-1190"/>
         </scene>
     </scenes>
     <resources>
