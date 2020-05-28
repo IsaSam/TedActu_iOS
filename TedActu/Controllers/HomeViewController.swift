@@ -101,6 +101,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
+// MARK: - VIEW DID LOAD
     
     override func viewDidLoad() {
         super.viewDidLoad()

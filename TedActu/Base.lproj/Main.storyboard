@@ -162,7 +162,11 @@
                             <constraint firstItem="FFS-K9-t8k" firstAttribute="centerY" secondItem="IA4-hJ-luX" secondAttribute="centerY" id="mgW-Rt-TJ7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1lf-Ys-rTs"/>
+                    <navigationItem key="navigationItem" id="1lf-Ys-rTs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="dWQ-1u-DR7">
+                            <color key="tintColor" red="0.94283473490000003" green="0.46693152189999998" blue="0.18875449899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicatory" destination="FFS-K9-t8k" id="GM1-UT-JkV"/>
                         <outlet property="tableView" destination="CAb-Hi-ngn" id="GjB-TI-LSh"/>
@@ -170,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HxM-Zc-FI6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1852.5" y="-1190.4929577464789"/>
+            <point key="canvasLocation" x="1916" y="-1190"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="uLG-2W-bUX">
@@ -703,7 +707,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KB7-kE-e9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1366" y="-1190"/>
+            <point key="canvasLocation" x="1198" y="-1190"/>
         </scene>
         <!--Categories-->
         <scene sceneID="VBK-kY-HxD">
