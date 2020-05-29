@@ -19,10 +19,16 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_img_blue" translatesAutoresizingMaskIntoConstraints="NO" id="Wob-ht-CpU">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dXH-YB-4gY">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.97245675330000003" green="0.97261565920000004" blue="0.97242289780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Wob-ht-CpU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IuS-7n-HF5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wob-ht-CpU" secondAttribute="bottom" id="P55-dK-UcN"/>
+                            <constraint firstItem="dXH-YB-4gY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RaE-SC-FiM"/>
+                            <constraint firstItem="dXH-YB-4gY" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="lzN-6c-YDS"/>
                             <constraint firstItem="Wob-ht-CpU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rY8-Eh-sc7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wob-ht-CpU" secondAttribute="trailing" id="wqA-Co-sTU"/>
                         </constraints>
