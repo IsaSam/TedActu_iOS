@@ -11,6 +11,7 @@ import UIKit
 private let reuseIdentifier = "cellCategory"
 
 class ListCategoriesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var myImages: [UIImage] = [
@@ -22,6 +23,8 @@ class ListCategoriesViewController: UIViewController, UICollectionViewDelegate, 
         UIImage(named: "Anket_BG_Color.jpg")!
         
     ]
+    
+    var deviceOrientation: Bool?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,10 +38,28 @@ class ListCategoriesViewController: UIViewController, UICollectionViewDelegate, 
         
     }
     
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+            print("landscape")
+            deviceOrientation = true
+        } else {
+            print("portrait")
+            deviceOrientation = false
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("o- \(deviceOrientation ?? false)")
         
 //        collectionView?.contentInset = UIEdgeInsets(top: 23, left: 8, bottom: 10, right: 8)
+        
+//        let layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .vertical //.horizontal
+//        layout.minimumLineSpacing = 5
+//        layout.minimumInteritemSpacing = 5
+//        collectionView.setCollectionViewLayout(layout, animated: true)
         
         collectionView?.dataSource = self
         collectionView?.delegate = self
@@ -79,7 +100,7 @@ class ListCategoriesViewController: UIViewController, UICollectionViewDelegate, 
             
             cell.backgroundColor = .clear
         
-      //////      cell.imageListCategories?.image = myImages[indexPath.row]
+            cell.imageListCategories?.image = myImages[indexPath.row]
             
             return cell
             
@@ -93,12 +114,18 @@ class ListCategoriesViewController: UIViewController, UICollectionViewDelegate, 
          cell.alpha = 1.0
          }
     }
-    
+     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
         let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
-        let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
-        return CGSize(width: size, height: size)
+        if deviceOrientation != true{
+            let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
+            return CGSize(width: size, height: size)
+        }else{
+            let size:CGFloat = (collectionView.frame.size.width - space) / 6.0
+            return CGSize(width: size, height: size)
+        }
+        
     }
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

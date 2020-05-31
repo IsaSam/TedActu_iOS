@@ -1178,15 +1178,26 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_tedactu2" translatesAutoresizingMaskIntoConstraints="NO" id="FQP-uD-BMZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Politique_BG_Color" translatesAutoresizingMaskIntoConstraints="NO" id="esK-GF-8OK">
+                                                    <rect key="frame" x="0.0" y="60" width="100" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="IBB-fv-9w9"/>
+                                                        <constraint firstAttribute="width" constant="100" id="Mah-aR-YHq"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="FQP-uD-BMZ" secondAttribute="trailing" id="BCM-8P-BYA"/>
+                                            <constraint firstAttribute="trailing" secondItem="esK-GF-8OK" secondAttribute="trailing" id="OiR-d9-RDB"/>
+                                            <constraint firstAttribute="bottom" secondItem="esK-GF-8OK" secondAttribute="bottom" id="Oqd-to-JMa"/>
                                             <constraint firstItem="FQP-uD-BMZ" firstAttribute="leading" secondItem="hdC-y5-sD7" secondAttribute="leading" id="ZNs-hh-0NC"/>
                                             <constraint firstItem="FQP-uD-BMZ" firstAttribute="top" secondItem="hdC-y5-sD7" secondAttribute="top" id="hTs-OC-C2u"/>
                                             <constraint firstAttribute="bottom" secondItem="FQP-uD-BMZ" secondAttribute="bottom" id="wLY-Ac-XAY"/>
+                                            <constraint firstItem="esK-GF-8OK" firstAttribute="leading" secondItem="hdC-y5-sD7" secondAttribute="leading" id="xN0-C8-Buw"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="imageListCategories" destination="esK-GF-8OK" id="2C8-Lg-Y8L"/>
                                             <segue destination="Ken-hf-UEc" kind="push" id="EEs-lU-A4V"/>
                                         </connections>
                                     </collectionViewCell>
@@ -1236,6 +1247,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
     </scenes>
     <resources>
         <image name="1" width="320" height="206"/>
+        <image name="Politique_BG_Color" width="300" height="100"/>
         <image name="about-Small" width="29" height="29"/>
         <image name="about-select-Small" width="29" height="29"/>
         <image name="app-store" width="512" height="512"/>
