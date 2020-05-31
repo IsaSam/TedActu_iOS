@@ -23,6 +23,37 @@ class ListCategoriesViewController: UIViewController, UICollectionViewDelegate, 
         
     ]
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        view.backgroundColor = .black
+        
+        //tabBarColor
+        self.tabBarController?.tabBar.barTintColor = UIColor(red: 0.00, green: 0.11, blue: 0.29, alpha: 1.00)
+        
+        topBarLogo()
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+        func topBarLogo(){
+            let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+            imageView.contentMode = .scaleAspectFit
+            let image = UIImage(named: "logo-text-white.png")
+            imageView.image = image
+            logoContainer.addSubview(imageView)
+            navigationItem.titleView = logoContainer
+            //Background
+            navigationController?.navigationBar.backgroundColor = .systemBlue
+            navigationController?.navigationBar.barStyle = .blackTranslucent
+    //        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.00, green:0.11, blue:0.29, alpha:1.00)
+        }
+    
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return myImages.count
     }
@@ -63,90 +94,10 @@ class ListCategoriesViewController: UIViewController, UICollectionViewDelegate, 
         return CGSize(width: itemSize, height: itemSize+40)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        view.backgroundColor = .black
-        
-        //tabBarColor
-        self.tabBarController?.tabBar.barTintColor = UIColor(red: 0.00, green: 0.11, blue: 0.29, alpha: 1.00)
-        
-        topBarLogo()
-        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let row = indexPath.row
+        MyVariables2.rowSelect = row
+  //      collectionView.deselectRow(at: indexPath, animated: true) // to remove
     }
-    func topBarLogo(){
-        let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
-
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
-        imageView.contentMode = .scaleAspectFit
-        let image = UIImage(named: "logo-text-white.png")
-        imageView.image = image
-        logoContainer.addSubview(imageView)
-        navigationItem.titleView = logoContainer
-        //Background
-        navigationController?.navigationBar.backgroundColor = .systemBlue
-        navigationController?.navigationBar.barStyle = .blackTranslucent
-//        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.00, green:0.11, blue:0.29, alpha:1.00)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    
 }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let row = indexPath.row
-//        MyVariables2.rowSelect = row
-//        tableView.deselectRow(at: indexPath, animated: true) // to remove
-//    }
-    
-/*
- 
- UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-     @IBOutlet weak var collectionView: UICollectionView!
-     
-     override func viewDidLoad() {
-         super.viewDidLoad()
-
-   /*      if let patternImage = UIImage(named: "Pattern") {
-             view.backgroundColor = UIColor(patternImage: patternImage)
-         }*/
-  //       collectionView?.backgroundColor = .clear
-         collectionView?.contentInset = UIEdgeInsets(top: 20, left: 8, bottom: 10, right: 8)
-
-         collectionView?.dataSource = self
-     }
-
- //}
-
- //extension GalleriesCollectionView: UICollectionViewDelegateFlowLayout {
-
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return 6
-     }
-
-     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! cellCategory
-
-         return cell
-     }
-
-     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-
-          // animation 2
-          cell.alpha = 0
-          UIView.animate(withDuration: 1.5){
-          cell.alpha = 1.0
-          }
-     }
-
-     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
-         return CGSize(width: itemSize, height: itemSize+40)
-     }
-
-
-
- }
-
- */
