@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		96105A0F245E9CA800905C90 /* ListCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96105A0E245E9CA700905C90 /* ListCategoriesViewController.swift */; };
 		96105A11245EA29C00905C90 /* ListCategoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96105A10245EA29C00905C90 /* ListCategoriesTableViewCell.swift */; };
+		962127AF2481D4D6008D34D3 /* GalleriesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962127AE2481D4D6008D34D3 /* GalleriesCollectionView.swift */; };
 		963D64F7246202F800B8982D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D64F6246202F800B8982D /* AboutViewController.swift */; };
 		964D6B51242421C900504E42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D6B50242421C900504E42 /* AppDelegate.swift */; };
 		964D6B53242421C900504E42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964D6B52242421C900504E42 /* SceneDelegate.swift */; };
@@ -37,6 +38,8 @@
 		96F23F56243F7F6400CD634C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F23F55243F7F6400CD634C /* Post.swift */; };
 		96F23F59243F874700CD634C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F23F58243F874700CD634C /* Extensions.swift */; };
 		96F23F5B243FED3A00CD634C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F23F5A243FED3800CD634C /* Reachability.swift */; };
+		96F32FFF2480D6EE002CA7FF /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F32FFE2480D6ED002CA7FF /* CategoryCollectionViewController.swift */; };
+		96F330012480D7E3002CA7FF /* cellCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F330002480D7E3002CA7FF /* cellCategory.swift */; };
 		96F80B3724308C7200E119B8 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F80B3624308C7200E119B8 /* PlaylistViewController.swift */; };
 		96F80B3A2430953D00E119B8 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F80B392430953D00E119B8 /* Video.swift */; };
 		96F80B3E2430979F00E119B8 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F80B3D2430979F00E119B8 /* VideoDetailViewController.swift */; };
@@ -48,6 +51,7 @@
 		49E247230B81F473FABA795D /* Pods-TedActu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TedActu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TedActu/Pods-TedActu.debug.xcconfig"; sourceTree = "<group>"; };
 		96105A0E245E9CA700905C90 /* ListCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoriesViewController.swift; sourceTree = "<group>"; };
 		96105A10245EA29C00905C90 /* ListCategoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoriesTableViewCell.swift; sourceTree = "<group>"; };
+		962127AE2481D4D6008D34D3 /* GalleriesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleriesCollectionView.swift; sourceTree = "<group>"; };
 		963D64F6246202F800B8982D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		964D6B4D242421C900504E42 /* TedActu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TedActu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		964D6B50242421C900504E42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 		96F23F55243F7F6400CD634C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		96F23F58243F874700CD634C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		96F23F5A243FED3800CD634C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		96F32FFE2480D6ED002CA7FF /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		96F330002480D7E3002CA7FF /* cellCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellCategory.swift; sourceTree = "<group>"; };
 		96F80B3624308C7200E119B8 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaylistViewController.swift; path = ../PlaylistViewController.swift; sourceTree = "<group>"; };
 		96F80B392430953D00E119B8 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		96F80B3D2430979F00E119B8 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoDetailViewController.swift; path = ../VideoDetailViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +199,8 @@
 				96105A0E245E9CA700905C90 /* ListCategoriesViewController.swift */,
 				963D64F6246202F800B8982D /* AboutViewController.swift */,
 				965F0D7E247795DC00A54A30 /* ListGalleryViewController.swift */,
+				96F32FFE2480D6ED002CA7FF /* CategoryCollectionViewController.swift */,
+				962127AE2481D4D6008D34D3 /* GalleriesCollectionView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 				96105A10245EA29C00905C90 /* ListCategoriesTableViewCell.swift */,
 				969189D92465495200D88929 /* cellGallery.swift */,
 				965F0D7C247795B700A54A30 /* ListGalleryTableViewCell.swift */,
+				96F330002480D7E3002CA7FF /* cellCategory.swift */,
 			);
 			path = CellView;
 			sourceTree = "<group>";
@@ -413,11 +422,14 @@
 				96F23F51243F7CF600CD634C /* TedActuAPIManager.swift in Sources */,
 				963D64F7246202F800B8982D /* AboutViewController.swift in Sources */,
 				969189EC2465CE3700D88929 /* ZoomTransitionController.swift in Sources */,
+				96F32FFF2480D6EE002CA7FF /* CategoryCollectionViewController.swift in Sources */,
 				969189E72465CE1700D88929 /* PhotoCollectionViewCell.swift in Sources */,
 				96F23F53243F7D7D00CD634C /* HTTPHandler.swift in Sources */,
 				965F0D7F247795DC00A54A30 /* ListGalleryViewController.swift in Sources */,
 				96F80B3A2430953D00E119B8 /* Video.swift in Sources */,
+				962127AF2481D4D6008D34D3 /* GalleriesCollectionView.swift in Sources */,
 				96F23F59243F874700CD634C /* Extensions.swift in Sources */,
+				96F330012480D7E3002CA7FF /* cellCategory.swift in Sources */,
 				969189E22465CDE700D88929 /* PhotoPageContainerViewController.swift in Sources */,
 				96105A11245EA29C00905C90 /* ListCategoriesTableViewCell.swift in Sources */,
 				964DB5F3245B76FF00F0DFD9 /* DetailsPostViewController.swift in Sources */,

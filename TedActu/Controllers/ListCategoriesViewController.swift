@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ListCategoriesViewController: UIViewController {
+private let reuseIdentifier = "cellCategory"
+
+class ListCategoriesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var myImages: [UIImage] = [
         UIImage(named: "Politique_BG_Color.jpg")!,
@@ -19,6 +22,46 @@ class ListCategoriesViewController: UIViewController {
         UIImage(named: "Anket_BG_Color.jpg")!
         
     ]
+    
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return myImages.count
+    }
+    
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! cellCategory
+            
+            ////
+            
+            
+            // Add a background image view to the tableViewCell
+            let backgroundImage = UIImage(named: "back_img_blue.png")
+            let imageView = UIImageView(image: backgroundImage)
+            
+            // Add a background image view to the tableView
+            collectionView.backgroundView = imageView
+    //        cell.backgroundView = imageView
+            
+            cell.backgroundColor = .clear
+        
+            cell.imageListCategories?.image = myImages[indexPath.row]
+            
+            return cell
+            
+        }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+         // animation 2
+         cell.alpha = 0
+         UIView.animate(withDuration: 1.5){
+         cell.alpha = 1.0
+         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+        return CGSize(width: itemSize, height: itemSize+40)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,37 +93,60 @@ class ListCategoriesViewController: UIViewController {
         super.viewDidLoad()
     }
 }
-extension ListCategoriesViewController : UITableViewDataSource , UITableViewDelegate{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myImages.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        ////
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListCategoriesCell", for: indexPath) as! ListCategoriesTableViewCell
-        
-        // Add a background image view to the tableViewCell
-        let backgroundImage = UIImage(named: "back_img_blue.png")
-        let imageView = UIImageView(image: backgroundImage)
-        
-        // Add a background image view to the tableView
-        tableView.backgroundView = imageView
-//        cell.backgroundView = imageView
-        
-        cell.backgroundColor = .clear
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let row = indexPath.row
+//        MyVariables2.rowSelect = row
+//        tableView.deselectRow(at: indexPath, animated: true) // to remove
+//    }
     
-        cell.imageListCategories?.image = myImages[indexPath.row]
-        
-        return cell
-        
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let row = indexPath.row
-        MyVariables2.rowSelect = row
-        tableView.deselectRow(at: indexPath, animated: true) // to remove
-    }
+/*
+ 
+ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+     @IBOutlet weak var collectionView: UICollectionView!
+     
+     override func viewDidLoad() {
+         super.viewDidLoad()
 
-  
-}
+   /*      if let patternImage = UIImage(named: "Pattern") {
+             view.backgroundColor = UIColor(patternImage: patternImage)
+         }*/
+  //       collectionView?.backgroundColor = .clear
+         collectionView?.contentInset = UIEdgeInsets(top: 20, left: 8, bottom: 10, right: 8)
+
+         collectionView?.dataSource = self
+     }
+
+ //}
+
+ //extension GalleriesCollectionView: UICollectionViewDelegateFlowLayout {
+
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+         return 6
+     }
+
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! cellCategory
+
+         return cell
+     }
+
+     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+          // animation 2
+          cell.alpha = 0
+          UIView.animate(withDuration: 1.5){
+          cell.alpha = 1.0
+          }
+     }
+
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+         let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+         return CGSize(width: itemSize, height: itemSize+40)
+     }
+
+
+
+ }
+
+ */
