@@ -37,6 +37,11 @@ class ListCategoriesViewController: UIViewController, UICollectionViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        collectionView?.contentInset = UIEdgeInsets(top: 23, left: 8, bottom: 10, right: 8)
+        
+        collectionView?.dataSource = self
+        collectionView?.delegate = self
     }
     
         func topBarLogo(){
@@ -74,7 +79,7 @@ class ListCategoriesViewController: UIViewController, UICollectionViewDelegate, 
             
             cell.backgroundColor = .clear
         
-            cell.imageListCategories?.image = myImages[indexPath.row]
+      //////      cell.imageListCategories?.image = myImages[indexPath.row]
             
             return cell
             
@@ -90,9 +95,16 @@ class ListCategoriesViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
-        return CGSize(width: itemSize, height: itemSize+40)
+        let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
+        let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
+        let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
+        return CGSize(width: size, height: size)
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let itemSize = (collectionView.frame.width - (collectionView.contentInset.left + collectionView.contentInset.right + 10)) / 2
+//        return CGSize(width: itemSize, height: itemSize+40)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let row = indexPath.row
