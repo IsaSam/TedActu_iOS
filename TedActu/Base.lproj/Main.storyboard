@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="1nT-C6-Ihh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="evn-Ie-ZwN">
     <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -128,8 +128,8 @@
                         <segue destination="QKj-av-JE1" kind="relationship" relationship="viewControllers" id="mgs-PY-fM3"/>
                         <segue destination="GcI-XI-xGA" kind="relationship" relationship="viewControllers" id="pzr-Oe-zzm"/>
                         <segue destination="ygu-3j-YQv" kind="relationship" relationship="viewControllers" id="8W2-Br-S3E"/>
-                        <segue destination="beA-zY-krV" kind="relationship" relationship="viewControllers" id="Mzg-c4-CFV"/>
                         <segue destination="NBU-UO-i4F" kind="relationship" relationship="viewControllers" id="JVd-sQ-dht"/>
+                        <segue destination="beA-zY-krV" kind="relationship" relationship="viewControllers" id="Mzg-c4-CFV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywf-Yo-ERc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -981,8 +981,8 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgz-Ch-VvB">
                                 <rect key="frame" x="42" y="391" width="117" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Télécharger" image="download26">
-                                    <color key="titleColor" red="0.0" green="0.10627212380000001" blue="0.28515332939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Télécharger" image="download-26-yellow">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="save:" destination="JRL-4K-N1j" eventType="touchUpInside" id="AxS-jK-MKF"/>
@@ -991,8 +991,8 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8o-rx-A8O">
                                 <rect key="frame" x="189" y="391" width="90" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Partager" image="share-24">
-                                    <color key="titleColor" red="0.0" green="0.10627212380000001" blue="0.28515332939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Partager" image="share-24-yellow">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="btnShareTapped:" destination="JRL-4K-N1j" eventType="touchUpInside" id="uzA-dg-Pxr"/>
@@ -1256,7 +1256,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
         <image name="back_tedactu2" width="960" height="960"/>
         <image name="category-Small" width="29" height="29"/>
         <image name="category-select-Small" width="29" height="29"/>
-        <image name="download26" width="26" height="26"/>
+        <image name="download-26-yellow" width="26" height="26"/>
         <image name="feeds-Small" width="29" height="29"/>
         <image name="feeds-select-Small" width="29" height="29"/>
         <image name="gallery-Small" width="29" height="29"/>
@@ -1264,7 +1264,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
         <image name="logo-text-blue" width="370" height="74"/>
         <image name="photo.fill" catalog="system" width="64" height="46"/>
         <image name="search-Small20" width="20" height="20"/>
-        <image name="share-24" width="24" height="24"/>
+        <image name="share-24-yellow" width="24" height="24"/>
         <image name="video-Small" width="29" height="29"/>
         <image name="video-select-Small" width="29" height="29"/>
     </resources>
