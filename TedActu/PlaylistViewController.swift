@@ -11,7 +11,6 @@ import UIKit
 import Alamofire
 
 class PlaylistViewController: UIViewController {
-    
     let UPLOADS_PLAYLIST_ID =  "UUYwjO810TxGsyEG9ytlRtbQ"
     let API_KEY = "AIzaSyBQqgKRuhh2JuqOpKpwRULqtydyYSRkvn4"
     let urlString = "https://www.googleapis.com/youtube/v3/playlistItems"
@@ -19,7 +18,6 @@ class PlaylistViewController: UIViewController {
     var snippet: [[String: Any]] = []
     var snippet1: [[String: Any]] = []
     var resourceId1: [[String: Any]] = []
-    
     var posts: [[String: Any]] = []
 
        @IBOutlet weak var tableView: UITableView!
@@ -31,10 +29,7 @@ class PlaylistViewController: UIViewController {
             
             tableView.delegate = self
             tableView.dataSource = self
-            
             getFeedsVideos()
-            
-
         }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -57,8 +52,8 @@ class PlaylistViewController: UIViewController {
         //back-img-white
         let imageView = UIImageView(image: backgroundImage)
         self.tableView.backgroundView = imageView
-        
     }
+    
     func topBarLogo(){
         let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
 
@@ -76,7 +71,6 @@ class PlaylistViewController: UIViewController {
         
     //    navigationController?.navigationBar.backgroundColor = UIColor(red:0.00, green:0.11, blue:0.29, alpha:1.00)
     }
-    
     ///new
     func getFeedsVideos(){
         
@@ -121,8 +115,6 @@ class PlaylistViewController: UIViewController {
                                                         self.tableView?.reloadData()
                                                         }
                                                      }
-                                   
-                                ///
                             }
                         
             }
@@ -149,6 +141,7 @@ class PlaylistViewController: UIViewController {
             let label = cell.viewWithTag(2) as! UILabel
             label.text = post["title"] as? String
             print("label:\(indexPath.row) \(label.text ?? "nil")")
+            label.backgroundColor = UIColor(red: 0.11, green: 0.31, blue: 0.45, alpha: 0.5)
             
             video1.videoDes = (post["description"] as? String)!
             video1.videoId =  (resource["videoId"] as? String)!
@@ -196,32 +189,18 @@ class PlaylistViewController: UIViewController {
             return cell
             
         }
-        
-        
-        
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return (self.view.frame.size.width/320)*180
         }
         
-        
-        
-        
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
-            
             self.selectedVideo = self.videos[indexPath.row]
-          
         }
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let detailViewController = segue.destination as! VideoDetailViewController
-            
             detailViewController.selectedVideo = self.selectedVideo
-            
-            
         }
-        
-        
     }
 
 

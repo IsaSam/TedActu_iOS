@@ -162,15 +162,15 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PiT-SN-xq0">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="143"/>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTE-Qa-sJU">
+                                                <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTE-Qa-sJU">
                                                     <rect key="frame" x="0.0" y="83" width="320" height="60"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.58076584509999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196078431372548" alpha="0.58076584509999996" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="TzT-dL-h1M"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJN-43-J7Z">
-                                                    <rect key="frame" x="15" y="83" width="290" height="60"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJN-43-J7Z">
+                                                    <rect key="frame" x="0.0" y="83" width="320" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="Mz6-h4-e6I"/>
                                                     </constraints>
@@ -182,8 +182,8 @@
                                             <constraints>
                                                 <constraint firstItem="PiT-SN-xq0" firstAttribute="top" secondItem="gyO-cO-BZV" secondAttribute="top" id="Ojh-UB-fnH"/>
                                                 <constraint firstItem="PiT-SN-xq0" firstAttribute="leading" secondItem="gyO-cO-BZV" secondAttribute="leading" id="Qvo-d3-nzp"/>
-                                                <constraint firstItem="eJN-43-J7Z" firstAttribute="leading" secondItem="gyO-cO-BZV" secondAttribute="leading" constant="15" id="SvF-dA-m2o"/>
-                                                <constraint firstAttribute="trailing" secondItem="eJN-43-J7Z" secondAttribute="trailing" constant="15" id="WN5-72-C5T"/>
+                                                <constraint firstItem="eJN-43-J7Z" firstAttribute="leading" secondItem="gyO-cO-BZV" secondAttribute="leading" id="SvF-dA-m2o"/>
+                                                <constraint firstAttribute="trailing" secondItem="eJN-43-J7Z" secondAttribute="trailing" id="WN5-72-C5T"/>
                                                 <constraint firstAttribute="trailing" secondItem="PiT-SN-xq0" secondAttribute="trailing" id="eyQ-BF-ES7"/>
                                                 <constraint firstItem="YTE-Qa-sJU" firstAttribute="leading" secondItem="gyO-cO-BZV" secondAttribute="leading" id="fGF-JW-a87"/>
                                                 <constraint firstAttribute="bottom" secondItem="YTE-Qa-sJU" secondAttribute="bottom" id="nec-DW-lx0"/>
