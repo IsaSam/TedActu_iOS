@@ -36,6 +36,46 @@ class PlaylistViewController: UIViewController {
             
 
         }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // remove separator
+        tableView.separatorColor = .clear
+        
+        //backButton color
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 0.94, green: 0.47, blue: 0.19, alpha: 1.00)
+        
+        //tabBarColor
+        self.tabBarController?.tabBar.barTintColor = UIColor(red: 0.00, green: 0.11, blue: 0.29, alpha: 1.00)
+        
+        // hide navigationBar
+     //   navigationController?.setNavigationBarHidden(true, animated: animated)
+        topBarLogo()
+        
+        // Add a background image view to the table view
+        let backgroundImage = UIImage(named: "back_img_blue")
+        //back-img-white
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+        
+    }
+    func topBarLogo(){
+        let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "logo-text-white.png")
+        imageView.image = image
+        logoContainer.addSubview(imageView)
+        navigationItem.titleView = logoContainer
+        
+        //Background
+        
+        navigationController?.navigationBar.backgroundColor = .systemBlue
+        navigationController?.navigationBar.barStyle = .blackTranslucent
+        
+    //    navigationController?.navigationBar.backgroundColor = UIColor(red:0.00, green:0.11, blue:0.29, alpha:1.00)
+    }
     
     ///new
     func getFeedsVideos(){
