@@ -102,7 +102,7 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
         view.backgroundColor = .black
         
         print("rowSelect: \(MyVariables2.rowSelect ?? -1)")
-        selectCategory()
+     //   selectCategory()
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl.addTarget(self, action: #selector(HomeViewController.didPullToRefresh(_:)), for: .valueChanged)
@@ -164,10 +164,15 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
     
     // GET Post
      func getPostList(){
+        catID = "17"
         self.activityIndicatory.startAnimating() //====================
+//        print(catID!)
+//        print("cccc1")
 //        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&categories=\(catID ?? "")&_embed") { (result, error) in
           
         TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&per_page=20&categories=\(catID ?? "")&_embed") { (result, error) in
+      
+   //         TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&categories=17&_embed") { (result, error) in
             
          
          if error != nil{
@@ -184,8 +189,8 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
            //     self.dismiss(animated: true, completion: nil)
          return
          }
-         
-             
+                print("the result: ...")
+                print(result!)
         if result != nil{
                 do{
                     print("===========")
@@ -198,7 +203,9 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
                             if postFormat == "gallery"{
                                 self.posts2 = [item]
                                 print("fff1: \(postFormat!)")
-                            }else{}
+                            }else{
+                                print("end of posts gallery's")
+                            }
                         }
                     ///////////////////////////////////////////////////////////////////
 
@@ -236,10 +243,13 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
     }
     // Get More Posts
     func loadMorePosts(){
+        print(catID!)
+        print("cccc2")
         self.activityIndicatory.startAnimating()
         self.activityIndicatory.isHidden = false
         loadNumber = loadNumber + 1
         TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&per_page=20&categories=\(catID ?? "")&_embed") { (result, error) in
+  //      TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&categories=17&_embed") { (result, error) in
             
                 if error != nil{
                     let errorAlertController = UIAlertController(title: "On ne peut pas obtenir de données", message: "La connexion Internet semble être hors ligne", preferredStyle: .alert)

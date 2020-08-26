@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="evn-Ie-ZwN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="evn-Ie-ZwN">
     <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -815,7 +815,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="z9k-9i-UCF">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="206.00000000000006"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="206"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1019,7 +1019,7 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
                                 <rect key="frame" x="0.0" y="44" width="320" height="475"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back-img-white" translatesAutoresizingMaskIntoConstraints="NO" id="xhi-Vm-5PU">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="475.00000000000023"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EC4-hw-8Bv">
                                         <rect key="frame" x="2" y="2" width="316" height="250"/>
@@ -1246,6 +1246,11 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
             <point key="canvasLocation" x="465" y="437.32394366197184"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="aDV-bW-qfn"/>
+        <segue reference="v6t-92-nn9"/>
+        <segue reference="EEs-lU-A4V"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="1" width="320" height="206"/>
         <image name="Politique_BG_Color" width="300" height="100"/>
@@ -1262,15 +1267,10 @@ Vous pouvez nous retrouver sur Facebook, Twitter, Youtube et Instagram. N’oubl
         <image name="gallery-Small" width="29" height="29"/>
         <image name="gallery-select-Small" width="29" height="29"/>
         <image name="logo-text-blue" width="370" height="74"/>
-        <image name="photo.fill" catalog="system" width="64" height="46"/>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="search-Small20" width="20" height="20"/>
         <image name="share-24-yellow" width="24" height="24"/>
         <image name="video-Small" width="29" height="29"/>
         <image name="video-select-Small" width="29" height="29"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="aDV-bW-qfn"/>
-        <segue reference="v6t-92-nn9"/>
-        <segue reference="EEs-lU-A4V"/>
-    </inferredMetricsTieBreakers>
 </document>
