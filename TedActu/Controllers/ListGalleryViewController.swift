@@ -102,7 +102,7 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
         view.backgroundColor = .black
         
         print("rowSelect: \(MyVariables2.rowSelect ?? -1)")
-     //   selectCategory()
+        catID = "17"
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl.addTarget(self, action: #selector(HomeViewController.didPullToRefresh(_:)), for: .valueChanged)
@@ -110,6 +110,7 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
         
         if Reachability.isConnectedToNetwork(){
             print("Internet Connection Available!")
+            catID = "17"
             getPostList()
             
         }else{
@@ -119,55 +120,18 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
                    errorAlertController.addAction(cancelAction)
                 self.present(errorAlertController, animated: true)
         }
-        
-
-    }
-    
-    
-
-    
-    func selectCategory(){
-        if MyVariables2.rowSelect != -1{
-            if MyVariables2.rowSelect == 0 {
-                   catID = "16"
-                   print("Catégorie POLITIQUE")
-               }
-               else if MyVariables2.rowSelect == 1 {
-                   catID = "22"
-                   print("Catégorie SAVOIR+")
-               }
-                else if MyVariables2.rowSelect == 2 {
-                    catID = "18"
-                    print("Catégorie SOCIÉTÉ")
-                }
-                else if MyVariables2.rowSelect == 3 {
-                    catID = "19"
-                    print("Catégorie SPORT")
-                }
-                else if MyVariables2.rowSelect == 4 {
-                    catID = "20"
-                    print("Catégorie CULTURE")
-                }
-                else if MyVariables2.rowSelect == 5 {
-                    catID = "23"
-                    print("Catégorie ANKÈT")
-                }
-        }else{
-            catID = ""
-            print("Toutes les Catégories")
-        }
     }
     
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
+        catID = "17"
         getPostList()
     }
     
     // GET Post
      func getPostList(){
-        catID = "17"
         self.activityIndicatory.startAnimating() //====================
-//        print(catID!)
-//        print("cccc1")
+        print(catID!)
+        print("cccc1")
 //        TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&categories=\(catID ?? "")&_embed") { (result, error) in
           
         TedActuAPIManager.shared.get(url: "https://tedactu.com/wp-json/wp/v2/posts?&page=\(loadNumber)&per_page=20&categories=\(catID ?? "")&_embed") { (result, error) in
@@ -196,17 +160,8 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
                     print("===========")
                         // MARK: - POST FORMAT
                         
-                        for item in result!{
-                            let postFormat = item["format"] as? String
-                            self.postFormat1 = item["format"] as? String
-                            print("fff: \(postFormat!)")
-                            if postFormat == "gallery"{
-                                self.posts2 = [item]
-                                print("fff1: \(postFormat!)")
-                            }else{
-                                print("end of posts gallery's")
-                            }
-                        }
+                    
+                    self.posts2 = result!
                     ///////////////////////////////////////////////////////////////////
 
                     
@@ -227,10 +182,6 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
                             self.activityIndicatory.stopAnimating()
                             self.activityIndicatory.isHidden = true
                         }
-        //                let errorAlertController = UIAlertController(title: "Désolé, Fin des articles!", message: "Remonter la liste", preferredStyle: .alert)
-        //                let cancelAction = UIAlertAction(title: "OK", style: .cancel)
-        //                errorAlertController.addAction(cancelAction)
-        //                self.present(errorAlertController, animated: true)
                     }
             
          }
@@ -239,7 +190,6 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
 //            self.activityIndicatory.isHidden = true
 //            self.refreshControl.endRefreshing()
 //        }
-        
     }
     // Get More Posts
     func loadMorePosts(){
@@ -265,12 +215,7 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
 
                     for item in result!
                     {
-                        let postFormat = item["format"] as? String
-                        self.postFormat1 = item["format"] as? String
-                        print("fff2: \(postFormat!)")
-                        if postFormat == "gallery"{
-                            self.posts2.append(item)
-                        }else{}
+                        self.posts2.append(item)
                     }
 
                     DispatchQueue.main.async {
@@ -287,12 +232,10 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
                                 self.activityIndicatory.stopAnimating()
                                 self.activityIndicatory.isHidden = true
                             }
-            //                let errorAlertController = UIAlertController(title: "Désolé, Fin des articles!", message: "Remonter la liste", preferredStyle: .alert)
-            //                let cancelAction = UIAlertAction(title: "OK", style: .cancel)
-            //                errorAlertController.addAction(cancelAction)
-            //                self.present(errorAlertController, animated: true)
                         }
         }
+        print("88888")
+           print(catID ?? "")
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
