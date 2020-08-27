@@ -102,7 +102,6 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
         view.backgroundColor = .black
         
         print("rowSelect: \(MyVariables2.rowSelect ?? -1)")
-       // selectCategory()
         catID = "17"
         
         self.refreshControl = UIRefreshControl()
@@ -111,7 +110,6 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
         
         if Reachability.isConnectedToNetwork(){
             print("Internet Connection Available!")
-     //       selectCategory()
             catID = "17"
             getPostList()
             
@@ -124,47 +122,13 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
-    func selectCategory(){
-        if MyVariables2.rowSelect != -1{
-            if MyVariables2.rowSelect == 0 {
-                   catID = "16"
-                   print("Catégorie POLITIQUE")
-               }
-               else if MyVariables2.rowSelect == 1 {
-                   catID = "22"
-                   print("Catégorie SAVOIR+")
-               }
-                else if MyVariables2.rowSelect == 2 {
-                    catID = "18"
-                    print("Catégorie SOCIÉTÉ")
-                }
-                else if MyVariables2.rowSelect == 3 {
-                    catID = "19"
-                    print("Catégorie SPORT")
-                }
-                else if MyVariables2.rowSelect == 4 {
-                    catID = "20"
-                    print("Catégorie CULTURE")
-                }
-                else if MyVariables2.rowSelect == 5 {
-                    catID = "23"
-                    print("Catégorie ANKÈT")
-                }
-        }else{
-            catID = "17"
-            print("Catégorie Gallerie")
-        }
-    }
-    
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
-     //   selectCategory()
         catID = "17"
         getPostList()
     }
     
     // GET Post
      func getPostList(){
-//        catID = "17"
         self.activityIndicatory.startAnimating() //====================
         print(catID!)
         print("cccc1")
@@ -196,18 +160,6 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
                     print("===========")
                         // MARK: - POST FORMAT
                         
-//                        for item in result!{
-////                            let postFormat = item["format"] as? String
-////                            self.postFormat1 = item["format"] as? String
-////                            print("fff: \(postFormat!)")
-////                            if postFormat == "gallery"{
-////                                self.posts2 = [item]
-////                                print("fff1: \(postFormat!)")
-////                            }else{
-////                                print("end of posts gallery's")
-////                            }
-//                            self.posts2 = [item]
-//                        }
                     
                     self.posts2 = result!
                     ///////////////////////////////////////////////////////////////////
@@ -230,10 +182,6 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
                             self.activityIndicatory.stopAnimating()
                             self.activityIndicatory.isHidden = true
                         }
-        //                let errorAlertController = UIAlertController(title: "Désolé, Fin des articles!", message: "Remonter la liste", preferredStyle: .alert)
-        //                let cancelAction = UIAlertAction(title: "OK", style: .cancel)
-        //                errorAlertController.addAction(cancelAction)
-        //                self.present(errorAlertController, animated: true)
                     }
             
          }
@@ -242,8 +190,6 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
 //            self.activityIndicatory.isHidden = true
 //            self.refreshControl.endRefreshing()
 //        }
-     print("8888")
-        print(catID ?? "")
     }
     // Get More Posts
     func loadMorePosts(){
@@ -269,12 +215,6 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
 
                     for item in result!
                     {
-//                        let postFormat = item["format"] as? String
-//                        self.postFormat1 = item["format"] as? String
-//                        print("fff2: \(postFormat!)")
-//                        if postFormat == "gallery"{
-//                            self.posts2.append(item)
-//                        }else{}
                         self.posts2.append(item)
                     }
 
@@ -292,10 +232,6 @@ class ListGalleryViewController: UIViewController, UITableViewDataSource, UITabl
                                 self.activityIndicatory.stopAnimating()
                                 self.activityIndicatory.isHidden = true
                             }
-            //                let errorAlertController = UIAlertController(title: "Désolé, Fin des articles!", message: "Remonter la liste", preferredStyle: .alert)
-            //                let cancelAction = UIAlertAction(title: "OK", style: .cancel)
-            //                errorAlertController.addAction(cancelAction)
-            //                self.present(errorAlertController, animated: true)
                         }
         }
         print("88888")
